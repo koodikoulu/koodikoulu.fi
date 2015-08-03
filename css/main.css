@@ -1,0 +1,69 @@
+body {
+    font-size: 16px;
+}
+
+a:link {
+    color: #333 !important;
+}
+
+a:visited {
+    color: #333 !important;
+}
+
+.kk-start {
+    background-image: url("https://download.unsplash.com/reserve/oIpwxeeSPy1cnwYpqJ1w_Dufer%20Collateral%20test.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255, 0.7);
+    margin-bottom: 0 !important;
+}
+
+.kk-start-title {
+    text-align: center;
+    font-size: 90px !important;
+    margin-top: 30vh;
+}
+
+.kk-sub-title {
+    margin-bottom: 10vh;
+}
+
+.kk-page {
+    height: 100vh;
+}
+
+.kk-section:nth-child(even) {
+    background-color: #DFDFDE;
+}
+
+.kk-section:nth-child(odd) {
+    background-color: #ececeb;
+}
+
+.kk-box {
+    height: 70vh;
+    width: 95%;
+    margin: auto;
+}
+
+.kk-event-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.kk-text-content {
+    font-size: 16px;
+}
+
+.kk-icon {
+    font-size: 180px;
+}
+
+.kk-label-text {
+    font-size: 30px;
+}
+
+.kk-video {
+    width: 560px;
+    margin: auto;
+}
