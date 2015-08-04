@@ -19,7 +19,6 @@ a:visited {
 }
 
 .kk-start-title {
-    text-align: center;
     font-size: 90px !important;
     margin-top: 30vh;
 }
@@ -65,5 +64,10 @@ a:visited {
 
 .kk-video {
     width: 560px;
+    margin: auto;
+}
+
+.kk-turtle {
+    width: 800px;
     margin: auto;
 }
