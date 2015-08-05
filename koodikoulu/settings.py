@@ -107,6 +107,9 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+# Authentication settings.
+LOGIN_REDIRECT_URL='/'
+
 if 'DYNO' in os.environ:
     import dj_database_url
     DATABASES = {}
