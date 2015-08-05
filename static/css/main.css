@@ -63,9 +63,10 @@ a:visited {
 }
 
 .kk-box {
-    height: 70vh;
+    height: 35vh;
     width: 95%;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
