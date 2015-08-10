@@ -6,6 +6,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700|Open+Sans:400,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -13,127 +14,133 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-static-top kk-nav">
-      <div class="container">
+    <nav class="navbar navbar-default navbar-static-top nav">
+      <div class="container white">
         Navigaatio
       </div>
     </nav>
     <!-- Startpage -->
-    <div class="jumbotron kk-start">
+    <div class="jumbotron start">
       <div class="container text-center col-xs-12">
-        <h1 class="kk-start-title">Koodikoulu</h1>
-        <p>Koodikoulu on sivusto, josta löytyy kaikki, mitä aloittamiseen tarvitset.</p>
+        <h1 class="start-title white">Koodikoulu</h1>
+        <p class="white">Halusimme koota yhteen paikkaan koodiopetuksen ja oppaat Suomessa. Koodikoulu on sivusto, josta löydät kaiken, mitä aloittamiseen tarvitset.</p>
       </div>
     </div>
 
     <!-- TurtleRoy -->
-    <div class="kk-section">
-      <div class="container kk-page">
-        <h1 class="kk-sub-title">Kokeile itse!</h1>
-      <div class="kk-turtle col-md-8">
-        <iframe width="100%" height="400" src="https://nameless-peak-1399.herokuapp.com/" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    <div class="section tryout">
+      <div class="container page">
+        <h1 class="sub-title">Kirjoita koodia samantien!</h1>
+      <div class="turtle col-md-8">
+        <!-- <iframe width="100%" height="400" src="https://nameless-peak-1399.herokuapp.com/" frameborder="0" scrolling="no" allowfullscreen></iframe> -->
+        <iframe src="https://trinket.io/embed/python/781fff0326" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
       </div>
       </div>
     </div>
 
     <!-- Material links -->
-    <div class="kk-section">
-      <div class="container kk-page">
-        <h1 class="kk-sub-title">Valitse kauanko haluat käyttää aikaa</h1>
-        <a href="http://koodaustunti.fi/" class="col-md-4">
-          <div class="well well-lg kk-box text-center">
-          <p class="kk-label-text">1 <strong>tunti</strong> aikaa</p>
+    <div class="section material">
+      <div class="container page">
+        <h1 class="sub-title">Opi itse</h1>
+        <a href="https://www.youtube.com/watch?v=cKhVupvyhKk" class="col-md-4">
+          <div class="well well-lg box text-center box1">
+            <div class="box-header">Haluan ymmärtää minuutissa, mitä koodaus on!</div>
+            <div class="box-text">Tästä englanninkieliseen videoon, jonka avulla ymmärrät, mistä puhutaan</div>
         </div>
         </a>
-        <a href="https://www.codeschool.com/" class="col-md-4">
-          <div class="well well-lg kk-box text-center">
-            <p class="kk-label-text">1 <strong>päivä</strong> aikaa</p>
+        <a href="http://code.org/learn" class="col-md-4">
+          <div class="well well-lg box text-center  box2">
+            <div class="box-header">Haluan päästä kokeilemaan koodausta!</div>
+            <div class="box-text">Opiskele koodausta itsenäisesti suomeksi yhden tunnin ajan</div>
+          </div>
+        </a>
+        <a href="http://koodikirja.fi/" class="col-md-4">
+          <div class="well well-lg box text-center box3 white">
+            <div class="box-header">Haluan opetella vähän enemmänkin!</div>
+            <div class="box-text">Vietä pari tuntia suomenkielisen koodikirjan kanssa</div>
+          </div>
+        </a>
+        <a href="http://codecademy.com/" class="col-md-4">
+          <div class="well well-lg box text-center box4 white">
+            <div class="box-header">Haluan oppia tosi paljon ja osaan englantia!</div>
+            <div class="box-text">Opettele englanninkielisessä Codecademyssä eri koodauskieliä ja esim. nettisivujen tekemistä</div>
           </div>
         </a>
         <a href="http://mooc.fi/" class="col-md-4">
-          <div class="well well-lg kk-box text-center">
-            <p class="kk-label-text">1 <strong>kuukausi</strong> aikaa</p>
+          <div class="well well-lg box text-center  box5">
+            <div class="box-header">Haluan oppia tosi paljon mutta suomeksi!</div>
+            <div class="box-text">Opettele yliopistojen tarjoamilla mooc-kursseilla.</div>
           </div>
         </a>
-        <a href="http://koodaustunti.fi/" class="col-md-4">
-          <div class="well well-lg kk-box text-center">
-          <p class="kk-label-text">1 <strong>tunti</strong> aikaa</p>
-        </div>
-        </a>
-        <a href="https://www.codeschool.com/" class="col-md-4">
-          <div class="well well-lg kk-box text-center">
-            <p class="kk-label-text">1 <strong>päivä</strong> aikaa</p>
-          </div>
-        </a>
-        <a href="http://mooc.fi/" class="col-md-4">
-          <div class="well well-lg kk-box text-center">
-            <p class="kk-label-text">1 <strong>kuukausi</strong> aikaa</p>
+        <a href="" class="col-md-4">
+          <div class="well well-lg box text-center box6">
+            <div class="box-header">Muita hyviä paikkoja koodauksen opettaluun</div>
           </div>
         </a>
       </div>
     </div>
 
     <!-- Events -->
-    <div class="kk-section">
-      <div class="container kk-page">
-        <h1 class="kk-sub-title">Tapahtumat</h1>
+    <div class="section events">
+      <div class="container page">
+        <h1 class="sub-title">Ilmoittaudu mukaan</h1>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="heading">
-              <div class="panel-title kk-row-container kk-heading-row">
+              <div class="panel-title row-container heading-row">
                 <div class="row col-xs-12 col-md-12">
-                  <div class="col-xs-4 col-md-4 kk-row-elem">Aika</div>
-                  <div class="col-xs-4 col-md-4 kk-row-elem">Tapahtuma</div>
-                  <div class="col-xs-4 col-md-3 kk-row-elem">Paikka</div>
-                  <div class="col-md-1 hidden-sm hidden-xs kk-row-elem"></div>
+                  <div class="col-xs-4 col-md-4 row-elem">Aika</div>
+                  <div class="col-xs-4 col-md-4 row-elem">Tapahtuma</div>
+                  <div class="col-xs-4 col-md-3 row-elem">Paikka</div>
+                  <div class="col-md-1 hidden-sm hidden-xs row-elem"></div>
                 </div>
               </div>
             </div>
           </div>
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
-              <div class="panel-title kk-row-container">
+              <div class="panel-title row-container">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   <div class="row col-xs-12 col-md-12">
-                    <div class="col-xs-4 col-md-4 kk-row-elem">
-                      <div class="kk-title">3.3.2015 - 5.5.2015</div>
+                    <div class="col-xs-4 col-md-4 row-elem">
+                      <div class="title">3.3.2015 - 5.5.2015</div>
                       <div class="kkdetail">ma klo 10-12</div>
                     </div>
-                    <div class="col-xs-4 col-md-4 kk-row-elem">
-                      <div class="kk-title">Koodikerho</div>
-                      <div class="kk-detail">aloittelijoille</div>
+                    <div class="col-xs-4 col-md-4 row-elem">
+                      <div class="title">Koodikerho</div>
+                      <div class="detail">aloittelijoille</div>
                     </div>
-                    <div class="col-xs-4 col-md-3 kk-row-elem">
-                      <div class="kk-title">Koodikatu 1</div>
-                      <div class="kk-detail">Tampere</div>
+                    <div class="col-xs-4 col-md-3 row-elem">
+                      <div class="title">Koodikatu 1</div>
+                      <div class="detail">Tampere</div>
                     </div>
-                    <div class="col-md-1 hidden-sm hidden-xs kk-row-elem"><span class="glyphicon glyphicon-minus-sign kk-full"></span></div>
+                    <div class="col-md-1 hidden-sm hidden-xs row-elem"><span class="glyphicon glyphicon-minus-sign full"></span></div>
                   </div>
                 </a>
               </div>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse kk-icon" role="tabpanel" aria-labelledby="headingOne">
+            <div id="collapseOne" class="panel-collapse collapse icon" role="tabpanel" aria-labelledby="headingOne">
               <div class="panel-body">
-                <div class="kk-text-content">
-                  <div class="kk-info col-xs-12 col-md-8">
+                <div class="text-content">
+                  <div class="info col-xs-12 col-md-8">
                     <p>Koodikerho on kerran viikossa järjestettävä koululaisten iltapäiväkerho, jossa lapset oppivat ohjelmoinnin perusteet.</p>
                     <p>Ohjelmointia ja tietokoneiden toiminnan ymmärtämistä tarvitaan tietoyhteiskunnassa koko ajan enemmän. Me Koodikerhossa uskomme, että lasten olisi hyvä hallita lukemisen ja kirjoittamisen lisäksi myös koodaamisen taitoja. Kaiken lisäksi Koodikerhossa on hauskaa!</p>
                     <a href="http://koodikerho.fi/">http://koodikerho.fi/</a>
                     <ul>
                       <li>
-                        <span class="col-xs-4 col-md-2 kk-heading-row">Ota mukaan:</span>
+                        <span class="col-xs-4 col-md-2 heading-row">Ota mukaan:</span>
                         <span class="col-xs-8 col-md-6">Läppäri ja aikuinen apuri</span>
                       </li>
                       <li>
-                        <span class="col-xs-4 col-md-2 kk-heading-row">Hinta:</span>
+                        <span class="col-xs-4 col-md-2 heading-row">Hinta:</span>
                         <span class="col-xs-8 col-md-6">0€</span>
                       </li>
                       <li>
-                        <span class="col-xs-4 col-md-2 kk-heading-row">Esitiedot:</span>
+                        <span class="col-xs-4 col-md-2 heading-row">Esitiedot:</span>
                         <span class="col-xs-8 col-md-6">Koodikerho on 9+ -vuotiaille. Osallistujalla ei tarvitse olla etukäteen koodamisesta kokemusta.</span>
                       </li>
                       <li>
-                        <span class="col-xs-4 col-md-2 kk-heading-row">Järjestäjä:</span>
+                        <span class="col-xs-4 col-md-2 heading-row">Järjestäjä:</span>
                         <span class="col-xs-8 col-md-6">Kari Koodaaja, 040 123456789, kari.koodaaja@koodi.fi</span>
                       </li>
                     </ul>
@@ -141,7 +148,7 @@
                   <div class="col-xs-12 col-md-4 text-center">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7615.559820551766!2d23.7610254!3d61.498150349999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468edf554593da5d%3A0x6adfe3bd1e0b22c0!2s33100+Tampere%2C+Finland!5e0!3m2!1sen!2sus!4v1438606569909" width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                   </div>
-                  <div class="kk-signup">Kurssi on täynnä</div>
+                  <div class="signup">Kurssi on täynnä</div>
                 </div>
               </div>
             </div>
@@ -151,18 +158,18 @@
     </div>
 
     <!-- Info section -->
-    <div class="kk-section">
-      <div class="container kk-page">
-        <h1 class="kk-sub-title">Mitä koodaus on?</h1>
-        <div class="kk-video-container">
-          <iframe class="kk-video" src="https://www.youtube.com/embed/cKhVupvyhKk" frameborder="0" allowfullscreen>
+    <div class="section">
+      <div class="container page">
+        <h1 class="sub-title">Mitä koodaus on?</h1>
+        <div class="video-container">
+          <iframe class="video" src="https://www.youtube.com/embed/cKhVupvyhKk" frameborder="0" allowfullscreen>
           </iframe>
         </div>
       </div>
     </div>
 
     <!-- Footer -->
-    <div class="kk-footer">
+    <div class="footer">
     </div>
   </body>
 </html>

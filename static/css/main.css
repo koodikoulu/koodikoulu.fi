@@ -13,87 +13,143 @@ li {
     clear: both;
 }
 
+p {
+    font-size: 18px !important;
+    font-weight: lighter !important;
+}
+
+.ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+
+.opensans {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
 a:link {
     color: #333 !important;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 a:visited {
     color: #333 !important;
 }
 
-.kk-nav {
+.nav {
     margin: 0;
     min-height: 8vh;
+    background-color: #4C3750;
+    font-color: #FFFFFF;
+    border: none;
 }
 
-.kk-start {
-    /*background-image: url("https://download.unsplash.com/reserve/oIpwxeeSPy1cnwYpqJ1w_Dufer%20Collateral%20test.jpg");*/
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: inset 0 0 0 1000px rgba(255,255,255, 0.7);
+.white {
+    color: #FFFFFF !important;
+}
+
+.start {
+    background-color: #4C3750;
     margin-bottom: 0 !important;
     min-height: 92vh;
 }
 
-.kk-start-title {
-    font-size: 90px !important;
+.start-title {
+    font-size: 50px !important;
     margin-top: 30vh;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-weight: bold;
 }
 
 @media (max-width: 500px) {
-    .kk-start-title {
+    .start-title {
         font-size: 50px !important;
     }
 }
 
-.kk-sub-title {
-    margin-bottom: 10vh;
+.tryout {
+    background-color: #E9E9E9;
 }
 
-.kk-page {
+.material {
+    background-color: #FFFFFF;
+}
+
+.events {
+    background-color: #fdbc5f;
+}
+
+.sub-title {
+    margin-bottom: 10vh;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #484639;
+    text-align: center;
+}
+
+.page {
     min-height: 100vh;
 }
 
-.kk-section:nth-child(even) {
-    background-color: #DFDFDE;
-}
-
-.kk-section:nth-child(odd) {
-    background-color: #ececeb;
-}
-
-.kk-box {
-    height: 35vh;
-    width: 95%;
+.box {
+    height: 400px;
+    width: 300px;
     margin: auto;
     margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.box-header {
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    margin-top: 100px;
+}
+
+.box-text {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    margin-top: 30px;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 @media (min-width: 768px) {
-    .kk-title, .kk-detail {
+    .title, .detail {
         float: left;
         padding-right: 10px;
     }
 }
 
-.kk-extra {
+.extra {
     clear: both;
 }
 
-.kk-row-elem {
+.row-elem {
     float: left;
 }
 
-.kk-row-container {
+.row-container {
     overflow: auto;
 }
 
-.kk-heading-row {
+.heading-row {
     font-weight: bold;
     padding-left: 0;
 }
 
-.kk-text-content {
+.text-content {
     font-size: 16px;
 }
 
@@ -101,24 +157,24 @@ a:visited {
     padding: 0;
 }
 
-.kk-full {
+.full {
     color: red;
 }
 
-.kk-signup {
+.signup {
     float: right;
     padding: 2em;
 }
 
-.kk-icon {
+.icon {
     font-size: 180px;
 }
 
-.kk-label-text {
+.label-text {
     font-size: 30px;
 }
 
-.kk-video {
+.video {
     margin: 0 auto;
     display: block;
     width: 560px;
@@ -126,7 +182,7 @@ a:visited {
 }
 
 @media(max-width: 560px) {
-    .kk-video {
+    .video {
         margin: 0 auto;
         display: block;
         width: 300px;
@@ -134,12 +190,36 @@ a:visited {
     }
 }
 
-.kk-turtle {
+.turtle {
     width: 100%;
     margin: auto;
 }
 
-.kk-footer {
+.footer {
     min-height: 20vh;
-    background-color: #5a5a5a;
+    background-color: #4C3750;
+}
+
+.box1 {
+    background-color: #6BBEA9;
+}
+
+.box2 {
+    background-color: #FEC772;
+}
+
+.box3 {
+    background-color: #4C384F;
+}
+
+.box4 {
+    background-color: #8A778F;
+}
+
+.box5 {
+    background-color: #E9E9E9;
+}
+
+.box6 {
+    background-color: #E25462;
 }
