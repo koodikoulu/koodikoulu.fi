@@ -55,7 +55,7 @@ a:visited {
 .start {
     background-color: #4C3750;
     margin-bottom: 0 !important;
-    min-height: 92vh;
+    min-height: 82vh;
 }
 
 .start-title {
@@ -94,7 +94,7 @@ a:visited {
 }
 
 .page {
-    min-height: 100vh;
+    min-height: 80vh;
 }
 
 .box {
