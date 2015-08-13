@@ -1,7 +1,7 @@
-from django.forms import ModelForm, TextInput, DateInput, EmailInput, NumberInput, DateField
+from django import forms
 from web.models import Event, SignUp
 
-class EventForm(ModelForm):
+class EventForm(forms.ModelForm):
   def __init__(self, *args, **kwargs):
       super(EventForm, self).__init__(*args, **kwargs)
       self.fields['title'].label = 'Tapahtuman nimi'
@@ -12,8 +12,8 @@ class EventForm(ModelForm):
       self.fields['city'].label = 'Kaupunki'
       self.fields['amount'].label = 'Osallistujien maksimimäärä'
 
-  start_date = DateField(input_formats=['%d.%m.%Y'], widget=DateInput(attrs={'class': 'startdate'}, format=('%d.%m.%Y')))
-  end_date = DateField(input_formats=['%d.%m.%Y'], required=False, widget=DateInput(attrs={'class': 'enddate'}, format=('%d.%m.%Y')))
+  start_date = forms.DateField(input_formats=['%d.%m.%Y'], widget=forms.DateInput(attrs={'class': 'startdate'}, format=('%d.%m.%Y')))
+  end_date = forms.DateField(input_formats=['%d.%m.%Y'], required=False, widget=forms.DateInput(attrs={'class': 'enddate'}, format=('%d.%m.%Y')))
 
   class Meta:
     model = Event
@@ -25,16 +25,16 @@ class EventForm(ModelForm):
               'city',
               'amount',)
     widgets = {
-      'title': TextInput(),
-      'description': TextInput(),
-      'start_date': DateInput(format=('%d.%m.%Y')),
-      'end_date': DateInput(format=('%d.%m.%Y')),
-      'street_address': TextInput(),
-      'city': TextInput(),
-      'amount': NumberInput(),
+      'title': forms.TextInput(),
+      'description': forms.TextInput(),
+      'start_date': forms.DateInput(format=('%d.%m.%Y')),
+      'end_date': forms.DateInput(format=('%d.%m.%Y')),
+      'street_address': forms.TextInput(),
+      'city': forms.TextInput(),
+      'amount': forms.NumberInput(),
     }
 
-class SignUpForm(ModelForm):
+class SignUpForm(forms.ModelForm):
   class Meta:
     model = SignUp
     fields = ('child',
@@ -44,10 +44,29 @@ class SignUpForm(ModelForm):
               'phone',
               'other',)
     widgets = {
-      'child': TextInput(attrs={'placeholder': 'Lapsen nimi'}),
-      'guardian': TextInput(attrs={'placeholder': 'Huoltajan nimi'}),
-      'age': NumberInput(attrs={'placeholder': 'Lapsen ikä'}),
-      'email': EmailInput(attrs={'placeholder': 'Sähköposti'}),
-      'phone': TextInput(attrs={'placeholder': 'Puhelinnumero'}),
-      'other': TextInput(attrs={'placeholder': 'Muuta'}),
+      'child': forms.TextInput(attrs={'placeholder': 'Lapsen nimi'}),
+      'guardian': forms.TextInput(attrs={'placeholder': 'Huoltajan nimi'}),
+      'age': forms.NumberInput(attrs={'placeholder': 'Lapsen ikä'}),
+      'email': forms.EmailInput(attrs={'placeholder': 'Sähköposti'}),
+      'phone': forms.TextInput(attrs={'placeholder': 'Puhelinnumero'}),
+      'other': forms.TextInput(attrs={'placeholder': 'Muuta'}),
     }
+
+class RegisterForm(forms.Form):
+  email = forms.EmailField(label='Sähköposti')
+  first_name = forms.CharField(label='Etunimi', max_length=100)
+  last_name = forms.CharField(label='Sukunimi', max_length=100)
+  password = forms.CharField(widget=forms.PasswordInput, label='Salasana')
+  password_validate = forms.CharField(widget=forms.PasswordInput, label='Salasana uudestaan')
+
+  def is_valid(self):
+    valid = super(RegisterForm, self).is_valid()
+
+    if not valid:
+      return valid
+
+    if self.cleaned_data['password'] != self.cleaned_data['password_validate']:
+      self._errors['password'] = 'Salasanat eivät täsmää'
+      return False
+
+    return True
