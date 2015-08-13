@@ -8,7 +8,7 @@ class EventForm(ModelForm):
       self.fields['description'].label = 'Tapahtuman kuvaus'
       self.fields['start_date'].label = 'Tapahtuman alkamispäivä'
       self.fields['end_date'].label = 'Tapahtuman päättymispäivä'
-      self.fields['street_address'].label = 'Tapahtuma paikan osoite'
+      self.fields['street_address'].label = 'Tapahtumapaikan osoite'
       self.fields['city'].label = 'Kaupunki'
       self.fields['amount'].label = 'Osallistujien maksimimäärä'
 

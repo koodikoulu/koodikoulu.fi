@@ -97,34 +97,34 @@
               </div>
             </div>
           </div>
+            {% for event in events %}
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
               <div class="panel-title row-container">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#id-{{ event.pk }}" aria-expanded="true" aria-controls="collapseOne">
                   <div class="row col-xs-12 col-md-12">
                     <div class="col-xs-4 col-md-4 row-elem">
-                      <div class="title">3.3.2015 - 5.5.2015</div>
-                      <div class="kkdetail">ma klo 10-12</div>
+                      <div class="title">{{ event.start_date }} {% if event.end_date %} - {{ event.end_date }}{% endif %}</div>
+                      <div class="kkdetail">dd klo xx-xx</div>
                     </div>
                     <div class="col-xs-4 col-md-4 row-elem">
-                      <div class="title">Koodikerho</div>
-                      <div class="detail">aloittelijoille</div>
+                      <div class="title">{{ event.title }}</div>
+                      <div class="detail">{{ event.description }}</div>
                     </div>
                     <div class="col-xs-4 col-md-3 row-elem">
-                      <div class="title">Koodikatu 1</div>
-                      <div class="detail">Tampere</div>
+                      <div class="title">{{ event.street_address }}</div>
+                      <div class="detail">{{ event.city }}</div>
                     </div>
                     <div class="col-md-1 hidden-sm hidden-xs row-elem"><span class="glyphicon glyphicon-minus-sign full"></span></div>
                   </div>
                 </a>
               </div>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse icon" role="tabpanel" aria-labelledby="headingOne">
+            <div id="id-{{ event.pk }}" class="panel-collapse collapse icon" role="tabpanel" aria-labelledby="headingOne">
               <div class="panel-body">
                 <div class="text-content">
                   <div class="info col-xs-12 col-md-8">
-                    <p>Koodikerho on kerran viikossa järjestettävä koululaisten iltapäiväkerho, jossa lapset oppivat ohjelmoinnin perusteet.</p>
-                    <p>Ohjelmointia ja tietokoneiden toiminnan ymmärtämistä tarvitaan tietoyhteiskunnassa koko ajan enemmän. Me Koodikerhossa uskomme, että lasten olisi hyvä hallita lukemisen ja kirjoittamisen lisäksi myös koodaamisen taitoja. Kaiken lisäksi Koodikerhossa on hauskaa!</p>
+                    <p>{{ event.description }}</p>
                     <a href="http://koodikerho.fi/">http://koodikerho.fi/</a>
                     <ul>
                       <li>
@@ -153,6 +153,7 @@
               </div>
             </div>
           </div>
+            {% endfor %}
         </div>
       </div>
     </div>

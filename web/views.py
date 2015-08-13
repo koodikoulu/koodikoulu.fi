@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from web.models import Event
 
 from web.forms import EventForm
 
 def index(request):
-  return render(request, 'index.html')
+  events = Event.objects.all()
+  return render(request, 'index.html', {'events': events})
 
 def register(request):
   return render(request, 'register.html')
