@@ -2,8 +2,8 @@ from django.forms import ModelForm, TextInput, DateInput, EmailInput, NumberInpu
 from web.models import Event, SignUp
 
 class EventForm(ModelForm):
-  start_date = DateField(input_formats=['%d.%m.%Y'])
-  end_date = DateField(input_formats=['%d.%m.%Y'], required=False)
+  start_date = DateField(input_formats=['%d.%m.%Y'], widget=DateInput(attrs={'class': 'startdate'}, format=('%d.%m.%Y')))
+  end_date = DateField(input_formats=['%d.%m.%Y'], required=False, widget=DateInput(attrs={'class': 'enddate'}, format=('%d.%m.%Y')))
 
   class Meta:
     model = Event
