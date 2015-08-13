@@ -32,6 +32,10 @@ class User(AbstractBaseUser):
   last_name = models.CharField(max_length=100)
   created = models.DateTimeField(auto_now_add=True)
 
+  is_staff = models.BooleanField(default=False)
+  is_admin = models.BooleanField(default=False)
+  is_active = models.BooleanField(default=True)
+
   objects = UserManager()
 
   USERNAME_FIELD = 'email'
@@ -40,8 +44,28 @@ class User(AbstractBaseUser):
   class Meta:
     ordering = ('created',)
 
+  def get_full_name(self):
+    return "%s %s" % (self.first_name, self.last_name)
+
+  def get_short_name(self):
+    return "%s" % (self.first_name)
+
+  @property
+  def is_superuser(self):
+      return self.is_admin
+
+  @property
+  def is_staff(self):
+      return self.is_admin
+
+  def has_perm(self, perm, obj=None):
+    return self.is_admin
+
+  def has_module_perms(self, app_label):
+    return self.is_admin
+
   def __str__(self):
-    return "%s %s" % (first_name, last_name)
+    return "%s %s" % (self.first_name, self.last_name)
 
 
 class Event(models.Model):
