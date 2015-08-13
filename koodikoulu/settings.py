@@ -71,6 +71,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'koodikoulu.wsgi.application'
 
+# Auth settings
+AUTH_USER_MODEL = 'web.User'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
