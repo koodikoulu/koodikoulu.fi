@@ -2,6 +2,16 @@ from django.forms import ModelForm, TextInput, DateInput, EmailInput, NumberInpu
 from web.models import Event, SignUp
 
 class EventForm(ModelForm):
+  def __init__(self, *args, **kwargs):
+      super(EventForm, self).__init__(*args, **kwargs)
+      self.fields['title'].label = 'Tapahtuman nimi'
+      self.fields['description'].label = 'Tapahtuman kuvaus'
+      self.fields['start_date'].label = 'Tapahtuman alkamispäivä'
+      self.fields['end_date'].label = 'Tapahtuman päättymispäivä'
+      self.fields['street_address'].label = 'Tapahtuma paikan osoite'
+      self.fields['city'].label = 'Kaupunki'
+      self.fields['amount'].label = 'Osallistujien maksimimäärä'
+
   start_date = DateField(input_formats=['%d.%m.%Y'], widget=DateInput(attrs={'class': 'startdate'}, format=('%d.%m.%Y')))
   end_date = DateField(input_formats=['%d.%m.%Y'], required=False, widget=DateInput(attrs={'class': 'enddate'}, format=('%d.%m.%Y')))
 
@@ -15,13 +25,13 @@ class EventForm(ModelForm):
               'city',
               'amount',)
     widgets = {
-      'title': TextInput(attrs={'placeholder': 'Otsikko'}),
-      'description': TextInput(attrs={'placeholder': 'Kuvaus'}),
+      'title': TextInput(),
+      'description': TextInput(),
       'start_date': DateInput(format=('%d.%m.%Y')),
       'end_date': DateInput(format=('%d.%m.%Y')),
-      'street_address': TextInput(attrs={'placeholder': 'Osoite'}),
-      'city': TextInput(attrs={'placeholder': 'Kaupunki'}),
-      'amount': NumberInput(attrs={'placeholder': 'Osallistujien lukumäärä'}),
+      'street_address': TextInput(),
+      'city': TextInput(),
+      'amount': NumberInput(),
     }
 
 class SignUpForm(ModelForm):
