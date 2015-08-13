@@ -161,6 +161,10 @@ a:visited {
     color: red;
 }
 
+.non-full {
+    color: lawngreen;
+}
+
 .signup {
     float: right;
     padding: 2em;

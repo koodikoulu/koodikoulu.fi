@@ -84,7 +84,8 @@
     <div class="section events">
       <div class="container page">
         <h1 class="sub-title">Ilmoittaudu mukaan</h1>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        {% if events %}
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="heading">
               <div class="panel-title row-container heading-row">
@@ -115,7 +116,12 @@
                       <div class="title">{{ event.street_address }}</div>
                       <div class="detail">{{ event.city }}</div>
                     </div>
+                    {% if not event.booked %}
                     <div class="col-md-1 hidden-sm hidden-xs row-elem"><span class="glyphicon glyphicon-minus-sign full"></span></div>
+                    {% else %}
+                    <div class="col-md-1 hidden-sm hidden-xs row-elem"><span class="glyphicon glyphicon-plus-sign non-full"></span></div>
+                    {% endif %}
+
                   </div>
                 </a>
               </div>
@@ -141,20 +147,27 @@
                       </li>
                       <li>
                         <span class="col-xs-4 col-md-2 heading-row">Järjestäjä:</span>
-                        <span class="col-xs-8 col-md-6">Kari Koodaaja, 040 123456789, kari.koodaaja@koodi.fi</span>
+                        <span class="col-xs-8 col-md-6">{{ event.organizer }}, 040 123456789, kari.koodaaja@koodi.fi</span>
                       </li>
                     </ul>
                   </div>
                   <div class="col-xs-12 col-md-4 text-center">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7615.559820551766!2d23.7610254!3d61.498150349999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468edf554593da5d%3A0x6adfe3bd1e0b22c0!2s33100+Tampere%2C+Finland!5e0!3m2!1sen!2sus!4v1438606569909" width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                   </div>
-                  <div class="signup">Kurssi on täynnä</div>
+                    {% if not event.booked %}
+                    <div class="signup">Kurssi on täynnä</div>
+                    {% else %}
+                    <div class="signup">Ilmoittaudu</div>
+                    {% endif %}
                 </div>
               </div>
             </div>
           </div>
             {% endfor %}
         </div>
+        {% else %}
+            <div>Ei tapahtumia</div>
+        {% endif %}
       </div>
     </div>
 
