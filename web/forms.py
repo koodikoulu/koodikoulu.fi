@@ -1,5 +1,6 @@
 from django import forms
 from web.models import Event, SignUp
+from django.contrib.auth import authenticate
 
 class EventForm(forms.ModelForm):
   def __init__(self, *args, **kwargs):
@@ -70,3 +71,29 @@ class RegisterForm(forms.Form):
       return False
 
     return True
+
+class LoginForm(forms.Form):
+  email = forms.EmailField(label='Sähköposti')
+  password = forms.CharField(widget=forms.PasswordInput, label='Salasana')
+
+  def is_valid(self):
+    valid = super(LoginForm, self).is_valid()
+
+    if not valid:
+      return valid
+
+    user = authenticate(
+      username=self.cleaned_data['email'],
+      password=self.cleaned_data['password']
+    )
+    if not user or not user.is_active:
+      self._errors['email'] = 'Sisäänkirjautuminen epäonnistui.'
+      return False
+
+    return True
+
+  def login(self, request):
+    email = self.cleaned_data['email']
+    password = self.cleaned_data['password']
+    user = authenticate(username=email, password=password)
+    return user
