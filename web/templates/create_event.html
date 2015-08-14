@@ -1,6 +1,7 @@
 {% extends "base.html" %}
   {% block title %}Koodikoulu - tapahtuman luonti{% endblock %}
   {% block extrahead %}
+    <link rel="stylesheet" href="/static/css/admin.css">
     <script>
       $(function() {
           $( ".startdate" ).datepicker({
@@ -22,10 +23,11 @@
           {% for field in form %}
             <div class="fieldWrapper">
               {{ field.errors }}
-              {{ field.label_tag }} {{ field }}
+              <div class="label">{{ field.label_tag }}</div>
+              <div class="label">{{ field }}</div>
             </div>
           {% endfor %}
-          <input type="submit" value="Luo tapahtuma" />
+          <input class="btn" type="submit" value="Luo tapahtuma" />
         </div>
       </div>
       </form>

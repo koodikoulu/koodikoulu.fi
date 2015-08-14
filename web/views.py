@@ -64,3 +64,6 @@ def create_event(request):
     form = EventForm()
 
   return render(request, 'create_event.html', {'form': form})
+
+def organize(request):
+  return render(request, 'organize.html')
