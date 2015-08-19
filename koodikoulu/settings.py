@@ -84,6 +84,8 @@ DATABASES = {
     }
 }
 
+# Google Maps Key
+GOOGLE_KEY = os.getenv('GOOGLE_KEY', '')
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

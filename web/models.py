@@ -1,5 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.conf import settings
+import googlemaps
+import json
+
 
 class UserManager(BaseUserManager):
   def create_user(self, email, first_name, last_name, password=None):
@@ -86,9 +90,19 @@ class Event(models.Model):
   booked = models.BooleanField(default=False)
 
   organizer = models.ForeignKey(User, blank=True, null=True, related_name="events")
+  lat = models.CharField(max_length=255, blank=True, null=True)
+  lng = models.CharField(max_length=255, blank=True, null=True)
 
   class Meta:
     ordering = ('start_date',)
+
+  def save(self, *args, **kwargs):
+    if not self.lat or not self.lng:
+      location = getLocation(self.street_address, self.city)
+      self.lat = location[0]
+      self.lng = location[1]
+    super(Event, self).save(*args, **kwargs)
+
 
   def __str__(self):
     return "%s" % self.title
@@ -115,3 +129,12 @@ class SignUp(models.Model):
 
   def __str__(self):
     return "%s" % self.child
+
+
+def getLocation(address, city):
+  gmaps = googlemaps.Client(key=settings.GOOGLE_KEY)
+  geocode_result = gmaps.geocode("%s, %s" % (address, city))
+  lat = geocode_result[0]["geometry"]["location"]["lat"]
+  lng = geocode_result[0]["geometry"]["location"]["lng"]
+  print("lat: %s lng: %s" % (lat, lng))
+  return [lat, lng]
