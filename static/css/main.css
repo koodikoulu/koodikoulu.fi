@@ -28,15 +28,15 @@ p {
     font-weight: 300;
 }
 
-a:link {
+.material a:link {
     color: #333 !important;
 }
 
-a:hover {
+.material a:hover {
     text-decoration: none;
 }
 
-a:visited {
+.material a:visited {
     color: #333 !important;
 }
 
@@ -50,7 +50,9 @@ a:visited {
 
 .nav-object {
     color: #ffffff;
-    float: right;
+    float: left;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .white {
@@ -89,6 +91,10 @@ a:visited {
     background-color: #fdbc5f;
 }
 
+.story {
+    background-color: #6BBEA9;
+}
+
 .sub-title {
     margin-bottom: 10vh;
     font-size: 24px;
@@ -100,6 +106,17 @@ a:visited {
 
 .page {
     min-height: 80vh;
+    padding-bottom: 20px;
+}
+
+.panel {
+    border: none;
+    border-radius: 0 !important;
+    box-shadow: none;
+}
+
+.panel-heading {
+    border-radius: 0;
 }
 
 .box {
@@ -175,6 +192,12 @@ a:visited {
     padding: 2em;
 }
 
+label {
+    width: 130px;
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+}
+
 .icon {
     font-size: 180px;
 }
@@ -183,30 +206,26 @@ a:visited {
     font-size: 30px;
 }
 
-.video {
-    margin: 0 auto;
-    display: block;
-    width: 560px;
-    height: 315px;
-}
-
-@media(max-width: 560px) {
-    .video {
-        margin: 0 auto;
-        display: block;
-        width: 300px;
-        height: 168px;
-    }
-}
-
 .turtle {
     width: 100%;
     margin: auto;
 }
 
+.text-container ul {
+    list-style-type: disc;
+    overflow: visible;
+    padding-left: 40px;
+    font-weight: lighter;
+}
+
 .footer {
-    min-height: 20vh;
+    min-height: 30vh;
     background-color: #4C3750;
+    color: white;
+}
+
+.center {
+    text-align: center;
 }
 
 .box1 {
