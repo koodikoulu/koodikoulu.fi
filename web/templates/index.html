@@ -116,7 +116,7 @@
                     <div class="title">{{ event.street_address }}</div>
                     <div class="detail">{{ event.city }}</div>
                   </div>
-                  {% if not event.booked %}
+                  {% if event.booked %}
                   <div class="col-md-1 hidden-sm hidden-xs row-elem"><span class="glyphicon glyphicon-minus-sign full"></span></div>
                   {% else %}
                   <div class="col-md-1 hidden-sm hidden-xs row-elem"><span class="glyphicon glyphicon-plus-sign non-full"></span></div>
@@ -160,26 +160,26 @@
                 <div class="col-xs-12 col-md-4 text-center">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7615.559820551766!2d23.7610254!3d61.498150349999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468edf554593da5d%3A0x6adfe3bd1e0b22c0!2s33100+Tampere%2C+Finland!5e0!3m2!1sen!2sus!4v1438606569909" width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
-                  {% if not event.booked %}
+                  {% if event.booked %}
                   <div class="signup">Kurssi on täynnä</div>
-                  {% else %}
-                  <div class="signup">Ilmoittaudu</div>
                   {% endif %}
               </div>
             </div>
+            {% if not event.booked %}
             <div class="panel-body">
               <div class="text-content">
                 <div class="info col-xs-12 mol-md-8">
                   <form method="post" id="signup-form" action="{% url 'web.views.handle_signup' pk=event.pk %}">
                     <p>Ilmoittautuminen</p>
                     {% csrf_token %}
-                    {{ form.as_ul }}
-                    <input type="submit" id="signup" name="signup" value="Ilmoittaudu" />
+                    <ul>{{ form.as_ul }}</ul>
+                    <input class="btn" type="submit" id="signup" name="signup" value="Ilmoittaudu" />
                     <p class="submit-error" style="color: red;"></p>
                   </form>
                 </div>
               </div>
             </div>
+            {% endif %}
           </div>
         </div>
           {% endfor %}

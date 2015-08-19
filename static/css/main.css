@@ -106,6 +106,7 @@ p {
 
 .page {
     min-height: 80vh;
+    padding-bottom: 20px;
 }
 
 .box {
@@ -179,6 +180,12 @@ p {
 .signup {
     float: right;
     padding: 2em;
+}
+
+label {
+    width: 130px;
+    float: left;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .icon {
