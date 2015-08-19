@@ -2,20 +2,70 @@
 {% block title %}Koodikoulu{% endblock %}
 {% block content %}
   <nav class="navbar navbar-default navbar-static-top nav">
-    <div class="container white">
-      <a href="/organize"><div class="nav-object opensans">Järjestäjälle</div></a>
+    <div class="container white col-xs-6 col-xs-offset-3">
+      <a href="#learn"><div class="nav-object opensans">Opi itse</div></a>
+      <a href="#tryout"><div class="nav-object opensans">Kokeile</div></a>
+      <a href="#events"><div class="nav-object opensans">Ilmoittaudu</div></a>
+      <a href="#story"><div class="nav-object opensans">Tarina</div></a>
+      <a href="#organize"><div class="nav-object opensans">Anna oma panoksesi</div></a>
     </div>
   </nav>
   <!-- Startpage -->
   <div class="jumbotron start">
-    <div class="container text-center col-xs-12">
+    <div class="container text-center col-xs-6 col-xs-offset-3">
       <h1 class="start-title white">Koodikoulu</h1>
       <p class="white">Halusimme koota yhteen paikkaan koodiopetuksen ja oppaat Suomessa. Koodikoulu on sivusto, josta löydät kaiken, mitä aloittamiseen tarvitset.</p>
     </div>
   </div>
 
+  <!-- Material links -->
+  <div id="learn" class="section material">
+    <div class="container page">
+      <h1 class="sub-title">Opi itse</h1>
+      <a href="https://www.youtube.com/watch?v=a6hf5cTOyhI" class="col-md-4">
+        <div class="well well-lg box text-center box1">
+          <div class="box-header">Ensimmäinen oppitunti koodauksen saloihin - video</div>
+          <div class="box-text">Mila tietää ja kertoo myös miten hidas kilpikonna saadaan liikkumaan vauhdilla ja tekemään temppuja. Koodaamalla!</div>
+        </div>
+      </a>
+      <a href="//koodaustunti.fi" class="col-md-4">
+        <div class="well well-lg box text-center  box2">
+          <div class="box-header">Tunnin johdatus koodaukseen</div>
+          <div class="box-text">Kuka tahansa voi oppia koodauksen perusasiat. Koodautunti antaa tunnin mittaisen johdatuksen koodaamiseen.</div>
+          <div>koodaustunti.fi</div>
+        </div>
+      </a>
+      <a href="http://koodikirja.fi/" class="col-md-4">
+        <div class="well well-lg box text-center box3 white">
+          <div class="box-header">Ohjaa kilpikonnaa antamalla käskyjä</div>
+          <div class="box-text">Koodikirja on lyhyt web-kirja, jossa opit koodaamaan vekkulin kilpikonnan ja avuliaan robotin kanssa.</div>
+          <div>koodikirja.fi</div>
+        </div>
+      </a>
+      <a href="http://codecombat.com" class="col-md-4">
+        <div class="well well-lg box text-center box4 white">
+          <div class="box-header">Opi koodaamista seikkailupelissä</div>
+          <div class="box-text">Seikkaulupelissä koululainen pääsee opettelemaan koodin kirjoittamista laajasti ja syvällisesti.</div>
+          <div>codecombat.com</div>
+        </div>
+      </a>
+      <a href="http://codeacademy.com" class="col-md-4">
+        <div class="well well-lg box text-center  box5">
+          <div class="box-header">Koodauksen nettiopetus alkeista eteenpäin</div>
+          <div class="box-text">Sivustolla on nettikursseja, joissa pääsee opettelemaan koodausta alkeista hyvin syvällisestikin.</div>
+          <div>codeacademy.com</div>
+        </div>
+      </a>
+      <a href="" class="col-md-4">
+        <div class="well well-lg box text-center box6">
+          <div class="box-header">Katso lisää muita hyviä vaihtoehtoja koodauksen opetteluun!</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
   <!-- TurtleRoy -->
-  <div class="section tryout">
+  <div id="tryout" class="section tryout">
     <div class="container page">
       <h1 class="sub-title">Kirjoita koodia samantien!</h1>
     <div class="turtle col-md-8">
@@ -25,52 +75,10 @@
     </div>
   </div>
 
-  <!-- Material links -->
-  <div class="section material">
-    <div class="container page">
-      <h1 class="sub-title">Opi itse</h1>
-      <a href="https://www.youtube.com/watch?v=cKhVupvyhKk" class="col-md-4">
-        <div class="well well-lg box text-center box1">
-          <div class="box-header">Haluan ymmärtää minuutissa, mitä koodaus on!</div>
-          <div class="box-text">Tästä englanninkieliseen videoon, jonka avulla ymmärrät, mistä puhutaan</div>
-      </div>
-      </a>
-      <a href="http://code.org/learn" class="col-md-4">
-        <div class="well well-lg box text-center  box2">
-          <div class="box-header">Haluan päästä kokeilemaan koodausta!</div>
-          <div class="box-text">Opiskele koodausta itsenäisesti suomeksi yhden tunnin ajan</div>
-        </div>
-      </a>
-      <a href="http://koodikirja.fi/" class="col-md-4">
-        <div class="well well-lg box text-center box3 white">
-          <div class="box-header">Haluan opetella vähän enemmänkin!</div>
-          <div class="box-text">Vietä pari tuntia suomenkielisen koodikirjan kanssa</div>
-        </div>
-      </a>
-      <a href="http://codecademy.com/" class="col-md-4">
-        <div class="well well-lg box text-center box4 white">
-          <div class="box-header">Haluan oppia tosi paljon ja osaan englantia!</div>
-          <div class="box-text">Opettele englanninkielisessä Codecademyssä eri koodauskieliä ja esim. nettisivujen tekemistä</div>
-        </div>
-      </a>
-      <a href="http://mooc.fi/" class="col-md-4">
-        <div class="well well-lg box text-center  box5">
-          <div class="box-header">Haluan oppia tosi paljon mutta suomeksi!</div>
-          <div class="box-text">Opettele yliopistojen tarjoamilla mooc-kursseilla.</div>
-        </div>
-      </a>
-      <a href="" class="col-md-4">
-        <div class="well well-lg box text-center box6">
-          <div class="box-header">Muita hyviä paikkoja koodauksen opettaluun</div>
-        </div>
-      </a>
-    </div>
-  </div>
-
   <!-- Events -->
-  <div class="section events">
+  <div id="events" class="section events">
     <div class="container page">
-      <h1 class="sub-title">Ilmoittaudu mukaan</h1>
+      <h1 class="sub-title">Ilmoittaudu oppimaan koodausta</h1>
       {% if events %}
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
@@ -158,18 +166,56 @@
     </div>
   </div>
 
-  <!-- Info section -->
-  <div class="section">
+<!-- Info section -->
+<div id="story" class="section story">
     <div class="container page">
-      <h1 class="sub-title">Mitä koodaus on?</h1>
-      <div class="video-container">
-        <iframe class="video" src="https://www.youtube.com/embed/cKhVupvyhKk" frameborder="0" allowfullscreen>
-        </iframe>
+      <h1 class="sub-title">Lue syntytarina</h1>
+      <div class="text-container col-xs-10 col-xs-offset-1">
+        <p>Idea koodikoulusta syntyi reaktorilaisen Juha Paanasen aloitteesta. Hän piti aluksi 4-vuotiaalle tyttärelleen tietokonetunteja, joilla opetti lapselleen tietokoneen käyttöä ja koodausta. Paananen alkoi kirjoittaa oppitunneistaan blogia ja samalla Paanasen työkaverit innostuivat tuomaan omia lapsiaankin hänen opetettavakseen.</p>
+
+        <p>Työpaikan sisäiset koodikoulut olivat niin onnistuneita, että koodausoppitunteja päätettiin alkaa pitää avoimesti. Ensimmäinen julkinen koodikoulu järjestettiin tammikuussa 2014. Tilaisuuden kaikki paikat varattiin alle tunnissa. Sittemmin lukuisat IT-alan yritykset, kirjastot ja kerhot ovat järjestäneet kymmeniä koodikouluja.</p>
+
+        <p>Lasten koodikouluista uutisoitiin myös laajasti valtamediassa: <a href="http://www.hs.fi/tekniikka/a1385088678561">Helsingin Sanomat</a>, <a href="http://areena.yle.fi/1-2283368">Yle Puhe</a> ja <a href="http://hbl.fi/nyheter/2013-11-22/531196/mila-4-visar-att-flickor-visst-kan-koda">Hufvudstadsbladet</a> uutisoivat koodikoulun isän, Juha Paanasen nelivuotiaan tyttären Milan hämmästyttävistä koodaustaidoista. Myös esimerkiksi <a href="http://www.taloussanomat.fi/tyo-ja-koulutus/2014/03/22/oppiiko-lapsesi-koodaamaan-ennen-lukemista/20144082/139">Taloussanomat</a> ja <a href="http://www.ess.fi/uutiset/kotimaa/2014/02/20/suomalainen-it-yritys-kantaa-vastuuta-tulevaisuudesta---lapsille-ilmainen-koodauksen-opetusohjelma">Etelä-Suomen Sanomat</a> ovat kirjoittaneet Koodikoulusta.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organize -->
+  <div id="organize" class="section">
+    <div class="container page">
+      <h1 class="sub-title">Anna oma panoksesi koodikoululle</h1>
+      <div class="text-container col-xs-10 col-xs-offset-1">
+        <h3>Järjestä koodikoulu</h3>
+        <p>Koodikoulu on 4-9 -vuotiaille lapsille suunnattu parin tunnin mittainen johdatus ohjelmoinnin alkeisiin. Kuka tahansa voi järjestää oman koodikoulun.</p>
+        <p>Koodikouluun tarvitaan:</p>
+        <ul>
+          <li>1 opettaja ja 1-2 avustajaa</li>
+          <li>10-15 oppilasta + vanhempaa</li>
+          <li>kannettavat tietokoneet (oppilaiden omat tai järjestäjän tarjoamat) + internet</li>
+        </ul>
+        <p>Ohjeet ja materiaalit Koodikoulun järjestämiseen löydät Koodikouilun GitHubista. <a href"https://vimeo.com/86706312">Tässä vielä video koodikoulun järjestämisestä.</a></p>
+        <p>Yhteisö auttaa alkuun, liity <a href="https://www.facebook.com/groups/koodikoulu">Koodikoulu-ryhmään Facebookissa</a></p>
+        <p>Ilmoitathan meille järjestämästäsi Koodikoulusta niin lisäämme sen tapahtumalistaan.</p>
+
+        <h3>Järjestä koodikerho</h3>
+        <p>Koodikerhon vetäjäksi voi ryhtyä kuka tahansa asiasta innostunut aikuinen, niin opettajat, koodarit kuin ohjelmoinnista kiinnostuneet vanhemmat. Koodikerho tarjoaa ohjaajalle valmiit opetusmateriaalit, puitteet ja perehdytyksen – sitoudut vain hoitamaan paikallisen koodikerhon vetämisen kerran viikossa. Tärkeintä on, että kerhon vetäjä on varustettu avoimella ja leikkisällä mielellä! Ilmoittaudu ohjaajaksi Koodikerhon sivustolla, josta löydät myös materiaalit kerhon järjestämiseen.</p>
+        <p>Oletko yli 9-vuotias koulainen ja haluaisit osallistua Koodikerhoon? Tai oletko vanhempi, joka haluaisi lapsensa Koodikerhoon? Ilmoittaudu mukaan Koodikerho-yhteisöön. Voit myös ottaa suoraan yhteyttä koulusi rehtoriin ja kysyä suunnitelmista käynnistää paikallinen koodikerho.</p>
+
+        <h3>Tue Koodikoulun kehittämistä</h3>
+        <p>Tule mukaan tukemaan Koodikoulun toimintaa sponsoroimalla Koodikoulu-sivuston kehittämistä ja ylläpitämistä. Ota meihin yhteyttä sähköpostitse niin sovitaan yhteistyöstä paremmin.</p>
+        <p>Voit myös osallistua suoraan Koodikoulu-sivuston kehittämiseen <a href="https://github.com/koodikoulu/koodikoulu.fi">GitHubin kautta.</a></p>
+
+        <h3>Anna palautetta Koodikoulusta</h3>
+        <p>Haluamme kehittää sivustoa, jotta se palvelisi juuri sinua parhaalla mahdollisella tavalla. Anna Koodikouluun liittyvää palautetta tästä.</p>
       </div>
     </div>
   </div>
 
   <!-- Footer -->
-  <div class="footer">
+   <div id="footer" class="section footer">
+    <div class="container">
+    <h1 class="sub-title white">Mukana kehittämässä</h1>
+    <p class="center">Reaktor, Futurice, Koodikerho</p>
+    </div>
   </div>
 {% endblock %}

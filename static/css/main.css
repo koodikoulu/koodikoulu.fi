@@ -28,15 +28,15 @@ p {
     font-weight: 300;
 }
 
-a:link {
+.material a:link {
     color: #333 !important;
 }
 
-a:hover {
+.material a:hover {
     text-decoration: none;
 }
 
-a:visited {
+.material a:visited {
     color: #333 !important;
 }
 
@@ -50,7 +50,9 @@ a:visited {
 
 .nav-object {
     color: #ffffff;
-    float: right;
+    float: left;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .white {
@@ -87,6 +89,10 @@ a:visited {
 
 .events {
     background-color: #fdbc5f;
+}
+
+.story {
+    background-color: #6BBEA9;
 }
 
 .sub-title {
@@ -183,30 +189,26 @@ a:visited {
     font-size: 30px;
 }
 
-.video {
-    margin: 0 auto;
-    display: block;
-    width: 560px;
-    height: 315px;
-}
-
-@media(max-width: 560px) {
-    .video {
-        margin: 0 auto;
-        display: block;
-        width: 300px;
-        height: 168px;
-    }
-}
-
 .turtle {
     width: 100%;
     margin: auto;
 }
 
+.text-container ul {
+    list-style-type: disc;
+    overflow: visible;
+    padding-left: 40px;
+    font-weight: lighter;
+}
+
 .footer {
-    min-height: 20vh;
+    min-height: 30vh;
     background-color: #4C3750;
+    color: white;
+}
+
+.center {
+    text-align: center;
 }
 
 .box1 {
