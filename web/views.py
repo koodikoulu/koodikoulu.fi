@@ -80,3 +80,6 @@ def handle_signup(request, pk):
     return JsonResponse({'status': 200})
   else:
     return JsonResponse({'status': 500})
+
+def organize(request):
+  return render(request, 'organize.html')

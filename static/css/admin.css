@@ -1,0 +1,43 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    font-weight: 200 !important;
+}
+
+a {
+    text-decoration: underline;
+}
+
+a:link {
+    color: #333 !important;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #333 !important;
+}
+
+.fieldWrapper {
+    overflow: auto;
+    margin-bottom: 5px;
+}
+
+.label {
+    color: black !important;
+    width: 170px;
+    float: left;
+    text-align: left;
+}
+
+.input {
+    float: left;
+}
+
+.row {
+    margin-top: 20px;
+}
