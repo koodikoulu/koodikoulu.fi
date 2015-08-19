@@ -109,6 +109,16 @@ p {
     padding-bottom: 20px;
 }
 
+.panel {
+    border: none;
+    border-radius: 0 !important;
+    box-shadow: none;
+}
+
+.panel-heading {
+    border-radius: 0;
+}
+
 .box {
     height: 400px;
     width: 300px;
