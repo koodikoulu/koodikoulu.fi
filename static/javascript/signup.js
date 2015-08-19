@@ -1,16 +1,15 @@
 $(document).ready(function() {
 
-  function createSignUp() {
-    var form = $('#signup-form');
+  function createSignUp(form) {
     $.ajax({
       url: form.attr('action'),
       type: form.attr('method'),
       data: form.serialize(),
       success: function(data) {
         if (data.status === 200) {
-          $('#signup-form').replaceWith('<h3 style="color: green;">Kiitos ilmoittautumisesta!</h3>');
+          form.replaceWith('<h3 style="color: green;">Kiitos ilmoittautumisesta!</h3>');
         } else {
-          $('#signup-form p.submit-error').text('Jotakin meni pieleen. Yritä uudelleen.');
+          form.find('p.submit-error').text('Jotakin meni pieleen. Yritä uudelleen.');
         }
       },
       error: function(data) {
@@ -19,9 +18,10 @@ $(document).ready(function() {
     });
   }
 
-  $('#signup-form').on('submit', function(event) {
+  $('input[type="submit"]').on('click', function(event) {
     event.preventDefault();
-    createSignUp();
+    var form = $(this).closest('form');
+    createSignUp(form);
     return false;
   });
 });
