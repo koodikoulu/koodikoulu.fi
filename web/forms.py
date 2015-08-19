@@ -36,6 +36,15 @@ class EventForm(forms.ModelForm):
     }
 
 class SignUpForm(forms.ModelForm):
+  def __init__(self, *args, **kwargs):
+    super(SignUpForm, self).__init__(*args, **kwargs)
+    self.fields['child'].label = 'Lapsen nimi'
+    self.fields['guardian'].label = 'Huoltajan nimi'
+    self.fields['age'].label = 'Ikä'
+    self.fields['email'].label = 'Sähköposti'
+    self.fields['phone'].label = 'Puhelinnumero'
+    self.fields['other'].label = 'Muuta'
+
   class Meta:
     model = SignUp
     fields = ('child',
@@ -44,14 +53,6 @@ class SignUpForm(forms.ModelForm):
               'email',
               'phone',
               'other',)
-    widgets = {
-      'child': forms.TextInput(attrs={'placeholder': 'Lapsen nimi'}),
-      'guardian': forms.TextInput(attrs={'placeholder': 'Huoltajan nimi'}),
-      'age': forms.NumberInput(attrs={'placeholder': 'Lapsen ikä'}),
-      'email': forms.EmailInput(attrs={'placeholder': 'Sähköposti'}),
-      'phone': forms.TextInput(attrs={'placeholder': 'Puhelinnumero'}),
-      'other': forms.TextInput(attrs={'placeholder': 'Muuta'}),
-    }
 
 class RegisterForm(forms.Form):
   email = forms.EmailField(label='Sähköposti')

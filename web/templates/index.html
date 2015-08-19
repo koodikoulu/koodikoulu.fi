@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% block title %}Koodikoulu{% endblock %}
+
+{% block extrahead %}
+<script src="/static/javascript/signup.js"></script>
+{% endblock %}
+
 {% block content %}
   <nav class="navbar navbar-default navbar-static-top nav">
     <div class="container white">
@@ -146,6 +151,19 @@
                   {% else %}
                   <div class="signup">Ilmoittaudu</div>
                   {% endif %}
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="text-content">
+                <div class="info col-xs-12 mol-md-8">
+                  <form method="post" id="signup-form" action="{% url 'web.views.handle_signup' pk=event.pk %}">
+                    <p>Ilmoittautuminen</p>
+                    {% csrf_token %}
+                    {{ form.as_ul }}
+                    <input type="submit" id="signup" name="signup" value="Ilmoittaudu" />
+                    <p class="submit-error" style="color: red;"></p>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
