@@ -72,7 +72,7 @@ class Event(models.Model):
   title = models.CharField(max_length=100)
   start_date = models.DateField()
   end_date = models.DateField(blank=True, null=True)
-  time = models.CharField(max_length=10)
+  time = models.CharField(max_length=20)
   price = models.PositiveIntegerField(default=0)
   bring_along = models.CharField(max_length=255, blank=True, null=True)
   street_address = models.CharField(max_length=100)
