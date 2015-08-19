@@ -70,12 +70,18 @@ class User(AbstractBaseUser):
 
 class Event(models.Model):
   title = models.CharField(max_length=100)
-  description = models.TextField(blank=True, null=True)
   start_date = models.DateField()
   end_date = models.DateField(blank=True, null=True)
+  time = models.CharField(max_length=10)
+  price = models.PositiveIntegerField(default=0)
+  bring_along = models.CharField(max_length=255, blank=True, null=True)
   street_address = models.CharField(max_length=100)
   city = models.CharField(max_length=40)
-  amount = models.PositiveIntegerField()
+  requirements = models.TextField()
+  description = models.TextField()
+  organization = models.CharField(max_length=100, blank=True, null=True)
+  amount = models.PositiveIntegerField(blank=True, null=True)
+  signup_link = models.CharField(max_length=255, blank=True, null=True)
   created = models.DateTimeField(auto_now_add=True)
   booked = models.BooleanField(default=False)
 

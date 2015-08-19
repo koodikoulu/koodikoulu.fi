@@ -6,33 +6,32 @@ class EventForm(forms.ModelForm):
   def __init__(self, *args, **kwargs):
       super(EventForm, self).__init__(*args, **kwargs)
       self.fields['title'].label = 'Tapahtuman nimi'
-      self.fields['description'].label = 'Tapahtuman kuvaus'
-      self.fields['start_date'].label = 'Tapahtuman alkamispäivä'
-      self.fields['end_date'].label = 'Tapahtuman päättymispäivä'
-      self.fields['street_address'].label = 'Tapahtumapaikan osoite'
+      self.fields['start_date'].label = 'Aloituspäivä'
+      self.fields['end_date'].label = 'Lopetuspäivä'
+      self.fields['price'].label = 'Hinta'
+      self.fields['bring_along'].label = 'Mitä mukaan?'
+      self.fields['street_address'].label = 'Osoite'
       self.fields['city'].label = 'Kaupunki'
+      self.fields['requirements'].label = 'Osallistujilta vaaditut esitiedot'
+      self.fields['description'].label = 'Tapahtuman kuvaus'
+      self.fields['organization'].label = 'Järjestäjä'
       self.fields['amount'].label = 'Osallistujien maksimimäärä'
+      self.fields['signup_link'].label = 'Linkki omaan ilmoittautumiseen'
 
   start_date = forms.DateField(input_formats=['%d.%m.%Y'], widget=forms.DateInput(attrs={'class': 'startdate'}, format=('%d.%m.%Y')))
   end_date = forms.DateField(input_formats=['%d.%m.%Y'], required=False, widget=forms.DateInput(attrs={'class': 'enddate'}, format=('%d.%m.%Y')))
+  start_hours = forms.IntegerField()
+  start_minutes = forms.IntegerField()
+  end_hours = forms.IntegerField()
+  end_minutes = forms.IntegerField()
 
   class Meta:
     model = Event
-    fields = ('title',
-              'description',
-              'start_date',
-              'end_date',
-              'street_address',
-              'city',
-              'amount',)
+    exclude = ['organizer', 'booked', 'time']
     widgets = {
-      'title': forms.TextInput(),
-      'description': forms.TextInput(),
       'start_date': forms.DateInput(format=('%d.%m.%Y')),
       'end_date': forms.DateInput(format=('%d.%m.%Y')),
-      'street_address': forms.TextInput(),
-      'city': forms.TextInput(),
-      'amount': forms.NumberInput(),
+      'bring_along': forms.TextInput(attrs={'placeholder': 'esim. kannettava tietokone, vanhempi'})
     }
 
 class SignUpForm(forms.ModelForm):

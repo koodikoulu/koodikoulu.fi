@@ -57,6 +57,12 @@ def create_event(request):
     form = EventForm(data=request.POST)
     if form.is_valid():
       event = form.save()
+      event.time = "%d:%d-%d:%d" % (
+        form.cleaned_data['start_hours'],
+        form.cleaned_data['start_minutes'],
+        form.cleaned_data['end_hours'],
+        form.cleaned_data['end_minutes']
+      )
       event.organiser = request.user
       event.save()
       return redirect(reverse('index'))

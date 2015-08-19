@@ -20,13 +20,59 @@
       <div class="row">
         <div class="col-sm-8 col-md-8 col-md-offset-3">
           <h1>Luo uusi tapahtuma</h1>
-          {% for field in form %}
-            <div class="fieldWrapper">
-              {{ field.errors }}
-              <div class="label">{{ field.label_tag }}</div>
-              <div class="label">{{ field }}</div>
-            </div>
-          {% endfor %}
+
+          <div class="fieldWrapper">
+            <div class="label"> {{ form.title.label }}</div>
+            <div class="label"> {{ form.title }}</div>
+          </div>
+          <div class="fieldWrapper">
+            <div class="label"> {{ form.start_date.label }}</div>
+            <div class="label"> {{ form.start_date }}</div>
+          </div>
+          <div class="fieldWrapper">
+            <div class="label"> {{ form.end_date.label }}</div>
+            <div class="label"> {{ form.end_date }}</div>
+          </div>
+          <div class="fieldWrapper">
+            <div class="label">Kello</div>
+            <div class="label">{{ form.start_hours }}-{{ form.start_minutes }} : {{ form.end_hours }}-{{ form.end_minutes }}</div>
+          </div>
+          <div class="fieldWrapper">
+            <div class="label"> {{ form.price.label }}</div>
+            <div class="label"> {{ form.price }}</div>
+          </div>
+          <div class="fieldWrapper">
+            <div class="label"> {{ form.bring_along.label }}</div>
+            <div class="label"> {{ form.bring_along }}</div>
+          </div>
+          <div class="fieldWrapper">
+            <div class="label"> {{ form.street_address.label }}</div>
+            <div class="label"> {{ form.street_address }}</div>
+          </div>
+          <div class="fieldWrapper">
+            <div class="label"> {{ form.city.label }}</div>
+            <div class="label"> {{ form.city }}</div>
+          </div>
+          <div class="fieldWrapper">
+            <div class="label"> {{ form.requirements.label }}</div>
+            <div class="label"> {{ form.requirements }}</div>
+          </div>
+          <div class="fieldWrapper">
+            <div class="label"> {{ form.description.label }}</div>
+            <div class="label"> {{ form.description }}</div>
+          </div>
+          <div class="fieldWrapper">
+            <div class="label"> {{ form.organization.label }}</div>
+            <div class="label"> {{ form.organization }}</div>
+          </div>
+          <div class="fieldWrapper">
+            <div class="label"> {{ form.amount.label }}</div>
+            <div class="label"> {{ form.amount }}</div>
+          </div>
+          <div class="fieldWrapper">
+            <div class="label"> {{ form.signup_link.label }}</div>
+            <div class="label"> {{ form.signup_link }}</div>
+          </div>
           <input class="btn" type="submit" value="Luo tapahtuma" />
         </div>
       </div>

@@ -98,7 +98,7 @@
                 <div class="row col-xs-12 col-md-12">
                   <div class="col-xs-4 col-md-4 row-elem">
                     <div class="title">{{ event.start_date }} {% if event.end_date %} - {{ event.end_date }}{% endif %}</div>
-                    <div class="kkdetail">dd klo xx-xx</div>
+                    <div class="kkdetail">klo {{ event.time }}</div>
                   </div>
                   <div class="col-xs-4 col-md-4 row-elem">
                     <div class="title">{{ event.title }}</div>
@@ -127,19 +127,25 @@
                   <ul>
                     <li>
                       <span class="col-xs-4 col-md-2 heading-row">Ota mukaan:</span>
-                      <span class="col-xs-8 col-md-6">Läppäri ja aikuinen apuri</span>
+                      <span class="col-xs-8 col-md-6">{{ event.bring_along }}</span>
                     </li>
                     <li>
                       <span class="col-xs-4 col-md-2 heading-row">Hinta:</span>
-                      <span class="col-xs-8 col-md-6">0€</span>
+                      <span class="col-xs-8 col-md-6">{{ event.price }}€</span>
                     </li>
                     <li>
                       <span class="col-xs-4 col-md-2 heading-row">Esitiedot:</span>
-                      <span class="col-xs-8 col-md-6">Koodikerho on 9+ -vuotiaille. Osallistujalla ei tarvitse olla etukäteen koodamisesta kokemusta.</span>
+                      <span class="col-xs-8 col-md-6">{{ event.requirements }}</span>
                     </li>
                     <li>
                       <span class="col-xs-4 col-md-2 heading-row">Järjestäjä:</span>
-                      <span class="col-xs-8 col-md-6">{{ event.organizer }}, 040 123456789, kari.koodaaja@koodi.fi</span>
+                      <span class="col-xs-8 col-md-6">{{ event.organization }}</span>
+                    </li>
+                    <li>
+                      {% if event.organizer %}
+                      <span class="col-xs-4 col-md-2 heading-row">Vastuuhenkilön yhteystiedot</span>
+                      <span class="col-xs-8 mol-md-6">{{ event.organizer.first_name }} {{ event.organizer.last_name }} {{ event.organizer.email }} </span>
+                      {% endif %}
                     </li>
                   </ul>
                 </div>
