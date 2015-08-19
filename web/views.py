@@ -1,15 +1,16 @@
 from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib.auth import authenticate, login, logout
 
-from web.models import Event, User
-from web.forms import EventForm, RegisterForm, LoginForm
+from web.models import Event, User, SignUp
+from web.forms import EventForm, RegisterForm, LoginForm, SignUpForm
 
 def index(request):
   events = Event.objects.all()
-  return render(request, 'index.html', {'events': events})
+  form = SignUpForm()
+  return render(request, 'index.html', {'events': events, 'form': form})
 
 def register(request):
   if request.method == 'POST':
@@ -56,6 +57,12 @@ def create_event(request):
     form = EventForm(data=request.POST)
     if form.is_valid():
       event = form.save()
+      event.time = "%d:%d-%d:%d" % (
+        form.cleaned_data['start_hours'],
+        form.cleaned_data['start_minutes'],
+        form.cleaned_data['end_hours'],
+        form.cleaned_data['end_minutes']
+      )
       event.organiser = request.user
       event.save()
       return redirect(reverse('index'))
@@ -64,6 +71,21 @@ def create_event(request):
     form = EventForm()
 
   return render(request, 'create_event.html', {'form': form})
+
+def handle_signup(request, pk):
+  if not request.method == 'POST':
+    return JsonResponse({'status': 405})
+
+  event = Event.objects.get(pk=pk)
+  if not event:
+    return JsonResponse({'status': 500})
+
+  form = SignUpForm(data=request.POST)
+  if form.is_valid():
+    signup = SignUp.objects.create(event=event, **form.cleaned_data)
+    return JsonResponse({'status': 200})
+  else:
+    return JsonResponse({'status': 500})
 
 def organize(request):
   return render(request, 'organize.html')

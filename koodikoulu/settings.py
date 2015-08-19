@@ -113,10 +113,13 @@ STATICFILES_DIRS = (
 # Authentication settings.
 LOGIN_REDIRECT_URL='/'
 
+# Settings for Heroku.
 if 'DYNO' in os.environ:
     import dj_database_url
     DATABASES = {}
     DATABASES['default'] = dj_database_url.config()
+
+    DEBUG = False
 
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     ALLOWED_HOSTS = ['*']
