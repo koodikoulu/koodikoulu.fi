@@ -1,0 +1,12 @@
+Hei {{ guardian }},
+
+Kiitos ilmoittautumisesta!
+
+Tapahtuman järjestäjä on vielä yhteydessä sinuun henkilökohtaisesti ennen tapahtumaa. Mikäli sinulla on jotain kysyttävää, otathan yhteyttä tapahtuman järjestäjään.
+
+Järjestäjän yhteystiedot:
+{{ organizer.first_name }} {{ organizer.last_name }}
+{{ organizer.email }}
+
+Terveisin,
+Koodikoulun ylläpito

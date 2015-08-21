@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web',
+    'djrill',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -114,6 +115,10 @@ STATICFILES_DIRS = (
 
 # Authentication settings.
 LOGIN_REDIRECT_URL='/'
+LOGIN_URL='/login/'
+
+# Email backend for development.
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Settings for Heroku.
 if 'DYNO' in os.environ:
@@ -122,6 +127,11 @@ if 'DYNO' in os.environ:
     DATABASES['default'] = dj_database_url.config()
 
     DEBUG = False
+
+    # Mandrill settings for production.
+    MANDRILL_API_KEY = os.getenv('MANDRILL_API_KEY', '')
+    EMAIL_BACKEND = 'djrill.mail.backends.djrill.DjrillBackend'
+    DEFAULT_FROM_EMAIL = 'noreply@koodikoulu.fi'
 
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     ALLOWED_HOSTS = ['*']

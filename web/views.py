@@ -6,6 +6,9 @@ from django.contrib.auth import authenticate, login, logout
 
 from web.models import Event, User, SignUp
 from web.forms import EventForm, RegisterForm, LoginForm, SignUpForm
+from web.extra import send_signup_confirmation
+
+import sys
 
 def index(request):
   events = Event.objects.all()
@@ -52,6 +55,7 @@ def logout_view(request):
   logout(request)
   return redirect(reverse('index'))
 
+@login_required
 def create_event(request):
   if request.method == 'POST':
     form = EventForm(data=request.POST)
@@ -63,7 +67,7 @@ def create_event(request):
         form.cleaned_data['end_hours'],
         form.cleaned_data['end_minutes']
       )
-      event.organiser = request.user
+      event.organizer = request.user
       event.save()
       return redirect(reverse('index'))
 
@@ -83,6 +87,12 @@ def handle_signup(request, pk):
   form = SignUpForm(data=request.POST)
   if form.is_valid():
     signup = SignUp.objects.create(event=event, **form.cleaned_data)
+    try:
+      send_signup_confirmation(signup.email, signup.guardian, event.title, event.organizer)
+    except:
+      for exc in sys.exc_info():
+        print(exc)
+
     return JsonResponse({'status': 200})
   else:
     return JsonResponse({'status': 500})
