@@ -98,9 +98,12 @@ class Event(models.Model):
 
   def save(self, *args, **kwargs):
     if not self.lat or not self.lng:
-      location = getLocation(self.street_address, self.city)
-      self.lat = location[0]
-      self.lng = location[1]
+      try:
+        location = getLocation(self.street_address, self.city)
+        self.lat = location[0]
+        self.lng = location[1]
+      except:
+        pass
     super(Event, self).save(*args, **kwargs)
 
 
