@@ -20,10 +20,10 @@ class EventForm(forms.ModelForm):
 
   start_date = forms.DateField(input_formats=['%d.%m.%Y'], widget=forms.DateInput(attrs={'class': 'startdate'}, format=('%d.%m.%Y')))
   end_date = forms.DateField(input_formats=['%d.%m.%Y'], required=False, widget=forms.DateInput(attrs={'class': 'enddate'}, format=('%d.%m.%Y')))
-  start_hours = forms.IntegerField()
-  start_minutes = forms.IntegerField()
-  end_hours = forms.IntegerField()
-  end_minutes = forms.IntegerField()
+  start_hours = forms.IntegerField(required=True)
+  start_minutes = forms.IntegerField(required=True)
+  end_hours = forms.IntegerField(required=True)
+  end_minutes = forms.IntegerField(required=True)
 
   class Meta:
     model = Event
