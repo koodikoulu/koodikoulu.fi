@@ -158,7 +158,9 @@
                   </ul>
                 </div>
                 <div class="col-xs-12 col-md-4 text-center">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7615.559820551766!2d23.7610254!3d61.498150349999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468edf554593da5d%3A0x6adfe3bd1e0b22c0!2s33100+Tampere%2C+Finland!5e0!3m2!1sen!2sus!4v1438606569909" width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  {% if event.lat and event.lng %}
+                  <img src="https://maps.googleapis.com/maps/api/staticmap?center={{event.lat}},{{event.lng}}&zoom=16&size=300x300&markers={{event.lat}},{{event.lng}}&output=embed" width="300" height="300" frameborder="0" style="border:0" allowfullscreen />
+                  {% endif %}
                 </div>
                   {% if event.booked %}
                   <div class="signup">Kurssi on täynnä</div>
