@@ -17,6 +17,10 @@ p {
     font-weight: lighter;
 }
 
+p, dt, dd {
+    line-height: 22px;
+}
+
 .ubuntu {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
@@ -262,6 +266,13 @@ label {
 
 .box6 {
     background-color: #E25462;
+}
+
+input, textarea {
+    border: none;
+    padding: 13px;
+    width: 100%;
+    resize: none;
 }
 
 input[type=number] {
