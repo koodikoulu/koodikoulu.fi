@@ -1,0 +1,58 @@
+{% load form_extras %}
+
+<form method="post" id="signup-form" action="{% url 'web.views.handle_signup' pk=event.pk %}">
+  {% csrf_token %}
+
+  <div class="col-md-12 container signup-container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>ILMOITTAUDU</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 form-group">
+        {% show_form_field form.child %}
+      </div>
+
+      <div class="col-md-2 form-group">
+        {% show_form_field form.age %}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 form-group">
+        {% show_form_field form.guardian %}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 form-group">
+        {% show_form_field form.email %}
+      </div>
+      <div class="col-md-4 form-group">
+        {% show_form_field form.phone %}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 form-group">
+        {% show_form_field form.other %}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 form-group">
+        <input class="btn" type="submit" id="signup" name="signup" value="Lähetä">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 form-group">
+        <p class="submit-error" style="color: red;"></p>
+      </div>
+    </div>
+
+  </div>
+
+</form>

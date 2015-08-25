@@ -1,4 +1,4 @@
-from django import forms
+from django import forms, template
 from web.models import Event, SignUp
 from django.contrib.auth import authenticate
 
@@ -37,7 +37,7 @@ class EventForm(forms.ModelForm):
 class SignUpForm(forms.ModelForm):
   def __init__(self, *args, **kwargs):
     super(SignUpForm, self).__init__(*args, **kwargs)
-    self.fields['child'].label = 'Lapsen nimi'
+    self.fields['child'].label = 'Nimi'
     self.fields['guardian'].label = 'Huoltajan nimi'
     self.fields['age'].label = 'Ikä'
     self.fields['email'].label = 'Sähköposti'

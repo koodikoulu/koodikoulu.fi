@@ -2,16 +2,26 @@ body {
     font-size: 16px;
 }
 
-ul {
-    list-style-type: none;
-    overflow: auto;
-    padding: 15px 0 15px 0;
-    margin: 0;
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
 }
 
-li {
-    clear: both;
+body, p, ul, li, h2, h3, h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
 }
+
+/*ul {*/
+    /*list-style-type: none;*/
+    /*overflow: auto;*/
+    /*padding: 15px 0 15px 0;*/
+    /*margin: 0;*/
+/*}*/
+
+/*li {*/
+    /*clear: both;*/
+/*}*/
 
 p {
     font-size: 18px !important;
@@ -40,37 +50,41 @@ p {
     color: #333 !important;
 }
 
-.nav {
+.white {
+    color: #FFFFFF !important;
+}
+
+.navbar {
+    background: #4C3750;
+    padding: 8vh;
     margin: 0;
-    min-height: 8vh;
-    background-color: #4C3750;
-    font-color: #FFFFFF;
     border: none;
 }
 
-.nav-object {
-    color: #ffffff;
-    float: left;
-    padding-right: 20px;
-    padding-left: 20px;
-}
-
-.white {
-    color: #FFFFFF !important;
+.navbar a {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
 .start {
     background-color: #4C3750;
     margin-bottom: 0 !important;
-    min-height: 82vh;
+    min-height: 52vh;
+}
+
+.start p {
+    line-height: 30px;
 }
 
 .start-title {
-    font-size: 50px !important;
-    margin-top: 30vh;
+    font-size: 64px !important;
+    font-family: Ubuntu, sans-serif;
     text-transform: uppercase;
     letter-spacing: 8px;
     font-weight: bold;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 500px) {
@@ -96,9 +110,11 @@ p {
 }
 
 .sub-title {
+    margin-top: 10vh;
     margin-bottom: 10vh;
     font-size: 24px;
     text-transform: uppercase;
+    font-weight: 500;
     letter-spacing: 2px;
     color: #484639;
     text-align: center;
@@ -117,6 +133,10 @@ p {
 
 .panel-heading {
     border-radius: 0;
+}
+
+.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
+    border-top: none;
 }
 
 .box {
@@ -193,9 +213,8 @@ p {
 }
 
 label {
-    width: 130px;
-    float: left;
     font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
 }
 
 .icon {
@@ -211,12 +230,12 @@ label {
     margin: auto;
 }
 
-.text-container ul {
-    list-style-type: disc;
-    overflow: visible;
-    padding-left: 40px;
-    font-weight: lighter;
-}
+/*.text-container ul {*/
+    /*list-style-type: disc;*/
+    /*overflow: visible;*/
+    /*padding-left: 40px;*/
+    /*font-weight: lighter;*/
+/*}*/
 
 .footer {
     min-height: 30vh;
@@ -262,3 +281,13 @@ input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+.signup-container {
+    background: #f1f1f1;
+    padding: 10px 30px;
+}
+
+.signup-container h2 {
+    font-weight: 300;
+}
+

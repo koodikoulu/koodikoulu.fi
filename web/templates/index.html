@@ -6,16 +6,21 @@
 {% endblock %}
 
 {% block content %}
-  <nav class="navbar navbar-default navbar-static-top nav">
-    <div class="container white col-xs-6 col-xs-offset-3">
-      <a href="#learn"><div class="nav-object opensans">Opi itse</div></a>
-      <a href="#tryout"><div class="nav-object opensans">Kokeile</div></a>
-      <a href="#events"><div class="nav-object opensans">Ilmoittaudu</div></a>
-      <a href="#story"><div class="nav-object opensans">Tarina</div></a>
-      <a href="#organize"><div class="nav-object opensans">Anna oma panoksesi</div></a>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container white col-md-8 col-md-offset-2">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#learn" class="white">Opi itse</a></li>
+          <li><a href="#tryout" class="white">Kokeile</a></li>
+          <li><a href="#events" class="white">Ilmoittaudu</a></li>
+          <li><a href="#story" class="white">Tarina</a></li>
+          <li><a href="#organize" class="white">Anna oma panoksesi</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
-  <!-- Startpage -->
+
+  <!-- Start page -->
   <div class="jumbotron start">
     <div class="container text-center col-xs-6 col-xs-offset-3">
       <h1 class="start-title white">Koodikoulu</h1>
@@ -171,13 +176,7 @@
             <div class="panel-body">
               <div class="text-content">
                 <div class="info col-xs-12 mol-md-8">
-                  <form method="post" id="signup-form" action="{% url 'web.views.handle_signup' pk=event.pk %}">
-                    <p>Ilmoittautuminen</p>
-                    {% csrf_token %}
-                    <ul>{{ form.as_ul }}</ul>
-                    <input class="btn" type="submit" id="signup" name="signup" value="Ilmoittaudu" />
-                    <p class="submit-error" style="color: red;"></p>
-                  </form>
+                  {% include "signup.html" %}
                 </div>
               </div>
             </div>
