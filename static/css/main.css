@@ -291,7 +291,9 @@ input[type=number]::-webkit-inner-spin-button {
     padding: 10px 30px;
 }
 
-.signup-container h2 {
-    font-weight: 300;
+.signup-container h3 {
+    font-weight: normal;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
