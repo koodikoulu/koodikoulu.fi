@@ -251,3 +251,14 @@ label {
 .box6 {
     background-color: #E25462;
 }
+
+input[type=number] {
+    width: 3em;
+    -moz-appearance:textfield;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
