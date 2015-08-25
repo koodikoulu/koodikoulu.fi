@@ -12,20 +12,9 @@ body, p, ul, li, h2, h3, h4 {
     font-weight: 300;
 }
 
-/*ul {*/
-    /*list-style-type: none;*/
-    /*overflow: auto;*/
-    /*padding: 15px 0 15px 0;*/
-    /*margin: 0;*/
-/*}*/
-
-/*li {*/
-    /*clear: both;*/
-/*}*/
-
 p {
-    font-size: 18px !important;
-    font-weight: lighter !important;
+    font-size: 18px;
+    font-weight: lighter;
 }
 
 .ubuntu {
@@ -139,6 +128,10 @@ p {
     border-top: none;
 }
 
+.info, .info p {
+    font-size: 14px;
+}
+
 .box {
     height: 400px;
     width: 300px;
@@ -186,9 +179,9 @@ p {
     overflow: auto;
 }
 
-.heading-row {
-    font-weight: bold;
-    padding-left: 0;
+.event-description-list dt {
+    text-align: left;
+    font-weight: 600;
 }
 
 .text-content {

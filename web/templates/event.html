@@ -1,0 +1,69 @@
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id="headingOne">
+    <div class="panel-title row-container">
+      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#id-{{ event.pk }}" aria-expanded="true" aria-controls="collapseOne">
+        <div class="row col-xs-12 col-md-12">
+          <div class="col-xs-4 col-md-4 row-elem">
+            <div class="title">{{ event.start_date }} {% if event.end_date %} - {{ event.end_date }}{% endif %}</div>
+            <div class="kkdetail">klo {{ event.time }}</div>
+          </div>
+          <div class="col-xs-4 col-md-4 row-elem">
+            <div class="title">{{ event.title }}</div>
+            <div class="detail">{{ event.description }}</div>
+          </div>
+          <div class="col-xs-4 col-md-3 row-elem">
+            <div class="title">{{ event.street_address }}</div>
+            <div class="detail">{{ event.city }}</div>
+          </div>
+          {% if event.booked %}
+          <div class="col-md-1 hidden-sm hidden-xs row-elem"><span class="glyphicon glyphicon-minus-sign full"></span></div>
+          {% else %}
+          <div class="col-md-1 hidden-sm hidden-xs row-elem"><span class="glyphicon glyphicon-plus-sign non-full"></span></div>
+          {% endif %}
+
+        </div>
+      </a>
+    </div>
+  </div>
+  <div id="id-{{ event.pk }}" class="panel-collapse collapse icon" role="tabpanel" aria-labelledby="headingOne">
+    <div class="panel-body">
+      <div class="text-content">
+        <div class="info col-xs-12 col-md-8">
+          <p>{{ event.description }}</p>
+          <p><a href="http://koodikerho.fi/">http://koodikerho.fi/</a></p>
+          <dl class="dl-horizontal event-description-list">
+              <dt>Ota mukaan:</dt>
+              <dd>{{ event.bring_along }}</dd>
+              <dt>Hinta:</dt>
+              <dd>{{ event.price }}€</dd>
+              <dt>Esitiedot:</dt>
+              <dd>{{ event.requirements }}</dd>
+              <dt>Järjestäjä:</dt>
+              <dd>{{ event.organization }}
+                {% if event.organizer %}
+                , {{ event.organizer.get_full_name }}, {{ event.organizer.email }}
+                {% endif %}
+              </dd>
+          </dl>
+        </div>
+        <div class="col-xs-12 col-md-4 text-center">
+          {% if event.lat and event.lng %}
+          <img src="https://maps.googleapis.com/maps/api/staticmap?center={{event.lat}},{{event.lng}}&zoom=16&size=300x300&markers={{event.lat}},{{event.lng}}&output=embed" width="300" height="300" frameborder="0" style="border:0" allowfullscreen />
+          {% endif %}
+        </div>
+        {% if event.booked %}
+        <div class="signup">Kurssi on täynnä</div>
+        {% endif %}
+      </div>
+    </div>
+    {% if not event.booked %}
+    <div class="panel-body">
+      <div class="text-content">
+        <div class="info col-xs-12 mol-md-8">
+          {% include "signup.html" %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
