@@ -302,6 +302,13 @@ input[type=number]::-webkit-inner-spin-button {
 
 .signup-container {
     background: #f1f1f1;
+    padding: 10px 30px;
+}
+
+.signup-container h3 {
+    font-weight: normal;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 .login-container {
@@ -310,4 +317,19 @@ input[type=number]::-webkit-inner-spin-button {
 
 .create-event-container {
     background: #f1f1f1;
+}
+
+.btn {
+    padding: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-submit {
+    background: #6BBEA9;
+    color: white;
+}
+
+.btn-submit:hover {
+    color: white;
 }

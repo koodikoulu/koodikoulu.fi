@@ -52,6 +52,9 @@ class SignUpForm(forms.ModelForm):
               'email',
               'phone',
               'other',)
+    widgets = {
+      'other': forms.Textarea(attrs={'rows': 6})
+    }
 
 class RegisterForm(forms.Form):
   email = forms.EmailField(label='Sähköposti')
