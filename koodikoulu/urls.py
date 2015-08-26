@@ -18,11 +18,13 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+
     url(r'^$', 'web.views.index', name='index'),
-    url(r'^events/create/$', 'web.views.create_event', name='create-event'),
+    url(r'^organize/$', 'web.views.organize', name='organize'),
+    url(r'^story/$', 'web.views.story', name='story'),
+
     url(r'^register/$', 'web.views.register', name='register'),
     url(r'^login/$', 'web.views.login_view', name='login'),
     url(r'^logout/$', 'web.views.logout_view', name='logout'),
     url(r'^signup/(?P<pk>[0-9]+)/$', 'web.views.handle_signup', name='signup'),
-    url(r'^organize/$', 'web.views.organize', name='organize'),
 ]

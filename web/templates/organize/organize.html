@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Järjestä{% endblock %}
+{% block content %}
+
+<div id="organize" class="section">
+  <div class="container page">
+    <h1 class="sub-title">Anna oma panoksesi koodikoululle</h1>
+
+    <div class="text-container col-md-8 col-md-offset-2">
+      <h3>Järjestä koodikoulu</h3>
+
+      <p>Koodikoulu on 4-9 -vuotiaille lapsille suunnattu parin tunnin mittainen johdatus ohjelmoinnin alkeisiin. Kuka
+        tahansa voi järjestää oman koodikoulun.</p>
+
+      <p>Koodikouluun tarvitaan:</p>
+      <ul>
+        <li>1 opettaja ja 1-2 avustajaa</li>
+        <li>10-15 oppilasta + vanhempaa</li>
+        <li>kannettavat tietokoneet (oppilaiden omat tai järjestäjän tarjoamat) + internet</li>
+      </ul>
+      <p>Ohjeet ja materiaalit Koodikoulun järjestämiseen löydät Koodikouilun GitHubista. <a href"https://vimeo.com/86706312">Tässä
+        vielä video koodikoulun järjestämisestä.</a></p>
+
+      <p>Yhteisö auttaa alkuun, liity <a href="https://www.facebook.com/groups/koodikoulu">Koodikoulu-ryhmään
+        Facebookissa</a></p>
+
+      <p>Ilmoitathan meille järjestämästäsi Koodikoulusta niin lisäämme sen tapahtumalistaan.</p>
+
+      <h3>Järjestä koodikerho</h3>
+
+      <p>Koodikerhon vetäjäksi voi ryhtyä kuka tahansa asiasta innostunut aikuinen, niin opettajat, koodarit kuin
+        ohjelmoinnista kiinnostuneet vanhemmat. Koodikerho tarjoaa ohjaajalle valmiit opetusmateriaalit, puitteet ja
+        perehdytyksen – sitoudut vain hoitamaan paikallisen koodikerhon vetämisen kerran viikossa. Tärkeintä on, että
+        kerhon vetäjä on varustettu avoimella ja leikkisällä mielellä! Ilmoittaudu ohjaajaksi Koodikerhon sivustolla,
+        josta löydät myös materiaalit kerhon järjestämiseen.</p>
+
+      <p>Oletko yli 9-vuotias koulainen ja haluaisit osallistua Koodikerhoon? Tai oletko vanhempi, joka haluaisi
+        lapsensa Koodikerhoon? Ilmoittaudu mukaan Koodikerho-yhteisöön. Voit myös ottaa suoraan yhteyttä koulusi
+        rehtoriin ja kysyä suunnitelmista käynnistää paikallinen koodikerho.</p>
+
+      <h3>Tue Koodikoulun kehittämistä</h3>
+
+      <p>Tule mukaan tukemaan Koodikoulun toimintaa sponsoroimalla Koodikoulu-sivuston kehittämistä ja ylläpitämistä.
+        Ota meihin yhteyttä sähköpostitse niin sovitaan yhteistyöstä paremmin.</p>
+
+      <p>Voit myös osallistua suoraan Koodikoulu-sivuston kehittämiseen <a
+        href="https://github.com/koodikoulu/koodikoulu.fi">GitHubin kautta.</a></p>
+
+      <h3>Anna palautetta Koodikoulusta</h3>
+
+      <p>Haluamme kehittää sivustoa, jotta se palvelisi juuri sinua parhaalla mahdollisella tavalla. Anna Koodikouluun
+        liittyvää palautetta tästä.</p>
+    </div>
+  </div>
+</div>
+
+{% if user.is_authenticated %}
+{% include 'organize/create_event.html' with form=create_event_form %}
+{% else %}
+{% include 'registration/login.html' with form=login_form %}
+{% endif %}
+
+{% endblock %}

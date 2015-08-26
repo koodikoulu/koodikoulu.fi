@@ -1,0 +1,48 @@
+<script>
+$(function() {
+    $( ".startdate" ).datepicker({
+        dateFormat: "dd.mm.yy"
+    });
+    $( ".enddate" ).datepicker({
+        dateFormat: "dd.mm.yy"
+    });
+});
+</script>
+{% load form_extras %}
+
+<div class="section create-event-container">
+  <div class="container page">
+    <form method="post" action="{% url 'web.views.organize' %}">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1 class="sub-title">Luo uusi tapahtuma</h1>
+
+        <div class="row form-group">
+          {% show_form_field form.title %}
+        </div>
+        <div class="row form-group">{% show_form_field form.start_date %}</div>
+        <div class="row form-group">{% show_form_field form.end_date %}</div>
+
+        <div class="row form-group">
+          <label>Kello</label><br>
+          {{ form.start_hours }}:{{ form.start_minutes }} &ndash; {{ form.end_hours }}:{{ form.end_minutes }}
+        </div>
+
+        <div class="row form-group">{% show_form_field form.price %}</div>
+        <div class="row form-group">{% show_form_field form.bring_along %}</div>
+        <div class="row form-group">{% show_form_field form.street_address %}</div>
+        <div class="row form-group">{% show_form_field form.requirements %}</div>
+        <div class="row form-group">{% show_form_field form.description %}</div>
+        <div class="row form-group">{% show_form_field form.organization %}</div>
+        <div class="row form-group">{% show_form_field form.amount %}</div>
+        <div class="row form-group">{% show_form_field form.signup_link %}</div>
+
+        <div class="row form-group">
+          <input class="btn" type="submit" value="Luo tapahtuma">
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>

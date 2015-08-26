@@ -61,6 +61,25 @@ p, dt, dd {
     text-transform: uppercase;
 }
 
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        vertical-align: top;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbar .navbar-nav a {
+        width: 150px;
+        padding: 0 10px;
+    }
+}
+
 .start {
     background-color: #4C3750;
     margin-bottom: 0 !important;
@@ -204,11 +223,6 @@ p, dt, dd {
     color: lawngreen;
 }
 
-.signup {
-    float: right;
-    padding: 2em;
-}
-
 label {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -288,12 +302,12 @@ input[type=number]::-webkit-inner-spin-button {
 
 .signup-container {
     background: #f1f1f1;
-    padding: 10px 30px;
 }
 
-.signup-container h3 {
-    font-weight: normal;
-    font-size: 16px;
-    margin-bottom: 20px;
+.login-container {
+    background: #f1f1f1;
 }
 
+.create-event-container {
+    background: #f1f1f1;
+}

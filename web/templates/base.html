@@ -18,7 +18,24 @@
     {% endblock %}
   </head>
   <body>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container white col-md-12">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="/" class="white">Opi</a></li>
+            <li><a href="/story" class="white">Tarina</a></li>
+            <li><a href="/organize" class="white">Järjestä</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     {% block content %}
     {% endblock %}
+    <div id="footer" class="section footer">
+      <div class="container">
+        <h1 class="sub-title white">Mukana kehittämässä</h1>
+        <p class="center">Reaktor, Futurice, Koodikerho</p>
+      </div>
+    </div>
   </body>
 </html>

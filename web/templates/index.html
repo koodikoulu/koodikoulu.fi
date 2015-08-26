@@ -6,21 +6,7 @@
 {% endblock %}
 
 {% block content %}
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container white col-md-8 col-md-offset-2">
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="#learn" class="white">Opi itse</a></li>
-          <li><a href="#tryout" class="white">Kokeile</a></li>
-          <li><a href="#events" class="white">Ilmoittaudu</a></li>
-          <li><a href="#story" class="white">Tarina</a></li>
-          <li><a href="#organize" class="white">Anna oma panoksesi</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Start page -->
+  <!-- Title -->
   <div class="jumbotron start">
     <div class="container text-center col-xs-6 col-xs-offset-3">
       <h1 class="start-title white">Koodikoulu</h1>
@@ -104,65 +90,12 @@
           </div>
         </div>
         {% for event in events %}
-          {% include 'event.html' %}
+          {% include 'events/event.html' %}
         {% endfor %}
       </div>
       {% else %}
           <div>Ei tapahtumia</div>
       {% endif %}
-    </div>
-  </div>
-
-<!-- Info section -->
-<div id="story" class="section story">
-    <div class="container page">
-      <h1 class="sub-title">Lue syntytarina</h1>
-      <div class="text-container col-xs-10 col-xs-offset-1">
-        <p>Idea koodikoulusta syntyi reaktorilaisen Juha Paanasen aloitteesta. Hän piti aluksi 4-vuotiaalle tyttärelleen tietokonetunteja, joilla opetti lapselleen tietokoneen käyttöä ja koodausta. Paananen alkoi kirjoittaa oppitunneistaan blogia ja samalla Paanasen työkaverit innostuivat tuomaan omia lapsiaankin hänen opetettavakseen.</p>
-
-        <p>Työpaikan sisäiset koodikoulut olivat niin onnistuneita, että koodausoppitunteja päätettiin alkaa pitää avoimesti. Ensimmäinen julkinen koodikoulu järjestettiin tammikuussa 2014. Tilaisuuden kaikki paikat varattiin alle tunnissa. Sittemmin lukuisat IT-alan yritykset, kirjastot ja kerhot ovat järjestäneet kymmeniä koodikouluja.</p>
-
-        <p>Lasten koodikouluista uutisoitiin myös laajasti valtamediassa: <a href="http://www.hs.fi/tekniikka/a1385088678561">Helsingin Sanomat</a>, <a href="http://areena.yle.fi/1-2283368">Yle Puhe</a> ja <a href="http://hbl.fi/nyheter/2013-11-22/531196/mila-4-visar-att-flickor-visst-kan-koda">Hufvudstadsbladet</a> uutisoivat koodikoulun isän, Juha Paanasen nelivuotiaan tyttären Milan hämmästyttävistä koodaustaidoista. Myös esimerkiksi <a href="http://www.taloussanomat.fi/tyo-ja-koulutus/2014/03/22/oppiiko-lapsesi-koodaamaan-ennen-lukemista/20144082/139">Taloussanomat</a> ja <a href="http://www.ess.fi/uutiset/kotimaa/2014/02/20/suomalainen-it-yritys-kantaa-vastuuta-tulevaisuudesta---lapsille-ilmainen-koodauksen-opetusohjelma">Etelä-Suomen Sanomat</a> ovat kirjoittaneet Koodikoulusta.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Organize -->
-  <div id="organize" class="section">
-    <div class="container page">
-      <h1 class="sub-title">Anna oma panoksesi koodikoululle</h1>
-      <div class="text-container col-xs-10 col-xs-offset-1">
-        <h3>Järjestä koodikoulu</h3>
-        <p>Koodikoulu on 4-9 -vuotiaille lapsille suunnattu parin tunnin mittainen johdatus ohjelmoinnin alkeisiin. Kuka tahansa voi järjestää oman koodikoulun.</p>
-        <p>Koodikouluun tarvitaan:</p>
-        <ul>
-          <li>1 opettaja ja 1-2 avustajaa</li>
-          <li>10-15 oppilasta + vanhempaa</li>
-          <li>kannettavat tietokoneet (oppilaiden omat tai järjestäjän tarjoamat) + internet</li>
-        </ul>
-        <p>Ohjeet ja materiaalit Koodikoulun järjestämiseen löydät Koodikouilun GitHubista. <a href"https://vimeo.com/86706312">Tässä vielä video koodikoulun järjestämisestä.</a></p>
-        <p>Yhteisö auttaa alkuun, liity <a href="https://www.facebook.com/groups/koodikoulu">Koodikoulu-ryhmään Facebookissa</a></p>
-        <p>Ilmoitathan meille järjestämästäsi Koodikoulusta niin lisäämme sen tapahtumalistaan.</p>
-
-        <h3>Järjestä koodikerho</h3>
-        <p>Koodikerhon vetäjäksi voi ryhtyä kuka tahansa asiasta innostunut aikuinen, niin opettajat, koodarit kuin ohjelmoinnista kiinnostuneet vanhemmat. Koodikerho tarjoaa ohjaajalle valmiit opetusmateriaalit, puitteet ja perehdytyksen – sitoudut vain hoitamaan paikallisen koodikerhon vetämisen kerran viikossa. Tärkeintä on, että kerhon vetäjä on varustettu avoimella ja leikkisällä mielellä! Ilmoittaudu ohjaajaksi Koodikerhon sivustolla, josta löydät myös materiaalit kerhon järjestämiseen.</p>
-        <p>Oletko yli 9-vuotias koulainen ja haluaisit osallistua Koodikerhoon? Tai oletko vanhempi, joka haluaisi lapsensa Koodikerhoon? Ilmoittaudu mukaan Koodikerho-yhteisöön. Voit myös ottaa suoraan yhteyttä koulusi rehtoriin ja kysyä suunnitelmista käynnistää paikallinen koodikerho.</p>
-
-        <h3>Tue Koodikoulun kehittämistä</h3>
-        <p>Tule mukaan tukemaan Koodikoulun toimintaa sponsoroimalla Koodikoulu-sivuston kehittämistä ja ylläpitämistä. Ota meihin yhteyttä sähköpostitse niin sovitaan yhteistyöstä paremmin.</p>
-        <p>Voit myös osallistua suoraan Koodikoulu-sivuston kehittämiseen <a href="https://github.com/koodikoulu/koodikoulu.fi">GitHubin kautta.</a></p>
-
-        <h3>Anna palautetta Koodikoulusta</h3>
-        <p>Haluamme kehittää sivustoa, jotta se palvelisi juuri sinua parhaalla mahdollisella tavalla. Anna Koodikouluun liittyvää palautetta tästä.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-   <div id="footer" class="section footer">
-    <div class="container">
-    <h1 class="sub-title white">Mukana kehittämässä</h1>
-    <p class="center">Reaktor, Futurice, Koodikerho</p>
     </div>
   </div>
 {% endblock %}

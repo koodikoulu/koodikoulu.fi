@@ -29,15 +29,17 @@ def register(request):
       user.save()
       login(request, user)
 
-      return redirect(reverse('index'))
-
+      return redirect(request.GET.get('next', reverse('index')))
   else:
     form = RegisterForm()
+
   return render(request, 'registration/register.html', {'form': form})
 
 def login_view(request):
+  next_page = reverse('organize') # Hard-coded for now
+
   if request.user.is_authenticated():
-    return redirect(reverse('index'))
+    return redirect(next_page)
 
   if request.method == 'POST':
     form = LoginForm(data=request.POST)
@@ -45,18 +47,17 @@ def login_view(request):
       user = form.login(request)
       if user:
         login(request, user)
-        return redirect(reverse('index'))
-
+        return redirect(next_page)
   else:
     form = LoginForm()
+
   return render(request, 'registration/login.html', {'form': form})
 
 def logout_view(request):
   logout(request)
   return redirect(reverse('index'))
 
-@login_required
-def create_event(request):
+def organize(request):
   if request.method == 'POST':
     form = EventForm(data=request.POST)
     if form.is_valid():
@@ -74,7 +75,10 @@ def create_event(request):
   else:
     form = EventForm()
 
-  return render(request, 'create_event.html', {'form': form})
+  return render(request, 'organize/organize.html', {
+    'create_event_form': form,
+    'login_form': LoginForm(),
+  })
 
 def handle_signup(request, pk):
   if not request.method == 'POST':
@@ -97,5 +101,5 @@ def handle_signup(request, pk):
   else:
     return JsonResponse({'status': 500})
 
-def organize(request):
-  return render(request, 'organize.html')
+def story(request):
+  return render(request, 'story.html')
