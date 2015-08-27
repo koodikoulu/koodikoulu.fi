@@ -333,3 +333,19 @@ input[type=number]::-webkit-inner-spin-button {
 .btn-submit:hover {
     color: white;
 }
+
+.footer img {
+  margin: 0 40px 100px 40px;
+}
+
+.img-koodikerho {
+  height: 80px;
+}
+
+.img-futurice {
+  height: 40px;
+}
+
+.img-reaktor {
+  height: 40px;
+}
