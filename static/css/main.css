@@ -49,7 +49,6 @@ p, dt, dd {
 
 .navbar {
     background: #4C3750;
-    padding: 8vh;
     margin: 0;
     border: none;
 }
@@ -58,7 +57,12 @@ p, dt, dd {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
     font-size: 18px;
+    letter-spacing: 2px;
     text-transform: uppercase;
+}
+
+.navbar a.active {
+    border-bottom: 5px solid #6bbea9;
 }
 
 @media (min-width: 768px) {
@@ -75,8 +79,8 @@ p, dt, dd {
     }
 
     .navbar .navbar-nav a {
-        width: 150px;
-        padding: 0 10px;
+        margin: 0 20px;
+        padding: 20px 10px;
     }
 }
 
