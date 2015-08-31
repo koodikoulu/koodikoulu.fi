@@ -1,5 +1,6 @@
 body {
     font-size: 16px;
+    padding-top: 65px; /* make room for fixed nav */
 }
 
 h1 {
@@ -65,27 +66,35 @@ p, dt, dd {
     border-bottom: 5px solid #6bbea9;
 }
 
+.navbar .nav>li {
+    display: inline-block;
+}
+
 .jumbotron p {
     font-size: 18px
 }
 
-@media (min-width: 768px) {
-    .navbar .navbar-nav {
-        display: inline-block;
-        vertical-align: top;
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
-    }
+.navbar .navbar-nav {
+    display: inline-block;
+    vertical-align: top;
+    float: none;
+    margin: 0
+}
 
-    .navbar .navbar-collapse {
-        text-align: center;
-    }
+.navbar .navbar-collapse {
+    text-align: center;
+}
 
-    .navbar .navbar-nav a {
-        margin: 0 20px;
-        padding: 20px 10px;
-    }
+.navbar .navbar-nav a {
+    margin: 0 20px;
+    padding: 20px 10px;
+}
+
+.navbar-nav li:first-child a {
+    margin-left: 0;
+}
+.navbar-nav li:last-child a {
+    margin-right: 0;
 }
 
 .start {
@@ -104,10 +113,6 @@ p, dt, dd {
     letter-spacing: 8px;
     font-weight: bold;
     margin-bottom: 30px;
-}
-
-.tryout {
-    background-color: #E9E9E9;
 }
 
 .material {

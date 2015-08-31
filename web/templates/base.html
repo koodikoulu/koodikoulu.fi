@@ -18,17 +18,15 @@
     {% endblock %}
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container white col-md-12">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          {% block nav %}
-          <ul class="nav navbar-nav">
-            <li>{% block nav-index %}<a href="/" class="white">Opi</a>{% endblock %}</li>
-            <li>{% block nav-story %}<a href="/story" class="white">Tarina</a>{% endblock %}</li>
-            <li>{% block nav-organize %}<a href="/organize" class="white">Järjestä</a>{% endblock %}</li>
-          </ul>
-          {% endblock %}
-        </div>
+    <nav class="navbar navbar-default navbar-fixed-top text-center">
+      <div class="container">
+        {% block nav %}
+        <ul class="nav navbar-nav">
+          <li>{% block nav-index %}<a href="/" class="white">Opi</a>{% endblock %}</li>
+          <li>{% block nav-story %}<a href="/story" class="white">Tarina</a>{% endblock %}</li>
+          <li>{% block nav-organize %}<a href="/organize" class="white">Järjestä</a>{% endblock %}</li>
+        </ul>
+        {% endblock %}
       </div>
     </nav>
     {% block content %}
