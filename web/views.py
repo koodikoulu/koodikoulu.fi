@@ -47,7 +47,7 @@ def login_view(request):
       user = form.login(request)
       if user:
         login(request, user)
-        return redirect(next_page)
+        return redirect(next_page + '#create-event')
   else:
     form = LoginForm()
 

@@ -10,7 +10,7 @@ $(function() {
 </script>
 {% load form_extras %}
 
-<div class="section create-event-container">
+<div class="section create-event-container" id="create-event">
   <div class="container page">
     <form method="post" action="{% url 'web.views.organize' %}">
     {% csrf_token %}
