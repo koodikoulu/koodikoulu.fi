@@ -1,23 +1,32 @@
 $(document).ready(function() {
 
-  function createSignUp(form, input) {
+  function createSignUp(form, input, loader) {
     $.ajax({
       url: form.attr('action'),
       type: form.attr('method'),
       data: form.serialize(),
       success: function(data) {
         if (data.status === 200) {
-          form.replaceWith('<h3 style="color: green;">Kiitos ilmoittautumisesta!</h3>');
-        } else {
+          form[0].reset();
+          var message = form.find('p.submit-message');
+          message.text('Kiitos ilmoittautumisesta!');
+          message.css('color', 'green');
           input.show();
-          $('#loader').remove();
-          form.find('p.submit-error').text('Jotakin meni pieleen. Yritä uudelleen.');
+          loader.remove();
+        } else {
+          var message = form.find('p.submit-message');
+          message.text('Jotakin meni pieleen. Yritä uudelleen.');
+          message.css('color', 'red');
+          input.show();
+          loader.remove();
         }
       },
       error: function(data) {
+        var message = form.find('p.submit-message');
+        message.text('Jotakin meni pieleen. Yritä uudelleen.');
+        message.css('color', 'red');
         input.show();
-        $('#loader').remove();
-        form.find('p.submit-error').text('Jotakin meni pieleen. Yritä uudelleen.');
+        loader.remove();
       }
     });
   }
@@ -26,9 +35,10 @@ $(document).ready(function() {
     event.preventDefault();
     var form = $(this).closest('form');
     var input = $(this);
-    input.after($('<img src="/static/media/ajax-loader.gif" alt="loading" id="loader">'));
+    var loader = $('<img src="/static/media/ajax-loader.gif" alt="loading" id="loader">');
+    input.after(loader);
     input.hide();
-    createSignUp(form, input);
+    createSignUp(form, input, loader);
     return false;
   });
 });
