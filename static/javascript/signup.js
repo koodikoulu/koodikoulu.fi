@@ -6,20 +6,12 @@ $(document).ready(function() {
       type: form.attr('method'),
       data: form.serialize(),
       success: function(data) {
-        if (data.status === 200) {
-          form[0].reset();
-          var message = form.find('p.submit-message');
-          message.text('Kiitos ilmoittautumisesta!');
-          message.css('color', 'green');
-          input.show();
-          loader.remove();
-        } else {
-          var message = form.find('p.submit-message');
-          message.text('Jotakin meni pieleen. Yritä uudelleen.');
-          message.css('color', 'red');
-          input.show();
-          loader.remove();
-        }
+        form[0].reset();
+        var message = form.find('p.submit-message');
+        message.text('Kiitos ilmoittautumisesta!');
+        message.css('color', 'green');
+        input.show();
+        loader.remove();
       },
       error: function(data) {
         var message = form.find('p.submit-message');
