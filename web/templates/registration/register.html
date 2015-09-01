@@ -8,7 +8,7 @@
       <form method="post" action="{% url 'web.views.register' %}">
         {% csrf_token %}
         <div class="col-sm-4 col-md-4 col-md-offset-4">
-          <h1 class="sub-title">Rekisteröityminen</h1>
+          <h2 class="sub-title">Rekisteröityminen</h2>
           {% for field in form %}
           <div class="row">
             <div class="form-group">
