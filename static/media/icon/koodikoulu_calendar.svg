@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="21px" viewBox="0 0 20 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>kalenteri ikoni</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="IKONIT-&amp;-Napit" sketch:type="MSArtboardGroup" transform="translate(-270.000000, -2089.000000)" fill="#FFFFFF">
+            <g id="kalenteri-ikoni" sketch:type="MSLayerGroup" transform="translate(270.000000, 2089.000000)">
+                <path d="M18.583075,20.98915 L1.031275,20.98915 C0.547925,20.98915 0.156275,20.5975 0.156275,20.11415 L0.156275,2.56235 C0.156275,2.079 0.547925,1.68735 1.031275,1.68735 L18.583075,1.68735 C19.066425,1.68735 19.458075,2.079 19.458075,2.56235 L19.458075,20.11415 C19.458075,20.5975 19.066425,20.98915 18.583075,20.98915 L18.583075,20.98915 Z M1.906275,19.23915 L17.70825,19.23915 L17.70825,3.437175 L1.906275,3.437175 L1.906275,19.23915 Z" id="Fill-1" sketch:type="MSShapeGroup"></path>
+                <path d="M18.53075,8.197175 L1.031275,8.197175 C0.547925,8.197175 0.156275,7.80535 0.156275,7.322175 C0.156275,6.838825 0.547925,6.447175 1.031275,6.447175 L18.53075,6.447175 C19.013925,6.447175 19.40575,6.838825 19.40575,7.322175 C19.40575,7.80535 19.013925,8.197175 18.53075,8.197175" id="Fill-2" sketch:type="MSShapeGroup"></path>
+                <path d="M4.2161,5.029675 C3.73275,5.029675 3.3411,4.638025 3.3411,4.154675 L3.3411,0.88235 C3.3411,0.399 3.73275,0.00735 4.2161,0.00735 C4.69945,0.00735 5.0911,0.399 5.0911,0.88235 L5.0911,4.154675 C5.0911,4.638025 4.69945,5.029675 4.2161,5.029675" id="Fill-3" sketch:type="MSShapeGroup"></path>
+                <path d="M15.34575,5.029675 C14.862575,5.029675 14.47075,4.638025 14.47075,4.154675 L14.47075,0.88235 C14.47075,0.399 14.862575,0.00735 15.34575,0.00735 C15.8291,0.00735 16.22075,0.399 16.22075,0.88235 L16.22075,4.154675 C16.22075,4.638025 15.8291,5.029675 15.34575,5.029675" id="Fill-4" sketch:type="MSShapeGroup"></path>
+                <path d="M8.223425,10.0345 L11.11075,10.0345 L11.11075,12.921825 L8.223425,12.921825 L8.223425,10.0345 Z" id="Fill-5" sketch:type="MSShapeGroup"></path>
+                <path d="M8.223425,14.426825 L11.11075,14.426825 L11.11075,17.314325 L8.223425,17.314325 L8.223425,14.426825 Z" id="Fill-6" sketch:type="MSShapeGroup"></path>
+                <path d="M3.5686,14.426825 L6.455925,14.426825 L6.455925,17.314325 L3.5686,17.314325 L3.5686,14.426825 Z" id="Fill-7" sketch:type="MSShapeGroup"></path>
+                <path d="M13.10575,14.426825 L15.993075,14.426825 L15.993075,17.314325 L13.10575,17.314325 L13.10575,14.426825 Z" id="Fill-8" sketch:type="MSShapeGroup"></path>
+                <path d="M13.10575,10.0345 L15.993075,10.0345 L15.993075,12.921825 L13.10575,12.921825 L13.10575,10.0345 Z" id="Fill-9" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

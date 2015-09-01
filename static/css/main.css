@@ -20,7 +20,17 @@ body, p, ul, li {
 
 p {
     font-size: 18px;
-    font-weight: lighter;
+    font-weight: 300;
+}
+
+p a {
+    font-weight: 500;
+    color: #000;
+    text-decoration: underline;
+}
+
+p a:after {
+    content: ' >'
 }
 
 p, dt, dd {
@@ -148,7 +158,8 @@ p, dt, dd {
     padding-bottom: 20px;
 }
 
-.panel {
+.panel,
+.panel-group .panel {
     border: none;
     border-radius: 1px;
     box-shadow: none;
@@ -165,12 +176,42 @@ p, dt, dd {
     border: none;
 }
 
+.panel-group .panel-event.unbooked {
+    border-left: 10px solid #6bbea9;
+    border-right: 10px solid #6bbea9;
+}
+
+.panel-group .panel-event.booked {
+    border-left: 10px solid #8b7790;
+    border-right: 10px solid #8b7790;
+}
+
+.panel-event .panel-heading {
+    padding: 13px 15px;
+}
+
+img.icon {
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: sub;
+}
+
 .panel-1 {
     border-top: 10px solid #6bbea9;
 }
 
 .panel-2 {
     border-top: 10px solid #8b7790;
+}
+
+.panel-group .panel-head {
+    background: #4C3750;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    margin-bottom: 10px;
 }
 
 .panel-heading {
