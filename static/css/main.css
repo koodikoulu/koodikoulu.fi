@@ -177,6 +177,10 @@ p, dt, dd {
     border: none;
 }
 
+.panel-event.active .panel-heading {
+    background: #eee;
+}
+
 .panel-event .panel-heading {
     padding: 13px 15px;
 }
