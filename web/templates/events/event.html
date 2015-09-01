@@ -7,11 +7,11 @@
             <span class="title">{{ event.start_date | date:"SHORT_DATE_FORMAT" }}</span>
             <span class="kkdetail">klo&nbsp;{{ event.time }}</span>
           </div>
-          <div class="col-xs-4 col-md-4 row-elem">
-            <div class="title">{{ event.title }}</div>
+          <div class="col-xs-4 col-md-4 row-elem text-center">
+            {{ event.title }}
           </div>
-          <div class="col-xs-4 col-md-3 row-elem">
-            <div class="detail">{{ event.city }}</div>
+          <div class="col-xs-4 col-md-4 row-elem text-right">
+            {{ event.city }}
           </div>
         </div>
       </a>
