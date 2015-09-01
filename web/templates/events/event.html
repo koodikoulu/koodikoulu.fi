@@ -31,10 +31,11 @@
                         <dt>Esitiedot:</dt>
                         <dd>{{ event.requirements }}</dd>
                         <dt>Järjestäjä:</dt>
-                        <dd>{{ event.organization }}
-                            {% if event.organizer %}
-                                , {{ event.organizer.get_full_name }}, {{ event.organizer.email }}
-                            {% endif %}
+                        <dd>
+                        {{ event.organization }}
+                        {% if event.organizer %}
+                            , {{ event.organizer.get_full_name }}, <a href="mailto:{{ event.organizer.email }}">{{ event.organizer.email }}</a>
+                        {% endif %}
                         </dd>
                     </dl>
                 </div>
