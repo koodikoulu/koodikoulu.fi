@@ -137,6 +137,7 @@ p, dt, dd {
 
 .events {
     background-color: #fec772;
+    padding-bottom: 88px;
 }
 
 .story {
@@ -164,6 +165,11 @@ p, dt, dd {
     border: none;
     border-radius: 1px;
     box-shadow: none;
+}
+
+.panel-group.event-list {
+    margin-top: 40px;
+    margin-bottom: 35px;
 }
 
 .panel-default {
