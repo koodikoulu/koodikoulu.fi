@@ -176,18 +176,18 @@ p, dt, dd {
     border: none;
 }
 
-.panel-group .panel-event.unbooked {
+.panel-event .panel-heading {
+    padding: 13px 15px;
+}
+
+.panel-group .panel-event.unbooked .panel-heading {
     border-left: 10px solid #6bbea9;
     border-right: 10px solid #6bbea9;
 }
 
-.panel-group .panel-event.booked {
+.panel-group .panel-event.booked .panel-heading {
     border-left: 10px solid #8b7790;
     border-right: 10px solid #8b7790;
-}
-
-.panel-event .panel-heading {
-    padding: 13px 15px;
 }
 
 img.icon {
