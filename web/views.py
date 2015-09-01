@@ -51,7 +51,10 @@ def login_view(request):
   else:
     form = LoginForm()
 
-  return render(request, 'registration/login.html', {'form': form})
+  return render(request, 'organize/organize.html', {
+    'login_form': form,
+    'create_event_form': EventForm(),
+  })
 
 def logout_view(request):
   logout(request)
