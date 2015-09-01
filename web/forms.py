@@ -1,5 +1,5 @@
 from django import forms, template
-from web.models import Event, SignUp
+from web.models import Event, SignUp, User
 from django.contrib.auth import authenticate
 
 class EventForm(forms.ModelForm):
@@ -72,6 +72,13 @@ class RegisterForm(forms.Form):
     if self.cleaned_data['password'] != self.cleaned_data['password_validate']:
       self._errors['password'] = 'Salasanat eivät täsmää'
       return False
+
+    try:
+      user_with_email = User.objects.get(email=self.cleaned_data['email'])
+      self._errors['email'] = 'Sähköpostilla on jo käyttäjätunnus.'
+      return False
+    except User.DoesNotExist:
+      pass
 
     return True
 
