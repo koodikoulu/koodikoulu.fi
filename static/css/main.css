@@ -1,5 +1,6 @@
 body {
     font-size: 16px;
+    min-width: 400px;
     padding-top: 65px; /* make room for fixed nav */
 }
 
@@ -136,6 +137,7 @@ p, dt, dd {
 
 .events {
     background-color: #fec772;
+    padding-bottom: 88px;
 }
 
 .story {
@@ -165,6 +167,11 @@ p, dt, dd {
     box-shadow: none;
 }
 
+.panel-group.event-list {
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
 .panel-default {
     padding: 20px 20px 18px;
     min-height: 250px;
@@ -174,6 +181,10 @@ p, dt, dd {
 .panel-default > .panel-heading {
     background: none;
     border: none;
+}
+
+.panel-event.active .panel-heading {
+    background: #eee;
 }
 
 .panel-event .panel-heading {
@@ -192,6 +203,7 @@ p, dt, dd {
 
 img.icon {
     height: 20px;
+    width: 20px;
     margin-right: 10px;
     vertical-align: sub;
 }

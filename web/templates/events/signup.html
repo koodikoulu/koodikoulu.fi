@@ -3,7 +3,7 @@
 <form method="post" id="signup-form" action="{% url 'web.views.handle_signup' pk=event.pk %}">
   {% csrf_token %}
 
-  <div class="col-md-12 container signup-container">
+  <div class="col-md-12 signup-container">
     <div class="row">
       <div class="col-md-12">
         <h3>ILMOITTAUDU</h3>
@@ -12,32 +12,32 @@
 
     <div class="row">
       <div class="col-md-4 form-group">
-        {% show_form_field form.child %}
+        {% show_form_field form.child 'person' %}
       </div>
 
       <div class="col-md-2 form-group">
-        {% show_form_field form.age %}
+        {% show_form_field form.age 'age' %}
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-4 form-group">
-        {% show_form_field form.guardian %}
+        {% show_form_field form.guardian 'guardian' %}
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-4 form-group">
-        {% show_form_field form.email %}
+        {% show_form_field form.email 'email' %}
       </div>
       <div class="col-md-4 form-group">
-        {% show_form_field form.phone %}
+        {% show_form_field form.phone 'phone' %}
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-8 form-group">
-        {% show_form_field form.other %}
+        {% show_form_field form.other 'details' %}
       </div>
     </div>
 
@@ -49,7 +49,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <p class="submit-error" style="color: red;"></p>
+        <p class="submit-message"></p>
       </div>
     </div>
 

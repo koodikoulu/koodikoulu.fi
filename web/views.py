@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, HttpResponseServerError
 from django.contrib.auth import authenticate, login, logout
 
 from web.models import Event, User, SignUp
@@ -85,11 +85,13 @@ def organize(request):
 
 def handle_signup(request, pk):
   if not request.method == 'POST':
-    return JsonResponse({'status': 405})
+    response = HttpResponse('Method not allowed')
+    response.status_code = 405
+    return response
 
   event = Event.objects.get(pk=pk)
   if not event:
-    return JsonResponse({'status': 500})
+    return HttpResponseServerError
 
   form = SignUpForm(data=request.POST)
   if form.is_valid():
@@ -100,9 +102,9 @@ def handle_signup(request, pk):
       for exc in sys.exc_info():
         print(exc)
 
-    return JsonResponse({'status': 200})
+    return HttpResponse('Kiitos ilmoittautumisesta!')
   else:
-    return JsonResponse({'status': 500})
+    return HttpResponseServerError
 
 def story(request):
   return render(request, 'story.html')
