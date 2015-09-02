@@ -131,7 +131,7 @@ p, dt, dd {
 }
 
 .material {
-    background-color: #FFFFFF;
+    background-color: #E9E9E9;
 }
 
 .events {
@@ -232,32 +232,71 @@ img.icon {
     font-size: 14px;
 }
 
-.box {
-    height: 400px;
+.box-default {
+    padding: 0;
+    min-height: 300px;
     width: 300px;
-    margin: auto;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
+}
+
+.box {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    border-bottom: #6EBDA9;
+    border-bottom-style: solid;
+    border-bottom-width: thick;
+}
+
+.box-age {
+    float: left;
+    background-color: #6EBDA9;
+    height: 60px;
+    width: 80px;
+    color: white;
+    font-size: 20px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.box-language {
+    float: right;
+    height: 60px;
+    width: 60px;
+    font-size: 20px;
+    line-height: 60px;
+    text-align: center;
 }
 
 .box-header {
     font-size: 24px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 100;
-    margin-top: 100px;
+    margin: 40px 30px 0 25px
 }
 
 .box-text {
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 100;
-    margin-top: 30px;
-    margin-left: 25px;
-    margin-right: 25px;
+    position: absolute;
+    top: 210px;
+    left: 40px;
+    width: 255px;
+}
+
+.box-info {
+    height: 60px;
+}
+
+@media (max-width: 992px) {
+    .box-default {
+        margin: 0 auto;
+        width: 90%;
+    }
+    .box {
+        width: 100%;
+        margin-bottom: 15px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -313,18 +352,6 @@ label {
     font-size: 30px;
 }
 
-.turtle {
-    width: 100%;
-    margin: auto;
-}
-
-/*.text-container ul {*/
-    /*list-style-type: disc;*/
-    /*overflow: visible;*/
-    /*padding-left: 40px;*/
-    /*font-weight: lighter;*/
-/*}*/
-
 .footer {
     min-height: 30vh;
     background-color: #4C3750;
@@ -333,30 +360,6 @@ label {
 
 .center {
     text-align: center;
-}
-
-.box1 {
-    background-color: #6BBEA9;
-}
-
-.box2 {
-    background-color: #FEC772;
-}
-
-.box3 {
-    background-color: #4C384F;
-}
-
-.box4 {
-    background-color: #8A778F;
-}
-
-.box5 {
-    background-color: #E9E9E9;
-}
-
-.box6 {
-    background-color: #E25462;
 }
 
 input, textarea {
