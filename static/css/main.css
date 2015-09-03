@@ -397,6 +397,11 @@ label {
     font-weight: 300;
 }
 
+label.required:after {
+    color: red;
+    content: '*';
+}
+
 .icon {
     font-size: 180px;
 }

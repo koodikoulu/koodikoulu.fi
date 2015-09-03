@@ -26,6 +26,8 @@ class EventForm(forms.ModelForm):
   end_hours = forms.IntegerField(required=True)
   end_minutes = forms.IntegerField(required=True)
 
+  required_css_class = 'required'
+
   class Meta:
     model = Event
     exclude = ['organizer', 'booked', 'time']
