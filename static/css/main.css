@@ -291,9 +291,9 @@ img.icon {
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
     position: absolute;
-    top: 205px;
+    bottom: 15px;
     left: 25px;
-    width: 260px;
+    width: 255px;
 }
 
 .box-info {
