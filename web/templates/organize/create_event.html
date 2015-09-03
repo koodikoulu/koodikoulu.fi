@@ -15,31 +15,33 @@ $(function() {
     <form method="post" action="{% url 'web.views.organize' %}">
     {% csrf_token %}
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <h2 class="sub-title">Luo uusi tapahtuma</h2>
+      <div class="col-md-12">
+        <h2 class="sub-title">Ilmoita omasta tapahtumastasi</h2>
 
-        <div class="row form-group">
+        <p>Ilmoita koodiaiheinen tapahtuma tapahtumakalenteriin, kerää ilmoittautuneiden tiedot ja hallinnoi tapahtumaa kirjautumalla tälle sivulle.</p>
+
+        <div class="form-group">
           {% show_form_field form.title %}
         </div>
-        <div class="row form-group">{% show_form_field form.start_date %}</div>
-        <div class="row form-group">{% show_form_field form.end_date %}</div>
+        <div class="form-group">{% show_form_field form.start_date %}</div>
+        <div class="form-group">{% show_form_field form.end_date %}</div>
 
-        <div class="row form-group">
+        <div class="form-group">
           <label>Kello</label><br>
           {{ form.start_hours }}:{{ form.start_minutes }} &ndash; {{ form.end_hours }}:{{ form.end_minutes }}
         </div>
 
-        <div class="row form-group">{% show_form_field form.price %}</div>
-        <div class="row form-group">{% show_form_field form.bring_along %}</div>
-        <div class="row form-group">{% show_form_field form.street_address %}</div>
-        <div class="row form-group">{% show_form_field form.city %}</div>
-        <div class="row form-group">{% show_form_field form.requirements %}</div>
-        <div class="row form-group">{% show_form_field form.description %}</div>
-        <div class="row form-group">{% show_form_field form.organization %}</div>
-        <div class="row form-group">{% show_form_field form.amount %}</div>
-        <div class="row form-group">{% show_form_field form.signup_link %}</div>
+        <div class="form-group">{% show_form_field form.price %}</div>
+        <div class="form-group">{% show_form_field form.bring_along %}</div>
+        <div class="form-group">{% show_form_field form.street_address %}</div>
+        <div class="form-group">{% show_form_field form.city %}</div>
+        <div class="form-group">{% show_form_field form.requirements %}</div>
+        <div class="form-group">{% show_form_field form.description %}</div>
+        <div class="form-group">{% show_form_field form.organization %}</div>
+        <div class="form-group">{% show_form_field form.amount %}</div>
+        <div class="form-group">{% show_form_field form.signup_link %}</div>
 
-        <div class="row form-group">
+        <div class="form-group">
           <input class="btn" type="submit" value="Luo tapahtuma">
         </div>
       </div>

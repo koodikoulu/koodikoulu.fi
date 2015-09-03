@@ -12,6 +12,17 @@ h1 {
 h2, h3, h4, h5, h6 {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
+    color: #484639;
+}
+
+h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+h3.panel-title {
+    text-transform: none;
 }
 
 body, p, ul, li {
@@ -19,9 +30,18 @@ body, p, ul, li {
     font-weight: 300;
 }
 
-p {
+p,
+li {
     font-size: 18px;
     font-weight: 300;
+}
+
+.section.feedback {
+    padding: 2em;
+}
+
+.section.feedback p {
+    margin: 0;
 }
 
 p a {
@@ -34,8 +54,17 @@ p a:after {
     content: ' >'
 }
 
-p, dt, dd {
-    line-height: 22px;
+p, dt, dd, li {
+    line-height: 32px;
+}
+
+p,
+ul {
+    margin-bottom: 1em;
+}
+
+section {
+    margin-bottom: 2em;
 }
 
 .ubuntu {
@@ -135,13 +164,12 @@ p, dt, dd {
     background-color: #E9E9E9;
 }
 
-.events {
+.section.yellow {
     background-color: #fec772;
-    padding-bottom: 88px;
 }
 
-.story {
-    background-color: #6BBEA9;
+.events {
+    padding-bottom: 88px;
 }
 
 .sub-title {
@@ -414,6 +442,14 @@ input[type=number]::-webkit-inner-spin-button {
     font-weight: normal;
     font-size: 16px;
     margin-bottom: 20px;
+}
+
+.picture {
+    background: #ccc;
+    border-radius: 1000px;
+    width: 200px;
+    height: 200px;
+    margin: 2em auto;
 }
 
 .login-container {
