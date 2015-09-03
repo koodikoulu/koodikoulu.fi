@@ -560,5 +560,6 @@ iframe.first-lesson {
 }
 
 .thumb-image {
-    height: 400px;
+    max-height: 400px;
+    width: 90%;
 }
