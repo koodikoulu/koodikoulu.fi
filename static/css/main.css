@@ -298,8 +298,28 @@ img.icon {
     height: 300px;
     width: 300px;
     margin-bottom: 20px;
-    background-color: white;
-    border-bottom: #6EBDA9;
+    color: #484639;
+    background-color: #FFFFFF;
+}
+.age-4 { background-color: #6bbea9; }
+.age-6 { background-color: #fec772; }
+.age-8 { background-color: #8b7790; }
+.age-12 { background-color: #80ADC3; }
+.age-18 { background-color: #DE5462; }
+
+.box-age-4 { border-bottom: #6bbea9; }
+.box-age-6 { border-bottom: #fec772; }
+.box-age-8 { border-bottom: #8b7790; }
+.box-age-12 { border-bottom: #80ADC3; }
+.box-age-18 { border-bottom: #DE5462; }
+
+.box-default :hover .box-age-4 { outline: #6EBDA9; }
+.box-default :hover .box-age-6 { outline: #fec772; }
+.box-default :hover .box-age-8 { outline: #8b7790; }
+.box-default :hover .box-age-12 { outline: #80ADC3; }
+.box-default :hover .box-age-18 { outline: #DE5462; }
+
+.box-border {
     border-bottom-style: solid;
     border-bottom-width: 4px;
 }
@@ -309,7 +329,6 @@ img.icon {
 }
 
 .box-default :hover .box {
-    outline: #6EBDA9;
     outline-style: solid;
     outline-width: 4px;
     cursor: pointer;
@@ -319,10 +338,9 @@ img.icon {
 
 .box-age {
     float: left;
-    background-color: #6EBDA9;
     height: 60px;
     width: 80px;
-    color: white;
+    color: #FFFFFF;
     font-size: 24px;
     line-height: 60px;
     text-align: center;
@@ -336,11 +354,18 @@ img.icon {
     text-align: center;
 }
 
+.box-price {
+    position: absolute;
+    font-size: 18px;
+    text-align: center;
+    right: 17px;
+    bottom: 16px;
+}
+
 .box-header {
     font-size: 24px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 100;
-    color: #484639;
     margin: 40px 30px 0 25px
 }
 
@@ -349,7 +374,7 @@ img.icon {
     font-family: 'Open Sans', sans-serif;
     font-weight: 100;
     position: absolute;
-    bottom: 15px;
+    bottom: 24px;
     left: 25px;
     width: 255px;
     color: #484639;
@@ -426,7 +451,7 @@ label.required:after {
 .footer {
     min-height: 30vh;
     background-color: #4C3750;
-    color: white;
+    color: #FFFFFF;
 }
 
 .center {
@@ -486,11 +511,11 @@ input[type=number]::-webkit-inner-spin-button {
 
 .btn-submit {
     background: #6BBEA9;
-    color: white;
+    color: #FFFFFF;
 }
 
 .btn-submit:hover {
-    color: white;
+    color: #FFFFFF;
 }
 
 .footer img {
