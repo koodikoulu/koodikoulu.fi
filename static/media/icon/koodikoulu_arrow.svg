@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="8px" height="13px" viewBox="0 0 8 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="KOODIKOULU-OPI,-uusi-järjestys-Copy-2" sketch:type="MSArtboardGroup" transform="translate(-1065.000000, -1487.000000)" fill="#484639">
+            <path d="M1065,1488.79553 L1066.38462,1487.41092 L1072.38462,1493.41092 L1066.38462,1499.41092 L1065,1498.0263 L1069.61538,1493.41092 L1065,1488.79553 Z" id="Arrow" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
