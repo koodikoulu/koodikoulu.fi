@@ -92,6 +92,8 @@ class Event(models.Model):
   lat = models.CharField(max_length=255, blank=True, null=True)
   lng = models.CharField(max_length=255, blank=True, null=True)
 
+  approved = models.BooleanField(default=False)
+
   class Meta:
     ordering = ('start_date',)
 

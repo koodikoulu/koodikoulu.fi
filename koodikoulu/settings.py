@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'web',
     'djrill',
 )
@@ -120,6 +121,9 @@ LOGIN_URL='/login/'
 
 # Email backend for development.
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SLACK_CHANNEL_ADDRESS = os.getenv('SLACK_CHANNEL', None)
+
+SITE_ID = 1
 
 # Settings for Heroku.
 if 'DYNO' in os.environ:

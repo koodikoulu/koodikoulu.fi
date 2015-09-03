@@ -3,15 +3,16 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseServerError
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.sites.models import Site
 
 from web.models import Event, User, SignUp
 from web.forms import EventForm, RegisterForm, LoginForm, SignUpForm
-from web.extra import send_signup_confirmation
+from web.extra import send_signup_confirmation, send_new_event
 
 import sys
 
 def index(request):
-  events = Event.objects.all()
+  events = Event.objects.filter(approved=True)
   form = SignUpForm()
   return render(request, 'index.html', {'events': events, 'form': form})
 
@@ -73,6 +74,15 @@ def organize(request):
       )
       event.organizer = request.user
       event.save()
+
+      # Send a notification to the Slack channel.
+      url = "%s/admin/web/event/%d/" % (Site.objects.get_current().domain, event.pk)
+      try:
+        send_new_event(url)
+      except:
+        for exc in sys.exc_info():
+          print(exc)
+
       return redirect(reverse('index'))
 
   else:
