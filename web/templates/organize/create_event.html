@@ -12,13 +12,16 @@ $(function() {
 
 <div class="section create-event-container" id="create-event">
   <div class="container page">
+    <div class="row">
+        <section class="col-md-12">
+            <h2 class="sub-title">Ilmoita omasta tapahtumastasi</h2>
+            <p>Ilmoita koodiaiheinen tapahtuma tapahtumakalenteriin, kerää ilmoittautuneiden tiedot ja hallinnoi tapahtumaa kirjautumalla tälle sivulle.</p>
+        </section>
+    </div>
     <form method="post" action="{% url 'web.views.organize' %}">
     {% csrf_token %}
     <div class="row">
       <div class="col-md-12">
-        <h2 class="sub-title">Ilmoita omasta tapahtumastasi</h2>
-
-        <p>Ilmoita koodiaiheinen tapahtuma tapahtumakalenteriin, kerää ilmoittautuneiden tiedot ja hallinnoi tapahtumaa kirjautumalla tälle sivulle.</p>
 
         <div class="form-group">
           {% show_form_field form.title %}
