@@ -260,6 +260,19 @@ img.icon {
     border-bottom-width: thick;
 }
 
+.box-default a:hover a:active a:link a:after a:visited {
+    text-decoration: none;
+}
+
+.box-default :hover .box {
+    outline: #6EBDA9;
+    outline-style: solid;
+    outline-width: thick;
+    cursor: pointer;
+    cursor: hand;
+    border-bottom: none;
+}
+
 .box-age {
     float: left;
     background-color: #6EBDA9;
