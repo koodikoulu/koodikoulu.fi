@@ -10,7 +10,7 @@ Install Python 3.4, eg. `brew install python3`.
 Install dependencies:
 `pip3 install -r requirements.txt`
 
-Initialize database:  
+Initialize database:
 `python3 manage.py migrate`
 
 Create superuser:
