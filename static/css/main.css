@@ -58,6 +58,10 @@ p a {
     text-decoration: underline;
 }
 
+p a:hover {
+    color: #DE5462;
+}
+
 p a:after {
     content: ' >'
 }
@@ -488,7 +492,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .picture {
-    background: #ccc;
+    background: #6bbea9;;
     border-radius: 1000px;
     width: 200px;
     height: 200px;
