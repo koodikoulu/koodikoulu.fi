@@ -25,6 +25,14 @@ h3.panel-title {
     text-transform: none;
 }
 
+h3.box-title {
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: none;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
 body, p, ul, li {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -272,20 +280,28 @@ img.icon {
     font-size: 14px;
 }
 
+.box-container {
+    margin: 0 auto;
+    max-width: 940px;
+}
+
 .box-default {
+    margin: 0 auto;
     padding: 0;
     min-height: 300px;
     width: 300px;
+    margin-right: 20px;
 }
 
 .box {
     position: relative;
     height: 300px;
     width: 300px;
+    margin-bottom: 20px;
     background-color: white;
     border-bottom: #6EBDA9;
     border-bottom-style: solid;
-    border-bottom-width: thick;
+    border-bottom-width: 4px;
 }
 
 .box-default a:hover a:active a:link a:after a:visited {
@@ -295,7 +311,7 @@ img.icon {
 .box-default :hover .box {
     outline: #6EBDA9;
     outline-style: solid;
-    outline-width: thick;
+    outline-width: 4px;
     cursor: pointer;
     cursor: hand;
     border-bottom: none;
@@ -307,17 +323,16 @@ img.icon {
     height: 60px;
     width: 80px;
     color: white;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 60px;
     text-align: center;
 }
 
 .box-language {
     float: right;
-    height: 60px;
-    width: 60px;
-    font-size: 20px;
-    line-height: 60px;
+    font-size: 18px;
+    margin-top: 16px;
+    margin-right: 17px;
     text-align: center;
 }
 
@@ -325,16 +340,19 @@ img.icon {
     font-size: 24px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 100;
+    color: #484639;
     margin: 40px 30px 0 25px
 }
 
 .box-text {
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
     position: absolute;
     bottom: 15px;
     left: 25px;
     width: 255px;
+    color: #484639;
 }
 
 .box-info {
@@ -344,11 +362,6 @@ img.icon {
 @media (max-width: 992px) {
     .box-default {
         margin: 0 auto;
-        width: 90%;
-    }
-    .box {
-        width: 100%;
-        margin-bottom: 15px;
     }
 }
 
