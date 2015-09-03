@@ -219,12 +219,12 @@ section {
     padding: 13px 15px;
 }
 
-.panel-group .panel-event.unbooked .panel-heading {
+.panel-group .panel-event.SCHOOL .panel-heading {
     border-left: 10px solid #6bbea9;
     border-right: 10px solid #6bbea9;
 }
 
-.panel-group .panel-event.booked .panel-heading {
+.panel-group .panel-event.CLUB .panel-heading {
     border-left: 10px solid #8b7790;
     border-right: 10px solid #8b7790;
 }
