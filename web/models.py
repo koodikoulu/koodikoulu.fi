@@ -72,7 +72,10 @@ class User(AbstractBaseUser):
 
 
 class Event(models.Model):
+  CATEGORY_CHOICES = ((0, 'Koodikoulu'), (1, 'Koodikerho'), (2, 'Muu'))
+
   title = models.CharField(max_length=100)
+  category = models.CharField(max_length=30, choices=CATEGORY_CHOICES, default=CATEGORY_CHOICES[0])
   start_date = models.DateField()
   end_date = models.DateField(blank=True, null=True)
   time = models.CharField(max_length=20)

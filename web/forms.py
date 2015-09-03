@@ -6,6 +6,7 @@ class EventForm(forms.ModelForm):
   def __init__(self, *args, **kwargs):
       super(EventForm, self).__init__(*args, **kwargs)
       self.fields['title'].label = 'Tapahtuman nimi'
+      self.fields['category'].label = 'Tyyppi'
       self.fields['start_date'].label = 'Aloituspäivä'
       self.fields['end_date'].label = 'Lopetuspäivä'
       self.fields['price'].label = 'Hinta'
