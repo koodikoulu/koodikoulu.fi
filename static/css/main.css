@@ -241,6 +241,11 @@ section {
     border-right: 10px solid #8b7790;
 }
 
+.panel-group .panel-event.OTHER .panel-heading {
+    border-left: 10px solid #DE5462;
+    border-right: 10px solid #DE5462;
+}
+
 img.icon {
     height: 20px;
     width: 20px;
