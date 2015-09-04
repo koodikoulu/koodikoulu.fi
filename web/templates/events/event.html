@@ -17,10 +17,10 @@
       </a>
     </div>
   </div>
-    <div id="id-{{ event.pk }}" class="panel-collapse collapse icon" role="tabpanel" aria-labelledby="headingOne">
+    <div id="id-{{ event.pk }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
         <div class="panel-body">
             <div class="text-content">
-                <div class="info col-xs-12 col-md-8">
+                <div class="info col-xs-12 col-md-7">
                     <p>{{ event.description }}</p>
                     <p><a href="http://koodikerho.fi/">http://koodikerho.fi/</a></p>
                     <dl class="dl-horizontal event-description-list">
@@ -50,13 +50,17 @@
             </div>
         </div>
         {% if not event.booked %}
-            <div class="panel-body">
-                <div class="text-content">
-                    <div class="info col-xs-12 mol-md-8">
-                        {% include "events/signup.html" %}
+            {% if event.signup_link %}
+                <a class="link-external" href="{{event.signup_link}}"><div class="btn btn-submit btn-external">Ilmoittaudu tästä</div></a>
+            {% else %}
+                <div class="panel-body">
+                    <div class="text-content">
+                        <div class="info col-xs-12 mol-md-8">
+                            {% include "events/signup.html" %}
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endif %}
         {% endif %}
     </div>
 </div>
