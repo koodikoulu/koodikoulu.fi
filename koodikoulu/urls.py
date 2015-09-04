@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^$', 'web.views.index', name='index'),
     url(r'^organize/$', 'web.views.organize', name='organize'),
     url(r'^story/$', 'web.views.story', name='story'),
+    url(r'^own-events/$', 'web.views.own_events', name='own-events'),
 
     url(r'^register/$', 'web.views.register', name='register'),
     url(r'^login/$', 'web.views.login_view', name='login'),
