@@ -576,3 +576,7 @@ iframe.first-lesson {
     max-height: 400px;
     width: 90%;
 }
+
+.smaller-nav-link {
+    font-size: 10px !important;
+}

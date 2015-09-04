@@ -26,6 +26,10 @@
           <li>{% block nav-index %}<a href="/" class="white">Opi</a>{% endblock %}</li>
           <li>{% block nav-story %}<a href="/story" class="white">Tarina</a>{% endblock %}</li>
           <li>{% block nav-organize %}<a href="/organize" class="white">Järjestä</a>{% endblock %}</li>
+          {% if user.is_authenticated %}
+          <li>{% block nav-own-events %}<a href="/own-events" class="white smaller-nav-link">Omat tapahtumat</a>{% endblock %}</li>
+          <li><a href="/logout" class="white smaller-nav-link">Kirjaudu ulos</a></li>
+          {% endif %}
         </ul>
         {% endblock %}
       </div>
