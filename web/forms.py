@@ -21,34 +21,13 @@ class EventForm(forms.ModelForm):
 
   start_date = forms.DateField(input_formats=['%d.%m.%Y'], widget=forms.DateInput(attrs={'class': 'startdate'}, format=('%d.%m.%Y')))
   end_date = forms.DateField(input_formats=['%d.%m.%Y'], required=False, widget=forms.DateInput(attrs={'class': 'enddate'}, format=('%d.%m.%Y')))
-  numeric = RegexValidator(r'^[0-9]*$', 'Tarkista aika.')
-  start_hours = forms.CharField(required=True, max_length=2, widget=forms.TextInput(attrs={'class': 'time'}), validators=[numeric])
-  start_minutes = forms.CharField(required=True, max_length=2, widget=forms.TextInput(attrs={'class': 'time'}), validators=[numeric])
-  end_hours = forms.CharField(required=True, max_length=2, widget=forms.TextInput(attrs={'class': 'time'}), validators=[numeric])
-  end_minutes = forms.CharField(required=True, max_length=2, widget=forms.TextInput(attrs={'class': 'time'}), validators=[numeric])
+
+  start_hours = forms.IntegerField(required=True, max_value=23, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2'}))
+  start_minutes = forms.IntegerField(required=True, max_value=59, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2'}))
+  end_hours = forms.IntegerField(required=True, max_value=23, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2'}))
+  end_minutes = forms.IntegerField(required=True, max_value=59, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2'}))
 
   required_css_class = 'required'
-
-  def is_valid(self):
-      valid = super(EventForm, self).is_valid()
-
-      if not valid:
-        return valid
-
-      try:
-          start_hours = int(self.cleaned_data['start_hours'])
-          start_minutes = int(self.cleaned_data['start_minutes'])
-          end_hours = int(self.cleaned_data['end_hours'])
-          end_minutes = int(self.cleaned_data['end_minutes'])
-
-          if start_hours > -1 and start_hours < 24 and end_hours > -1 and end_hours < 24 \
-                  and start_minutes > -1 and start_minutes < 60 and end_minutes > -1 and end_minutes < 60:
-            return True
-          else:
-            return False
-      except ValueError:
-          self._errors['start_hours'] = 'Tarkista aika.'
-          return False
 
   class Meta:
     model = Event
