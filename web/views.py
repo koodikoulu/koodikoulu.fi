@@ -137,3 +137,6 @@ def remove_participant(request, pk):
 
   participant.delete()
   return HttpResponse('Osallistuja poistettu')
+
+def koodikoulu_404(request):
+  return render(request, '404.html')

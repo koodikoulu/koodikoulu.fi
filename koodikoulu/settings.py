@@ -125,6 +125,9 @@ SLACK_CHANNEL_ADDRESS = os.getenv('SLACK_CHANNEL', None)
 
 SITE_ID = 1
 
+# Error pages
+handler404 = 'web.views.koodikoulu_404'
+
 # Settings for Heroku.
 if 'DYNO' in os.environ:
     import dj_database_url
