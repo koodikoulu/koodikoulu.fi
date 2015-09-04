@@ -517,15 +517,17 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .styled-select select {
-   width: 150px;
-   height: 48px;
-   padding: 13px;
-   line-height: 1;
-   border: 0;
-   border-radius: 0;
-   background: url("../media/icon/koodikoulu_arrow.svg") no-repeat right;
-   background-color: #FFFFFF;
-   -webkit-appearance: none;
+    width: 150px;
+    height: 48px;
+    padding: 13px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    background: url("../media/icon/arrow_down.svg") no-repeat;
+    background-position-x: 115px;
+    background-position-y: 20px;
+    background-color: #FFFFFF;
+    -webkit-appearance: none;
 }
 
 .btn {
