@@ -10,6 +10,7 @@ from web.forms import EventForm, RegisterForm, LoginForm, SignUpForm
 from web.extra import send_signup_confirmation, send_new_event
 
 import sys
+import datetime
 
 def index(request):
   events = Event.objects.filter(approved=True)
@@ -66,12 +67,8 @@ def organize(request):
     form = EventForm(data=request.POST)
     if form.is_valid():
       event = form.save()
-      event.time = "%d:%d-%d:%d" % (
-        form.cleaned_data['start_hours'],
-        form.cleaned_data['start_minutes'],
-        form.cleaned_data['end_hours'],
-        form.cleaned_data['end_minutes']
-      )
+      event.start_time = datetime.time(int(form.cleaned_data['start_hours']), int(form.cleaned_data['start_minutes']))
+      event.end_time = datetime.time(int(form.cleaned_data['end_hours']), int(form.cleaned_data['end_minutes']))
       event.organizer = request.user
       event.save()
 
@@ -84,6 +81,8 @@ def organize(request):
           print(exc)
 
       return redirect(reverse('index'))
+    for error in form.errors:
+      print(error)
 
   else:
     form = EventForm()

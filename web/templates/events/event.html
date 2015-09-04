@@ -5,7 +5,7 @@
         <div class="row col-xs-12 col-md-12">
           <div class="col-xs-4 col-md-4 row-elem">
             <span class="title">{{ event.start_date | date:"SHORT_DATE_FORMAT" }}</span>
-            <span class="kkdetail">klo&nbsp;{{ event.time }}</span>
+            <span class="kkdetail">klo&nbsp;{{ event.start_time }}-{{ event.end_time }}</span>
           </div>
           <div class="col-xs-4 col-md-4 row-elem text-center">
             {{ event.title }}

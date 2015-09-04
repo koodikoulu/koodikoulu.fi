@@ -478,7 +478,7 @@ input, textarea {
     resize: none;
 }
 
-input[type=number] {
+input.time {
     width: 3em;
     -moz-appearance:textfield;
 }
