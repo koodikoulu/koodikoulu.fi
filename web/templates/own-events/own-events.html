@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Omat tapahtumat{% endblock %}
+
+{% block extrahead %}
+{% endblock %}
+
+{% block nav-own-events %}
+    <a href="/" class="active white smaller-nav-link">Omat tapahtumat</a>
+{% endblock %}
+
+{% block content %}
+
+<div id="own-events" class="section material">
+  <div class="container page">
+    <h2 class="sub-title">Omat tapahtumat</h2>
+
+    <div class="text-container col-md-8 col-md-offset-2">
+      {% if events %}
+        {% for event in events %}
+          {% include 'own-events/own-event.html' %}
+        {% endfor %}
+      {% else %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

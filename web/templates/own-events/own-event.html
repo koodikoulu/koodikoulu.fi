@@ -1,0 +1,49 @@
+<div class="panel">
+  <div class="panel-heading">
+    <div class="panel-title row-container">
+      <div class="row col-xs-12 col-md-12">
+        <div class="col-xs-4 col-md-4 row-elem">
+          <h3 class="title">{{ event.title }}</h3>
+        </div>
+      </div>
+
+      {% for p in event.participants.all %}
+        <div class="panel panel-event">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <div class="panel-title row-container">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#id-{{ p.pk }}" aria-expanded="true" aria-controls="collapseOne">
+                <div class="row col-xs-12 col-md-12">
+                  <div class="col-xs-4 col-md-4 row-elem">
+                    <span class="title">{{ p.child }}</span>
+                  </div>
+                  <div class="col-xs-4 col-md-4 row-elem text-center">
+                    {{ p.guardian }}
+                  </div>
+                  <div class="col-xs-4 col-md-4 row-elem text-right">
+                    {{ p.email }}
+                  </div>
+                </div>
+                </a>
+            </div>
+
+            <div id="id-{{ p.pk }}" class="panel-collapse collapse icon" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                  <div class="text-content">
+                      <div class="info col-xs-6 col-md-4">
+                        <p>Age: {{ p.age }}</p>
+                        <p>Phone: {{ p.phone }}</p>
+                        <p>Other notes: {{ p.other }}</p>
+                      </div>
+                      <div class="info col-xs-6 col-md-4">
+                        <p>Poista</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>

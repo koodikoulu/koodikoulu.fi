@@ -117,3 +117,25 @@ def handle_signup(request, pk):
 
 def story(request):
   return render(request, 'story.html')
+
+def own_events(request):
+  events = Event.objects.filter(organizer=request.user)
+  return render(request, 'own-events/own-events.html', {
+    'events': events,
+  })
+
+def remove_participant(request, pk):
+  if not request.method == 'POST':
+    response = HttpResponse('Method not allowed')
+    response.status_code = 405
+    return response
+
+  participant = SignUp.objects.get(pk=pk)
+  if not participant:
+    return HttpResponseServerError
+
+  participant.delete()
+  return HttpResponse('Osallistuja poistettu')
+
+def koodikoulu_404(request):
+  return render(request, '404.html')
