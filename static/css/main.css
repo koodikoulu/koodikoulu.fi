@@ -297,6 +297,16 @@ img.icon {
     margin-right: 20px;
 }
 
+@media (max-width: 992px) {
+    .box-container {
+        max-width: 610px;
+    }
+
+    .box-default {
+        margin: 0 auto;
+    }
+}
+
 .box {
     position: relative;
     height: 300px;
@@ -386,12 +396,6 @@ img.icon {
 
 .box-info {
     height: 60px;
-}
-
-@media (max-width: 992px) {
-    .box-default {
-        margin: 0 auto;
-    }
 }
 
 @media (min-width: 768px) {
