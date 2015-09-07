@@ -118,6 +118,7 @@ def handle_signup(request, pk):
 def story(request):
   return render(request, 'story.html')
 
+@login_required
 def own_events(request):
   events = Event.objects.filter(organizer=request.user)
   return render(request, 'own-events/own-events.html', {
