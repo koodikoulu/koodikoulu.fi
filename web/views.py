@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseServerError
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.sites.models import Site
+from django.views.decorators.csrf import csrf_protect
 
 from web.models import Event, User, SignUp
 from web.forms import EventForm, RegisterForm, LoginForm, SignUpForm
@@ -125,6 +126,7 @@ def own_events(request):
     'events': events,
   })
 
+@csrf_protect
 def remove_participant(request, pk):
   if not request.method == 'POST':
     response = HttpResponse('Method not allowed')

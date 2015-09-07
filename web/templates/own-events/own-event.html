@@ -8,7 +8,7 @@
       </div>
 
       {% for p in event.participants.all %}
-        <div class="panel panel-event">
+        <div class="panel panel-event" id="participant-{{ p.pk }}">
           <div class="panel-heading" role="tab" id="headingOne">
             <div class="panel-title row-container">
               <a role="button" data-toggle="collapse" data-parent="#accordion" href="#id-{{ p.pk }}" aria-expanded="true" aria-controls="collapseOne">
@@ -35,7 +35,7 @@
                         <p>Other notes: {{ p.other }}</p>
                       </div>
                       <div class="info col-xs-6 col-md-4">
-                        <p>Poista</p>
+                        <input type="submit" value="Poista" name="{{ p.pk }}">
                       </div>
                   </div>
                 </div>

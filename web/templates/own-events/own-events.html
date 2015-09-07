@@ -2,6 +2,8 @@
 {% block title %}Omat tapahtumat{% endblock %}
 
 {% block extrahead %}
+<script src="/static/javascript/own-events.js"></script>
+<script src="/static/javascript/js.cookie.js"></script>
 {% endblock %}
 
 {% block nav-own-events %}
@@ -20,6 +22,7 @@
           {% include 'own-events/own-event.html' %}
         {% endfor %}
       {% else %}
+        <p>Ei omia tapahtumia.</p>
       {% endif %}
     </div>
   </div>
