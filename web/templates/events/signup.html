@@ -1,6 +1,6 @@
 {% load form_extras %}
 
-<form method="post" id="signup-form" action="{% url 'web.views.handle_signup' pk=event.pk %}">
+<form method="post" class="signup-form" action="{% url 'web.views.handle_signup' pk=event.pk %}">
   {% csrf_token %}
 
   <div class="col-md-12 signup-container">
