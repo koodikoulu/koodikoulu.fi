@@ -306,6 +306,10 @@ img.icon {
         font-size: 12px;
     }
 
+    .navbar .navbar-nav a {
+        margin: 0 10px;
+    }
+
     .panel-title {
         font-size: 12px;
         letter-spacing: 0;
