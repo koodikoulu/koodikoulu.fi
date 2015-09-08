@@ -607,6 +607,15 @@ iframe.first-lesson {
         margin-bottom: 50px;
     }
 
+    .img-reaktor,
+    .img-futurice {
+        height: 25px;
+    }
+
+    .img-koodikerho {
+        height: 40px;
+    }
+
     .sub-title,
     h3.box-title {
         font-size: 18px;
