@@ -302,6 +302,10 @@ img.icon {
 }
 
 @media (max-width: 992px) {
+    .navbar-default .navbar-nav>li>a {
+        font-size: 12px;
+    }
+
     .box-container {
         max-width: 610px;
     }
