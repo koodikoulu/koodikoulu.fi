@@ -3,6 +3,10 @@ body {
     padding-top: 65px; /* make room for fixed nav */
 }
 
+body.organizer {
+    padding-top: 110px; /* 65px base + 45px organizer nav */
+}
+
 h1 {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
@@ -118,8 +122,30 @@ section {
     text-transform: uppercase;
 }
 
+.navbar.organizer-nav {
+    background: #3f2d42;
+    min-height: 45px;
+}
+
+.navbar.organizer-nav a {
+    color: #a38da8;
+    font-size: 12px;
+    text-transform: none;
+    padding: 12.5px 10px !important;
+}
+
+.navbar.organizer-nav a:hover,
+.navbar.organizer-nav a:active,
+.navbar.organizer-nav a:focus {
+    color: #fff !important;
+}
+
 .navbar a.active {
     border-bottom: 5px solid #6bbea9;
+}
+
+.navbar.organizer-nav a.active {
+    border: none
 }
 
 .navbar .nav>li {
@@ -608,6 +634,3 @@ iframe.first-lesson {
     width: 90%;
 }
 
-.smaller-nav-link {
-    font-size: 10px !important;
-}

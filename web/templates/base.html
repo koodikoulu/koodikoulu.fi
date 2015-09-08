@@ -18,22 +18,26 @@
     {% block extrahead %}
     {% endblock %}
   </head>
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top text-center">
+  <body class="{% if user.is_authenticated %}organizer{% endif %}">
+    <div class="navbar navbar-default navbar-fixed-top text-center">
+      {% if user.is_authenticated %}
+        <nav class="navbar navbar-default organizer-nav">
+          <ul class="nav navbar-nav navbar-right ">
+            <li>{% block nav-own-events %}<a href="/own-events">Omat tapahtumat</a>{% endblock %}</li>
+            <li><a href="/logout">Kirjaudu ulos</a></li>
+          </ul>
+        </nav>
+      {% endif %}
       <div class="container">
         {% block nav %}
         <ul class="nav navbar-nav">
           <li>{% block nav-index %}<a href="/" class="white">Opi</a>{% endblock %}</li>
           <li>{% block nav-story %}<a href="/story" class="white">Tarina</a>{% endblock %}</li>
           <li>{% block nav-organize %}<a href="/organize" class="white">Järjestä</a>{% endblock %}</li>
-          {% if user.is_authenticated %}
-          <li>{% block nav-own-events %}<a href="/own-events" class="white smaller-nav-link">Omat tapahtumat</a>{% endblock %}</li>
-          <li><a href="/logout" class="white smaller-nav-link">Kirjaudu ulos</a></li>
-          {% endif %}
         </ul>
         {% endblock %}
       </div>
-    </nav>
+    </div>
     {% block content %}
     {% endblock %}
     <div id="footer" class="section footer">
