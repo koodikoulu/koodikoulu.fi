@@ -327,46 +327,6 @@ img.icon {
     margin-right: 20px;
 }
 
-@media (max-width: 992px) {
-    body {
-        font-size: 14px;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    .sub-title,
-    h3.box-title {
-        font-size: 18px;
-    }
-
-    .panel-heading h3 {
-        font-size: 18px;
-    }
-
-    .navbar-default .navbar-nav>li>a {
-        font-size: 12px;
-    }
-
-    .navbar .navbar-nav a {
-        margin: 0 10px;
-    }
-
-    .panel-title {
-        font-size: 12px;
-        letter-spacing: 0;
-    }
-
-    .box-container {
-        max-width: 610px;
-    }
-
-    .box-default {
-        margin: 0 auto;
-    }
-}
-
 .box {
     position: relative;
     height: 300px;
@@ -632,5 +592,49 @@ iframe.first-lesson {
 .thumb-image {
     max-height: 400px;
     width: 90%;
+}
+
+@media (max-width: 992px) {
+    body {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .footer img {
+        margin-bottom: 50px;
+    }
+
+    .sub-title,
+    h3.box-title {
+        font-size: 18px;
+    }
+
+    .panel-heading h3 {
+        font-size: 18px;
+    }
+
+    .navbar-default .navbar-nav>li>a {
+        font-size: 12px;
+    }
+
+    .navbar .navbar-nav a {
+        margin: 0 10px;
+    }
+
+    .panel-title {
+        font-size: 12px;
+        letter-spacing: 0;
+    }
+
+    .box-container {
+        max-width: 610px;
+    }
+
+    .box-default {
+        margin: 0 auto;
+    }
 }
 
