@@ -306,6 +306,11 @@ img.icon {
         font-size: 12px;
     }
 
+    .panel-title {
+        font-size: 12px;
+        letter-spacing: 0;
+    }
+
     .box-container {
         max-width: 610px;
     }
