@@ -1,8 +1,11 @@
 from django import forms, template
 from web.models import Event, SignUp, User
 from django.contrib.auth import authenticate
-from django.core.validators import RegexValidator
-class EventForm(forms.ModelForm):
+
+class KoodikouluForm(forms.ModelForm):
+  required_css_class = 'required'
+
+class EventForm(KoodikouluForm):
   def __init__(self, *args, **kwargs):
       super(EventForm, self).__init__(*args, **kwargs)
       self.fields['title'].label = 'Tapahtuman nimi'
@@ -27,8 +30,6 @@ class EventForm(forms.ModelForm):
   end_hours = forms.IntegerField(required=True, max_value=23, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2'}))
   end_minutes = forms.IntegerField(required=True, max_value=59, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2'}))
 
-  required_css_class = 'required'
-
   class Meta:
     model = Event
     exclude = ['organizer', 'booked', 'start_time', 'end_time']
@@ -38,7 +39,8 @@ class EventForm(forms.ModelForm):
       'bring_along': forms.TextInput(attrs={'placeholder': 'esim. kannettava tietokone, vanhempi'})
     }
 
-class SignUpForm(forms.ModelForm):
+class SignUpForm(KoodikouluForm):
+
   def __init__(self, *args, **kwargs):
     super(SignUpForm, self).__init__(*args, **kwargs)
     self.fields['child'].label = 'Nimi'
