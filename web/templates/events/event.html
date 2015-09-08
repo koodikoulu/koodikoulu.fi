@@ -39,10 +39,11 @@
                         </dd>
                     </dl>
                 </div>
-                <div class="col-xs-12 col-md-4 text-center">
+                <div class="col-xs-12 col-md-5 text-right">
                     {% if event.lat and event.lng %}
                         <img src="https://maps.googleapis.com/maps/api/staticmap?center={{event.lat}},{{event.lng}}&zoom=16&size=300x300&markers={{event.lat}},{{event.lng}}&output=embed" width="300" height="300" frameborder="0" style="border:0" allowfullscreen />
                     {% endif %}
+                    <p class="small">{{ event.street_address }}</p>
                 </div>
                 {% if event.booked %}
                     <div class="signup">Kurssi on täynnä</div>
