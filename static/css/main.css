@@ -256,12 +256,12 @@ section {
     padding: 13px 15px;
 }
 
-.panel-group .panel-event.SCHOOL .panel-heading {
+.panel-group .panel-event.ENSIASKELEET .panel-heading {
     border-left: 10px solid #6bbea9;
     border-right: 10px solid #6bbea9;
 }
 
-.panel-group .panel-event.CLUB .panel-heading {
+.panel-group .panel-event.ILTIS .panel-heading {
     border-left: 10px solid #8b7790;
     border-right: 10px solid #8b7790;
 }
@@ -532,14 +532,14 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .styled-select select {
-    width: 150px;
+    width: 300px;
     height: 48px;
     padding: 13px;
     line-height: 1;
     border: 0;
     border-radius: 0;
     background: url("../media/icon/arrow_down.svg") no-repeat;
-    background-position-x: 115px;
+    background-position-x: 265px;
     background-position-y: 20px;
     background-color: #FFFFFF;
     -webkit-appearance: none;

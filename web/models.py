@@ -72,7 +72,7 @@ class User(AbstractBaseUser):
 
 
 class Event(models.Model):
-  CATEGORY_CHOICES = (('SCHOOL', 'Koodikoulu'), ('CLUB', 'Koodikerho'), ('OTHER', 'Muu'))
+  CATEGORY_CHOICES = (('ENSIASKELEET', 'Koodikoulu ensiaskeleet'), ('ILTIS', 'Koodikoulu iltis'), ('OTHER', 'Muu'))
 
   title = models.CharField(max_length=100)
   category = models.CharField(max_length=30, choices=CATEGORY_CHOICES, default=CATEGORY_CHOICES[0])
