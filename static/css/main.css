@@ -252,8 +252,10 @@ section {
     border: none;
 }
 
+.panel-event:hover .panel-heading,
 .panel-event.active .panel-heading {
     background: #eee;
+    transition: .5s;
 }
 
 .panel-event .panel-heading {
