@@ -225,6 +225,10 @@ section {
     padding-bottom: 20px;
 }
 
+.container {
+    overflow-x: hidden;
+}
+
 .panel,
 .panel-group .panel {
     border: none;
