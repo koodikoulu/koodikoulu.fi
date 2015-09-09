@@ -225,6 +225,10 @@ section {
     padding-bottom: 20px;
 }
 
+.container {
+    overflow-x: hidden;
+}
+
 .panel,
 .panel-group .panel {
     border: none;
@@ -248,8 +252,10 @@ section {
     border: none;
 }
 
+.panel-event:hover .panel-heading,
 .panel-event.active .panel-heading {
     background: #eee;
+    transition: .5s;
 }
 
 .panel-event .panel-heading {
@@ -347,22 +353,27 @@ img.icon {
 .box-age-12 { border-bottom: #80ADC3; }
 .box-age-18 { border-bottom: #DE5462; }
 
-.box-default :hover .box-age-4 { outline: #6EBDA9; }
-.box-default :hover .box-age-6 { outline: #fec772; }
-.box-default :hover .box-age-8 { outline: #8b7790; }
-.box-default :hover .box-age-12 { outline: #80ADC3; }
-.box-default :hover .box-age-18 { outline: #DE5462; }
+.box-default .box-age-4 { outline: #6EBDA9; }
+.box-default .box-age-6 { outline: #fec772; }
+.box-default .box-age-8 { outline: #8b7790; }
+.box-default .box-age-12 { outline: #80ADC3; }
+.box-default .box-age-18 { outline: #DE5462; }
 
 .box-border {
     border-bottom-style: solid;
     border-bottom-width: 4px;
 }
 
-.box-default a:hover a:active a:link a:after a:visited {
+.box-default a:hover,
+.box-default a:active,
+.box-default a:link,
+.box-default a:after,
+.box-default a:visited {
     text-decoration: none;
 }
 
-.box-default :hover .box {
+.box-default :hover .box,
+.box-default :focus .box {
     outline-style: solid;
     outline-width: 4px;
     cursor: pointer;
