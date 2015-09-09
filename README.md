@@ -7,6 +7,8 @@ Development
 
 Install Python 3.4, eg. `brew install python3`.
 
+Install Postgres, eg. `brew install postgresql`.
+
 Install dependencies:
 `pip3 install -r requirements.txt`
 
