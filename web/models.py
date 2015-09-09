@@ -131,7 +131,7 @@ class SignUp(models.Model):
 
   def save(self, *args, **kwargs):
     super(SignUp, self).save(*args, **kwargs)
-    if len(self.event.participants.all()) >= self.event.amount:
+    if self.event.amount and len(self.event.participants.all()) >= self.event.amount:
       self.event.booked = True
       self.event.save()
 
