@@ -159,8 +159,8 @@ def export_signup_list(request, event_id):
   event = get_object_or_404(Event, pk=event_id)
 
   if event.organizer != request.user:
-    response = HttpResponse('Ei oikeutta')
-    reponse.status_code = 403
+    response = HttpResponse('Ei oikeutta ladata tietoja')
+    response.status_code = 403
     return response
 
   response = HttpResponse(content_type='text/csv')
