@@ -58,15 +58,11 @@ li {
 p a {
     font-weight: 500;
     color: #000;
-    text-decoration: underline;
 }
 
 p a:hover {
     color: #DE5462;
-}
-
-p a:after {
-    content: ' >'
+    text-decoration: underline;
 }
 
 p, dt, dd, li {
