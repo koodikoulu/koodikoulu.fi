@@ -25,10 +25,10 @@ class EventForm(KoodikouluForm):
   start_date = forms.DateField(input_formats=['%d.%m.%Y'], widget=forms.DateInput(attrs={'class': 'startdate'}, format=('%d.%m.%Y')))
   end_date = forms.DateField(input_formats=['%d.%m.%Y'], required=False, widget=forms.DateInput(attrs={'class': 'enddate'}, format=('%d.%m.%Y')))
 
-  start_hours = forms.IntegerField(required=True, max_value=23, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2'}))
-  start_minutes = forms.IntegerField(required=True, max_value=59, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2'}))
-  end_hours = forms.IntegerField(required=True, max_value=23, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2'}))
-  end_minutes = forms.IntegerField(required=True, max_value=59, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2'}))
+  start_hours = forms.IntegerField(required=True, max_value=23, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2', 'value': '00'}))
+  start_minutes = forms.IntegerField(required=True, max_value=59, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2', 'value': '00'}))
+  end_hours = forms.IntegerField(required=True, max_value=23, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2', 'value': '00'}))
+  end_minutes = forms.IntegerField(required=True, max_value=59, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2', 'value': '00'}))
 
   class Meta:
     model = Event
