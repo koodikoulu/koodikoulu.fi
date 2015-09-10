@@ -132,6 +132,7 @@ def own_events(request):
   })
 
 @csrf_protect
+@login_required
 def remove_participant(request, pk):
   if not request.method == 'POST':
     response = HttpResponse('Method not allowed')
