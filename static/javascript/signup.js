@@ -50,13 +50,13 @@ $(function() {
           $spinner.hide()
           $form.trigger('reset')
           $submits.prop('disabled', true)
-          $form.find('.submit-message.success').show()
+          $form.find('.submit-message.success').fadeIn().delay(5000).fadeOut()
         },
 
         error: function(res) {
           $spinner.hide()
           $submits.prop('disabled', false)
-          $form.find('.submit-message.error').show()
+          $form.find('.submit-message.error').fadeIn()
         }
       })
     })
