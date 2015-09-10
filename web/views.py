@@ -35,7 +35,7 @@ def register(request):
       user.save()
       login(request, user)
 
-      return redirect(request.GET.get('next', reverse('index')))
+      return redirect(request.GET.get('next', reverse('organize') + '#create-event'))
   else:
     form = RegisterForm()
 
