@@ -22,7 +22,9 @@
             <div class="text-content">
                 <div class="info col-xs-12 col-md-7">
                     <p>{{ event.description }}</p>
+                    {% if event.category == 'ILTIS' %}
                     <p><a href="http://koodikerho.fi/">http://koodikerho.fi/</a></p>
+                    {% endif %}
                     <dl class="dl-horizontal event-description-list">
                         <dt>Ota mukaan:</dt>
                         <dd>{{ event.bring_along }}</dd>
