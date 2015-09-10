@@ -4,7 +4,8 @@
       <div class="row col-xs-12 col-md-12">
         <div class="col-xs-12 col-md-12 row-elem">
           <h3 class="title">{{ event.title }}</h3>
-          <a href="/export-signup/{{ event.pk }}" class="export-link">Lataa tiedot (CSV)</a>
+          {% if event.participants.all %}
+          <a href="/export-signup/{{ event.pk }}" class="export-link">Lataa tiedot (CSV)</a>{% endif %}
         </div>
       </div>
 
