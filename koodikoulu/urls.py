@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^logout/$', 'web.views.logout_view', name='logout'),
     url(r'^signup/(?P<pk>[0-9]+)/$', 'web.views.handle_signup', name='signup'),
     url(r'^participant/(?P<pk>[0-9]+)/$', 'web.views.remove_participant', name='remove-participant'),
+    url(r'^export-signup/(?P<event_id>[0-9]+)/$', 'web.views.export_signup_list', name='export-signup'),
 ]
