@@ -571,8 +571,9 @@ input[type=number]::-webkit-inner-spin-button {
     color: #FFFFFF;
 }
 
-.btn-external {
+.signup-section {
     margin: 30px;
+    display: inline-block;
 }
 
 .footer img {

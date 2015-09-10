@@ -45,14 +45,14 @@
                     {% endif %}
                     <p class="small">{{ event.street_address }}</p>
                 </div>
-                {% if event.booked %}
-                    <div class="signup">Kurssi on täynnä</div>
-                {% endif %}
             </div>
         </div>
+        {% if event.booked %}
+            <div class="signup signup-section">Kurssi on täynnä</div>
+        {% endif %}
         {% if not event.booked %}
             {% if event.signup_link %}
-                <a class="link-external" href="{{event.signup_link}}"><div class="btn btn-submit btn-external">Ilmoittaudu tästä</div></a>
+                <a class="link-external" href="{{event.signup_link}}"><div class="btn btn-submit signup-section">Ilmoittaudu tästä</div></a>
             {% else %}
                 <div class="panel-body">
                     <div class="text-content">
