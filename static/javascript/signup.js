@@ -31,8 +31,8 @@ $(function() {
 
     // Set age to 0 or round it if value is not allowed
     $form.find('.age').focusout(function() {
-      var age = $form.find('.age').val() ? Math.abs(Math.round($form.find('#id_age').val())) : 0;
-      $form.find('.age').val(age)
+      var age = Math.round($(this).val()) ? Math.abs(Math.round($(this).val())) : 0;
+      $(this).val(age)
     })
 
     $form.submit(function(e) {
@@ -51,12 +51,18 @@ $(function() {
           $form.trigger('reset')
           $submits.prop('disabled', false)
           $form.find('.submit-message.success').show()
+          setTimeout(function(){
+           $form.find('.submit-message.success').fadeOut()
+          }, 3000)
         },
 
         error: function(res) {
           $spinner.hide()
           $submits.prop('disabled', false)
           $form.find('.submit-message.error').show()
+          setTimeout(function(){
+           $form.find('.submit-message.error').fadeOut()
+          }, 3000)
         }
       })
     })
