@@ -670,3 +670,10 @@ form .submit-message.error {
     }
 }
 
+/* Disable lg grid */
+
+@media (min-width:970px) {
+    .container {
+        width: 970px;
+    }
+}
