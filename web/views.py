@@ -5,6 +5,8 @@ from django.http import HttpResponse, HttpResponseServerError
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.sites.models import Site
 from django.views.decorators.csrf import csrf_protect
+from django.shortcuts import get_object_or_404
+from django.utils.encoding import smart_str
 
 from web.models import Event, User, SignUp
 from web.forms import EventForm, RegisterForm, LoginForm, SignUpForm
@@ -12,6 +14,7 @@ from web.extra import send_signup_confirmation, send_new_event
 
 import sys
 import datetime
+import csv
 
 def index(request):
   events = Event.objects.filter(approved=True)
@@ -145,11 +148,46 @@ def remove_participant(request, pk):
 
   if participant.event.organizer != request.user:
     response = HttpResponse('Ei oikeutta poistaa osallistujaa.')
-    response.status_code = 400
+    response.status_code = 403
     return response
 
   participant.delete()
   return HttpResponse('Osallistuja poistettu')
+
+@login_required
+def export_signup_list(request, event_id):
+  event = get_object_or_404(Event, pk=event_id)
+
+  if event.organizer != request.user:
+    response = HttpResponse('Ei oikeutta')
+    reponse.status_code = 403
+    return response
+
+  response = HttpResponse(content_type='text/csv')
+  response['Content-Disposition'] = 'attachment; filename=%s.csv' % event.title
+  writer = csv.writer(response, csv.excel)
+  response.write(u'\ufeff'.encode('utf8'))
+
+  writer.writerow([
+    smart_str(u'Nimi'),
+    smart_str(u'Huoltajan nimi'),
+    smart_str(u'Ikä'),
+    smart_str(u'Sähköposti'),
+    smart_str(u'Puhelinnumero'),
+    smart_str(u'Muuta')
+  ])
+
+  for p in event.participants.all():
+    writer.writerow([
+      smart_str(p.child),
+      smart_str(p.guardian),
+      smart_str(p.age),
+      smart_str(p.email),
+      smart_str(p.phone),
+      smart_str(p.other)
+    ])
+
+  return response
 
 def koodikoulu_404(request):
   return render(request, '404.html')

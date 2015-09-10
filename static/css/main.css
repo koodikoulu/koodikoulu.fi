@@ -181,13 +181,20 @@ section {
 }
 
 .start {
-    background: url('/static/media/hero_left.png'), url('/static/media/hero_right.png'), #4C3750;
-    background-position: left, right;
-    background-size: contain;
+    background: url('/static/media/sit_up.png'), url('/static/media/hero_left.png'), url('/static/media/hero_right.png'), #4C3750;
+    background-position: 85% 100%, left, right;
+    background-size: 200px, contain, contain;
     background-repeat: no-repeat;
 
     margin-bottom: 0 !important;
     min-height: 52vh;
+}
+
+#events {
+    background-image: url('/static/media/sit_down.png');
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: 85% 0;
 }
 
 .start p {
@@ -599,6 +606,12 @@ input[type=number]::-webkit-inner-spin-button {
   height: 40px;
 }
 
+.export-link {
+    margin-left: 10px;
+    height: 100%;
+    vertical-align: middle;
+}
+
 .footer .img-reaktor {
   margin-top: 10px; /* to align baselines with the futu logo in the footer */
 }
@@ -630,7 +643,8 @@ form .submit-message.error {
         font-size: 14px;
     }
 
-    .jumbotron {
+    .jumbotron,
+    #events {
         background-image: none;
     }
 
