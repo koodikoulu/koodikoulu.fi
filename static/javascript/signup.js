@@ -23,12 +23,16 @@ $(function() {
 
     $form.find('input').keyup(function() {
       var data = formState($form)
-
       var formValid = requiredKeys.map(function(key) {
         return !R.isEmpty(data[key])
       }).reduce(function(a, b) { return a && b })
-
       $submits.prop('disabled', !formValid)
+    })
+
+    // Set age to 0 or round it if value is not allowed
+    $form.find('.age').focusout(function() {
+      var age = $form.find('.age').val() ? Math.abs(Math.round($form.find('#id_age').val())) : 0;
+      $form.find('.age').val(age)
     })
 
     $form.submit(function(e) {
@@ -57,5 +61,4 @@ $(function() {
       })
     })
   }
-
 })

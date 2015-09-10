@@ -110,6 +110,8 @@ section {
 
 .navbar {
     background: #4C3750;
+    border-radius: 0;
+    box-shadow: 0 1px 12px -5px #000;
     margin: 0;
     border: none;
 }
@@ -125,6 +127,7 @@ section {
 .navbar.organizer-nav {
     background: #3f2d42;
     min-height: 45px;
+    box-shadow: none;
 }
 
 .navbar.organizer-nav a {
