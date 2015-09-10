@@ -145,7 +145,8 @@ section {
 }
 
 .navbar.organizer-nav a.active {
-    border: none
+    border: none;
+    color: #fff;
 }
 
 .navbar .nav>li {
