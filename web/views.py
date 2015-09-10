@@ -103,6 +103,11 @@ def handle_signup(request, pk):
   if not event:
     return HttpResponseServerError
 
+  if event.booked:
+    response = HttpResponse('Tapahtuma on täynnä.')
+    response.status_code = 400
+    return response
+
   form = SignUpForm(data=request.POST)
   if form.is_valid():
     signup = SignUp.objects.create(event=event, **form.cleaned_data)
@@ -127,6 +132,7 @@ def own_events(request):
   })
 
 @csrf_protect
+@login_required
 def remove_participant(request, pk):
   if not request.method == 'POST':
     response = HttpResponse('Method not allowed')
@@ -136,6 +142,11 @@ def remove_participant(request, pk):
   participant = SignUp.objects.get(pk=pk)
   if not participant:
     return HttpResponseServerError
+
+  if participant.event.organizer != request.user:
+    response = HttpResponse('Ei oikeutta poistaa osallistujaa.')
+    response.status_code = 400
+    return response
 
   participant.delete()
   return HttpResponse('Osallistuja poistettu')

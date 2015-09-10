@@ -7,20 +7,20 @@ class KoodikouluForm(forms.ModelForm):
 
 class EventForm(KoodikouluForm):
   def __init__(self, *args, **kwargs):
-      super(EventForm, self).__init__(*args, **kwargs)
-      self.fields['title'].label = 'Tapahtuman nimi'
-      self.fields['category'].label = 'Tyyppi'
-      self.fields['start_date'].label = 'Aloituspäivä'
-      self.fields['end_date'].label = 'Lopetuspäivä'
-      self.fields['price'].label = 'Hinta'
-      self.fields['bring_along'].label = 'Mitä mukaan?'
-      self.fields['street_address'].label = 'Osoite'
-      self.fields['city'].label = 'Kaupunki'
-      self.fields['requirements'].label = 'Osallistujilta vaaditut esitiedot'
-      self.fields['description'].label = 'Tapahtuman kuvaus'
-      self.fields['organization'].label = 'Järjestäjä'
-      self.fields['amount'].label = 'Osallistujien maksimimäärä'
-      self.fields['signup_link'].label = 'Linkki omaan ilmoittautumiseen'
+    super(EventForm, self).__init__(*args, **kwargs)
+    self.fields['title'].label = 'Tapahtuman nimi'
+    self.fields['category'].label = 'Tyyppi'
+    self.fields['start_date'].label = 'Aloituspäivä'
+    self.fields['end_date'].label = 'Lopetuspäivä'
+    self.fields['price'].label = 'Hinta'
+    self.fields['bring_along'].label = 'Mitä mukaan?'
+    self.fields['street_address'].label = 'Osoite'
+    self.fields['city'].label = 'Kaupunki'
+    self.fields['requirements'].label = 'Osallistujilta vaaditut esitiedot'
+    self.fields['description'].label = 'Tapahtuman kuvaus'
+    self.fields['organization'].label = 'Järjestäjä'
+    self.fields['amount'].label = 'Osallistujien maksimimäärä'
+    self.fields['signup_link'].label = 'Linkki omaan ilmoittautumiseen'
 
   start_date = forms.DateField(input_formats=['%d.%m.%Y'], widget=forms.DateInput(attrs={'class': 'startdate'}, format=('%d.%m.%Y')))
   end_date = forms.DateField(input_formats=['%d.%m.%Y'], required=False, widget=forms.DateInput(attrs={'class': 'enddate'}, format=('%d.%m.%Y')))
@@ -49,6 +49,8 @@ class SignUpForm(KoodikouluForm):
     self.fields['email'].label = 'Sähköposti'
     self.fields['phone'].label = 'Puhelinnumero'
     self.fields['other'].label = 'Muuta'
+
+  age = forms.IntegerField(required=True, widget=forms.NumberInput(attrs={'class': 'age', 'type': 'number'}))
 
   class Meta:
     model = SignUp
