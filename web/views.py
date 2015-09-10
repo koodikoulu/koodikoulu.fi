@@ -142,6 +142,11 @@ def remove_participant(request, pk):
   if not participant:
     return HttpResponseServerError
 
+  if participant.event.organizer != request.user:
+    response = HttpResponse('Ei oikeutta poistaa osallistujaa.')
+    response.status_code = 400
+    return response
+
   participant.delete()
   return HttpResponse('Osallistuja poistettu')
 
