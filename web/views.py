@@ -103,6 +103,11 @@ def handle_signup(request, pk):
   if not event:
     return HttpResponseServerError
 
+  if event.booked:
+    response = HttpResponse('Tapahtuma on täynnä.')
+    response.status_code = 400
+    return response
+
   form = SignUpForm(data=request.POST)
   if form.is_valid():
     signup = SignUp.objects.create(event=event, **form.cleaned_data)
