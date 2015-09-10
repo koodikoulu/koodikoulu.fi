@@ -49,7 +49,7 @@ $(function() {
         success: function(res) {
           $spinner.hide()
           $form.trigger('reset')
-          $submits.prop('disabled', false)
+          $submits.prop('disabled', true)
           $form.find('.submit-message.success').show()
         },
 
