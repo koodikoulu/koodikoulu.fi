@@ -132,6 +132,7 @@ def own_events(request):
   })
 
 @csrf_protect
+@login_required
 def remove_participant(request, pk):
   if not request.method == 'POST':
     response = HttpResponse('Method not allowed')
@@ -141,6 +142,11 @@ def remove_participant(request, pk):
   participant = SignUp.objects.get(pk=pk)
   if not participant:
     return HttpResponseServerError
+
+  if participant.event.organizer != request.user:
+    response = HttpResponse('Ei oikeutta poistaa osallistujaa.')
+    response.status_code = 400
+    return response
 
   participant.delete()
   return HttpResponse('Osallistuja poistettu')
