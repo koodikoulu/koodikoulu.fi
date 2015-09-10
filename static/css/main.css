@@ -140,7 +140,7 @@ section {
     color: #fff !important;
 }
 
-.navbar a.active {
+.navbar .navbar-nav a.active {
     border-bottom: 5px solid #6bbea9;
 }
 
@@ -166,6 +166,7 @@ section {
 .navbar .navbar-nav a {
     margin: 0 20px;
     padding: 20px 10px;
+    border-bottom: 5px solid transparent;
 }
 
 .navbar-nav li:first-child a {
