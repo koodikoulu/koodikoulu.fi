@@ -70,7 +70,7 @@ def organize(request):
   if request.method == 'POST':
     form = EventForm(data=request.POST)
     if form.is_valid():
-      event = form.save()
+      event = form.save(commit=False)
       event.start_time = datetime.time(form.cleaned_data['start_hours'], form.cleaned_data['start_minutes'])
       event.end_time = datetime.time(form.cleaned_data['end_hours'], form.cleaned_data['end_minutes'])
       event.organizer = request.user
