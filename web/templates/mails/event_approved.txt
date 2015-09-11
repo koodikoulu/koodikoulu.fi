@@ -1,0 +1,6 @@
+Hei {{ first_name }},
+
+Tapahtumanne {{ title }} on tarkastettu ja hyväksytty. Tapahtuma on nyt näkyvillä osoitteessa koodikoulu.fi.
+
+Terveisin,
+Koodikoulun ylläpito

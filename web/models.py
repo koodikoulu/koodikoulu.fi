@@ -1,8 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.conf import settings
-import googlemaps
+from web.extra import send_event_approved
 
+import googlemaps
+import sys
 
 class UserManager(BaseUserManager):
   def create_user(self, email, first_name, last_name, password=None):
@@ -109,6 +111,18 @@ class Event(models.Model):
         self.lng = location[1]
       except:
         pass
+
+    # If an event is approved, send a confirmation email to the organizer.
+    if self.pk is not None:
+      # Check if the state of 'approved' has changed from the previous object.
+      original_event = Event.objects.get(pk=self.pk)
+      if self.approved and original_event.approved != self.approved:
+        try:
+          send_event_approved(self.organizer.email, self.title, self.organizer.first_name)
+        except:
+          for exc in sys.exc_info():
+            print(exc)
+
     super(Event, self).save(*args, **kwargs)
 
 

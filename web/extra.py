@@ -22,3 +22,12 @@ def send_new_event(url):
     to=(settings.SLACK_CHANNEL_ADDRESS,)
   )
   email.send(fail_silently=False)
+
+def send_event_approved(email_address, title, first_name):
+  email = EmailMessage(
+    subject="%s hyväksytty" % title,
+    body=render_to_string('mails/event_approved.txt', {'title': title, 'first_name': first_name}),
+    from_email='noreply@koodikoulu.fi',
+    to=(email_address,)
+  )
+  email.send(fail_silently=False)
