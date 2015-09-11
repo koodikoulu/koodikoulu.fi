@@ -608,6 +608,13 @@ input[type=number]::-webkit-inner-spin-button {
     vertical-align: middle;
 }
 
+.status {
+    float: right;
+    line-height: 30px;
+    margin-left: 30px;
+}
+
+
 .footer .img-reaktor {
   margin-top: 10px; /* to align baselines with the futu logo in the footer */
 }
