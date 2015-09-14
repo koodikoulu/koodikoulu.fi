@@ -187,10 +187,10 @@ section {
 }
 
 #events {
-    background-image: url('/static/media/sit_down.png');
+    background-image: url('/static/media/sit_down.png'), url('/static/media/sit2.png');
     background-size: 200px;
     background-repeat: no-repeat;
-    background-position: 85% 0;
+    background-position: 85% 0, 2% 100%;
 }
 
 .start p {
