@@ -23,6 +23,9 @@
     {% endblock %}
   </head>
   <body class="{% if user.is_authenticated %}organizer{% endif %}">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">Huomasimme, että käytät <strong>vanhentunutta</strong> selainta. Selataksesi sivua <a href="http://browsehappy.com/">päivitä selaimesi</a>, jotta selailukokemuksesi olisi parempi.</p>
+      <![endif]-->
     <div class="navbar navbar-default navbar-fixed-top text-center">
       {% if user.is_authenticated %}
         <nav class="navbar navbar-default organizer-nav">
