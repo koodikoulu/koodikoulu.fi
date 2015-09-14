@@ -32,7 +32,7 @@ class EventForm(KoodikouluForm):
 
   class Meta:
     model = Event
-    exclude = ['organizer', 'booked', 'start_time', 'end_time']
+    exclude = ['organizer', 'booked', 'start_time', 'end_time', 'decoded_location']
     widgets = {
       'start_date': forms.DateInput(format=('%d.%m.%Y')),
       'end_date': forms.DateInput(format=('%d.%m.%Y')),

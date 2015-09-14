@@ -4,6 +4,7 @@ from django.conf import settings
 from web.extra import send_event_approved
 
 import googlemaps
+import urllib
 import sys
 
 class UserManager(BaseUserManager):
@@ -95,6 +96,7 @@ class Event(models.Model):
   booked = models.BooleanField(default=False)
 
   organizer = models.ForeignKey(User, blank=True, null=True, related_name="events")
+  decoded_location = models.CharField(max_length=255, blank=True, null=True)
   lat = models.CharField(max_length=255, blank=True, null=True)
   lng = models.CharField(max_length=255, blank=True, null=True)
 
@@ -104,11 +106,15 @@ class Event(models.Model):
     ordering = ('start_date',)
 
   def save(self, *args, **kwargs):
-    if not self.lat or not self.lng:
+    if not self.lat or not self.lng or not self.decoded_location:
       try:
         location = getLocation(self.street_address, self.city)
         self.lat = location[0]
         self.lng = location[1]
+        address = ','.join([self.street_address, self.city])
+        print("address" + address)
+        print("decoded" + urllib.parse.quote(address))
+        self.decoded_location = urllib.parse.quote(address)
       except:
         pass
 

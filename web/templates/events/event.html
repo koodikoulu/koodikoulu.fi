@@ -65,8 +65,8 @@
                     </dl>
                 </div>
                 <div class="col-xs-12 col-md-5 text-right">
-                    {% if event.lat and event.lng %}
-                        <img src="https://maps.googleapis.com/maps/api/staticmap?center={{event.lat}},{{event.lng}}&zoom=16&size=300x300&markers={{event.lat}},{{event.lng}}&output=embed" width="300" height="300" frameborder="0" style="border:0" allowfullscreen />
+                    {% if event.lat and event.lng and event.decoded_location %}
+                        <iframe width="300" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q={{event.decoded_location}}&key={{key}}" allowfullscreen></iframe>
                     {% endif %}
                     <p class="small"><b>Tapahtumapaikka:</b> {{ event.street_address }}, {{ event.city }}</p>
                 </div>

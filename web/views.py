@@ -7,6 +7,7 @@ from django.contrib.sites.models import Site
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import get_object_or_404
 from django.utils.encoding import smart_str
+from django.conf import settings
 
 from web.models import Event, User, SignUp
 from web.forms import EventForm, RegisterForm, LoginForm, SignUpForm
@@ -19,7 +20,7 @@ import csv
 def index(request):
   events = Event.objects.filter(approved=True)
   form = SignUpForm()
-  return render(request, 'index.html', {'events': events, 'form': form})
+  return render(request, 'index.html', {'events': events, 'form': form, 'key': settings.GOOGLE_KEY})
 
 def register(request):
   if request.method == 'POST':
