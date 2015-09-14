@@ -47,14 +47,6 @@ li {
     font-weight: 300;
 }
 
-.section.feedback {
-    padding: 2em;
-}
-
-.section.feedback p {
-    margin: 0;
-}
-
 p a {
     font-weight: 500;
     color: #000;
@@ -70,12 +62,67 @@ p, dt, dd, li {
 }
 
 p,
-ul {
+ul,
+form,
+.form-group {
     margin-bottom: 1em;
 }
 
 section {
-    margin-bottom: 2em;
+    padding-bottom: 17px;
+}
+
+section.jumbotron {
+    color: white;
+    background: url('/static/media/sit_up.png'), url('/static/media/hero_left.png'), url('/static/media/hero_right.png');
+    background-position: 85% 100%, left, right;
+    background-size: 200px, contain, contain;
+    background-repeat: no-repeat;
+
+    margin-bottom: 0 !important;
+    min-height: 52vh;
+}
+
+section.events {
+    padding-bottom: 88px;
+}
+
+section.muted {
+    background-color: #E9E9E9;
+}
+
+section.primary {
+    background-color: #fec772;
+}
+
+section.secondary {
+    background-color: #4C3750;
+}
+
+section.secondary h2 {
+    color: #fff;
+}
+
+section.gfx-3 {
+    background-image:  url('/static/media/sit3.png');
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: 98% 43px;
+}
+
+section#feedback {
+    padding: 2em;
+}
+
+section#feedback p {
+    margin: 0;
+}
+
+.browserupgrade {
+    margin: 0.2em 0 0 0;
+    background: #fec772;
+    color: #000;
+    padding: 0.2em 0 0 0;
 }
 
 .ubuntu {
@@ -95,10 +142,6 @@ section {
 
 .material .box a:hover {
     text-decoration: none;
-}
-
-.white {
-    color: #FFFFFF !important;
 }
 
 .navbar {
@@ -153,6 +196,12 @@ section {
     display: inline-block;
 }
 
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: #fff;
+}
+
 .navbar .navbar-nav {
     display: inline-block;
     vertical-align: top;
@@ -177,16 +226,6 @@ section {
     margin-right: 0;
 }
 
-.start {
-    background: url('/static/media/sit_up.png'), url('/static/media/hero_left.png'), url('/static/media/hero_right.png'), #4C3750;
-    background-position: 85% 100%, left, right;
-    background-size: 200px, contain, contain;
-    background-repeat: no-repeat;
-
-    margin-bottom: 0 !important;
-    min-height: 52vh;
-}
-
 #events {
     background-image: url('/static/media/sit_down.png'), url('/static/media/sit2.png');
     background-size: 200px, 14%;
@@ -199,37 +238,18 @@ section {
     line-height: 20px;
 }
 
-.start-title {
+.jumbotron h1 {
     font-family: Ubuntu, sans-serif;
     text-transform: uppercase;
     letter-spacing: 8px;
     font-weight: 700;
     margin-bottom: 30px;
-    font-size: 57px;
+    font-size: 63px;
 }
 
-.material {
-    background: #E9E9E9;
-}
-
-.gfx-3 {
-    background-image:  url('/static/media/sit3.png');
-    background-repeat: no-repeat;
-    background-size: 10%;
-    background-position: 98% 43px;
-}
-
-.section.yellow {
-    background-color: #fec772;
-}
-
-.events {
-    padding-bottom: 88px;
-}
-
-.sub-title {
+h2 {
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     font-size: 24px;
     text-transform: uppercase;
     font-weight: 500;
@@ -238,9 +258,9 @@ section {
     text-align: center;
 }
 
-.page {
-    min-height: 80vh;
-    padding-bottom: 20px;
+h3 {
+    margin-top: 31px;
+    margin-bottom: 30px;
 }
 
 .container {
@@ -515,13 +535,17 @@ label.required:after {
     font-size: 30px;
 }
 
-.footer {
+#footer {
     min-height: 30vh;
     background-color: #4C3750;
     color: #FFFFFF;
 }
 
-.footer h2 {
+#footer .img-reaktor {
+    margin-top: 10px; /* to align baselines with the futu logo in the footer */
+}
+
+#footer h2 {
     font-size: 22px;
 }
 
@@ -547,31 +571,12 @@ input[type=number]::-webkit-inner-spin-button {
     margin: 0;
 }
 
-.signup-container {
-    background: #f1f1f1;
-    padding: 10px 30px;
-}
-
-.signup-container h3 {
-    font-weight: normal;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
 .picture {
     background: #6bbea9;;
     border-radius: 1000px;
     width: 200px;
     height: 200px;
     margin: 2em auto;
-}
-
-.login-container {
-    background: #f1f1f1;
-}
-
-.create-event-container {
-    background: #f1f1f1;
 }
 
 .styled-select select {
@@ -608,19 +613,30 @@ input[type=number]::-webkit-inner-spin-button {
     display: inline-block;
 }
 
-.footer img {
+.signup-container {
+    background: #f1f1f1;
+    padding: 10px 30px;
+}
+
+.signup-container h3 {
+    font-weight: normal;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#footer img {
   margin: 0 40px 100px 40px;
 }
 
-.img-koodikerho {
+#footer .img-koodikerho {
   height: 80px;
 }
 
-.img-futurice {
+#footer .img-futurice {
   height: 40px;
 }
 
-.img-reaktor {
+#footer .img-reaktor {
   height: 40px;
 }
 
@@ -651,10 +667,6 @@ input.custom-trash-button {
     max-width: 40px;
 }
 
-.footer .img-reaktor {
-  margin-top: 10px; /* to align baselines with the futu logo in the footer */
-}
-
 iframe.first-lesson {
     height: 400px;
     width: 90%;
@@ -682,13 +694,13 @@ form .submit-message.error {
         font-size: 14px;
     }
 
-    .jumbotron,
+    section.jumbotron,
     #events,
     .material {
         background-image: none;
     }
 
-    .start-title {
+    .jumbotron h1 {
         font-size: 32px;
     }
 
@@ -696,21 +708,21 @@ form .submit-message.error {
         font-size: 16px;
     }
 
-    .footer img {
+    #footer img {
         margin-bottom: 50px;
     }
 
-    .img-reaktor,
-    .img-futurice {
+    #footer .img-reaktor,
+    #footer .img-futurice {
         height: 25px;
     }
 
-    .img-koodikerho {
+    #footer .img-koodikerho {
         height: 40px;
     }
 
-    .sub-title,
-    h3.box-title {
+    h2,
+    h3 {
         font-size: 18px;
     }
 
@@ -738,6 +750,11 @@ form .submit-message.error {
     .box-default {
         margin: 0 auto;
     }
+}
+
+.story {
+    padding-bottom: 40px;
+    padding-top: 25px;
 }
 
 /* Disable lg grid */

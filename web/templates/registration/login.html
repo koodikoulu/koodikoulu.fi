@@ -1,31 +1,26 @@
 {% load form_extras %}
-<div class="section login-container">
-  <div class="container page">
+
+<div class="container">
+  <h2>Sisäänkirjautuminen</h2>
+
+  <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <h2 class="sub-title">Sisäänkirjautuminen</h2>
 
       <form method="post" action="{% url 'web.views.login_view' %}">
         {% csrf_token %}
 
         {% for field in form %}
-          <div class="row">
-            <div class="form-group">
-              {% show_form_field field %}
-              {{ field.errors }}
-            </div>
-            </div>
+          <div class="form-group">
+            {% show_form_field field %}
+            {{ field.errors }}
+          </div>
         {% endfor %}
 
-        <div class="row">
-          <input class="btn" type="submit" value="Kirjaudu">
-        </div>
+        <input class="btn" type="submit" value="Kirjaudu">
       </form>
-
-      <div class="row">
-         <p>
-            <a href="/register">Etkö ole vielä rekisteröitynyt tapahtuman järjestäjäksi?</a>
-         </p>
-      </div>
+      <p>
+        <a href="/register">Etkö ole vielä rekisteröitynyt tapahtumanjärjestäjäksi?</a>
+      </p>
     </div>
   </div>
 </div>

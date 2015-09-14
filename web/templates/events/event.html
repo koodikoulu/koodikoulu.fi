@@ -1,7 +1,8 @@
 <div class="panel panel-event {{ event.category }}">
   <div class="panel-heading" role="tab" id="headingOne">
     <div class="panel-title row-container">
-      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#id-{{ event.pk }}" aria-expanded="true" aria-controls="collapseOne">
+      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#id-{{ event.pk }}" aria-expanded="true"
+         aria-controls="collapseOne">
         <div class="row col-xs-12 col-md-12">
           <div class="col-xs-4 col-md-4 row-elem">
             <span class="title">{{ event.start_date | date:"SHORT_DATE_FORMAT" }}</span>
@@ -17,76 +18,81 @@
       </a>
     </div>
   </div>
-    <div id="id-{{ event.pk }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-        <div class="panel-body">
-            <div class="text-content">
-                <div class="info col-xs-12 col-md-7">
-                    <p>{{ event.description }}</p>
-                    {% if event.category == 'ILTIS' %}
-                    <p><a href="http://koodikerho.fi/">http://koodikerho.fi/</a></p>
-                    {% endif %}
-                    <dl class="dl-horizontal event-description-list">
-                        <dt>Ota mukaan:</dt>
-                        <dd>{{ event.bring_along }}</dd>
-                        <dt>Hinta:</dt>
-                        <dd>
-                            {% if event.price > 0 %}
-                                {{ event.price }}&nbsp;€
-                            {% else %}
-                                Ilmainen.
-                            {% endif %}
-                        </dd>
-                        <dt>Esitiedot:</dt>
-                        <dd>{{ event.requirements }}</dd>
-                        <dt>Järjestäjä:</dt>
-                        <dd>
-                        {% if event.organization %}
-                            {{ event.organization }},
-                        {% endif %}
-                        {% if event.organizer %}
-                             {{ event.organizer.get_full_name }}, <a href="mailto:{{ event.organizer.email }}">{{ event.organizer.email }}</a>
-                        {% endif %}
-                        </dd>
-                            <dt>
-                                Paikkoja:
-                            </dt>
-                            <dd>
-                                {% if event.amount %}
-                                    {{ event.amount }}
-                                {% else %}
-                                    Ei rajattu.
-                                {% endif %}
-                            </dd>
-                        {% if not event.signup_link %}
-                            <dt>Ilmoittautuneita:</dt>
-                            <dd>{{ event.participants.count }}</dd>
-                        {% endif %}
-
-                    </dl>
-                </div>
-                <div class="col-xs-12 col-md-5 text-right">
-                    {% if event.lat and event.lng and event.decoded_location %}
-                        <iframe width="300" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q={{event.decoded_location}}&key={{key}}" allowfullscreen></iframe>
-                    {% endif %}
-                    <p class="small"><b>Tapahtumapaikka:</b> {{ event.street_address }}, {{ event.city }}</p>
-                </div>
-            </div>
-        </div>
-        {% if event.booked %}
-            <div class="signup signup-section">Kurssi on täynnä</div>
-        {% endif %}
-        {% if not event.booked %}
-            {% if event.signup_link %}
-                <a class="link-external" href="{{event.signup_link}}"><div class="btn btn-submit signup-section">Ilmoittaudu tästä</div></a>
-            {% else %}
-                <div class="panel-body">
-                    <div class="text-content">
-                        <div class="info col-xs-12 mol-md-8">
-                            {% include "events/signup.html" %}
-                        </div>
-                    </div>
-                </div>
+  <div id="id-{{ event.pk }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div class="panel-body">
+      <div class="text-content">
+        <div class="info col-xs-12 col-md-7">
+          <p>{{ event.description }}</p>
+          {% if event.category == 'ILTIS' %}
+            <p><a href="http://koodikerho.fi/">http://koodikerho.fi/</a></p>
+          {% endif %}
+          <dl class="dl-horizontal event-description-list">
+            <dt>Ota mukaan:</dt>
+            <dd>{{ event.bring_along }}</dd>
+            <dt>Hinta:</dt>
+            <dd>
+              {% if event.price > 0 %}
+                {{ event.price }}&nbsp;€
+              {% else %}
+                Ilmainen.
+              {% endif %}
+            </dd>
+            <dt>Esitiedot:</dt>
+            <dd>{{ event.requirements }}</dd>
+            <dt>Järjestäjä:</dt>
+            <dd>
+              {% if event.organization %}
+                {{ event.organization }},
+              {% endif %}
+              {% if event.organizer %}
+                {{ event.organizer.get_full_name }},
+                <a href="mailto:{{ event.organizer.email }}">{{ event.organizer.email }}</a>
+              {% endif %}
+            </dd>
+            <dt>
+              Paikkoja:
+            </dt>
+            <dd>
+              {% if event.amount %}
+                {{ event.amount }}
+              {% else %}
+                Ei rajattu.
+              {% endif %}
+            </dd>
+            {% if not event.signup_link %}
+              <dt>Ilmoittautuneita:</dt>
+              <dd>{{ event.participants.count }}</dd>
             {% endif %}
-        {% endif %}
+
+          </dl>
+        </div>
+        <div class="col-xs-12 col-md-5 text-right">
+          {% if event.lat and event.lng and event.decoded_location %}
+            <iframe width="300" height="300" frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?q={{ event.decoded_location }}&key={{ key }}"
+                    allowfullscreen></iframe>
+          {% endif %}
+          <p class="small"><b>Tapahtumapaikka:</b> {{ event.street_address }}, {{ event.city }}</p>
+        </div>
+      </div>
     </div>
+    {% if event.booked %}
+      <div class="signup signup-section">Kurssi on täynnä</div>
+    {% endif %}
+    {% if not event.booked %}
+      {% if event.signup_link %}
+        <a class="link-external" href="{{ event.signup_link }}">
+          <div class="btn btn-submit signup-section">Ilmoittaudu tästä</div>
+        </a>
+      {% else %}
+        <div class="panel-body">
+          <div class="text-content">
+            <div class="info col-xs-12 mol-md-8">
+              {% include "events/signup.html" %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
 </div>
