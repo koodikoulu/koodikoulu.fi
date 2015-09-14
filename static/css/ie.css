@@ -1,3 +1,7 @@
+.navbar {
+    display: none;
+}
+
 .start {
     background-image: none;
     background-color: #4C3750;
