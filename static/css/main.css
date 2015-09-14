@@ -514,6 +514,10 @@ label.required:after {
     color: #FFFFFF;
 }
 
+.footer h2 {
+    font-size: 22px;
+}
+
 .center {
     text-align: center;
 }
