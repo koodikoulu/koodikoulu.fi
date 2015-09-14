@@ -191,7 +191,7 @@ section {
     background-image: url('/static/media/sit_down.png'), url('/static/media/sit2.png');
     background-size: 200px, 14%;
     background-repeat: no-repeat;
-    background-position: 85% 0, 2% 100%;
+    background-position: 85% 0, 3% 100%;
 }
 
 .start p {
