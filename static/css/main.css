@@ -264,8 +264,12 @@ section {
 
 .panel-event:hover .panel-heading,
 .panel-event.active .panel-heading {
-    background: #eee;
+    background: #d6d6d6;
     transition: .5s;
+}
+
+.panel-event:nth-child(odd) {
+    background: #eee;
 }
 
 .panel-event .panel-heading {
@@ -450,9 +454,9 @@ img.icon {
     clear: both;
 }
 
-.row-elem {
+/*.row-elem {
     float: left;
-}
+}*/
 
 .row-container {
     overflow: auto;
@@ -608,12 +612,6 @@ input[type=number]::-webkit-inner-spin-button {
     vertical-align: middle;
 }
 
-.status {
-    float: right;
-    line-height: 30px;
-    margin-left: 30px;
-}
-
 .download {
     color: white;
     background: #4C3750;
@@ -623,6 +621,16 @@ input[type=number]::-webkit-inner-spin-button {
     margin-left: 30px;
 }
 
+.custom-trash {
+    color: white;
+    padding: 5px;
+}
+
+input.custom-trash-button {
+    border: none;
+    background: #4C3750 url('/static/media/icon/koodikoulu_trash.svg') no-repeat center;
+    margin-left: -1px;
+}
 
 .footer .img-reaktor {
   margin-top: 10px; /* to align baselines with the futu logo in the footer */
