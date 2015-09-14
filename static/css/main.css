@@ -88,16 +88,13 @@ section {
     font-weight: 300;
 }
 
-.material a:link {
+.material .box a:link,
+.material .box a:visited {
     color: #333 !important;
 }
 
-.material a:hover {
+.material .box a:hover {
     text-decoration: none;
-}
-
-.material a:visited {
-    color: #333 !important;
 }
 
 .white {
@@ -110,6 +107,10 @@ section {
     box-shadow: 0 1px 12px -5px #000;
     margin: 0;
     border: none;
+}
+
+.navbar .container {
+    overflow: hidden;
 }
 
 .navbar a {
@@ -187,10 +188,10 @@ section {
 }
 
 #events {
-    background-image: url('/static/media/sit_down.png');
-    background-size: 200px;
+    background-image: url('/static/media/sit_down.png'), url('/static/media/sit2.png');
+    background-size: 200px, 14%;
     background-repeat: no-repeat;
-    background-position: 85% 0;
+    background-position: 85% 0, 3% 100%;
 }
 
 .start p {
@@ -208,7 +209,14 @@ section {
 }
 
 .material {
-    background-color: #E9E9E9;
+    background: #E9E9E9;
+}
+
+.gfx-3 {
+    background-image:  url('/static/media/sit3.png');
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: 98% 43px;
 }
 
 .section.yellow {
@@ -513,6 +521,10 @@ label.required:after {
     color: #FFFFFF;
 }
 
+.footer h2 {
+    font-size: 22px;
+}
+
 .center {
     text-align: center;
 }
@@ -671,7 +683,8 @@ form .submit-message.error {
     }
 
     .jumbotron,
-    #events {
+    #events,
+    .material {
         background-image: none;
     }
 
