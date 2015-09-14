@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import get_object_or_404
 from django.utils.encoding import smart_str
 from django.conf import settings
+from django.utils import timezone
 
 from web.models import Event, User, SignUp
 from web.forms import EventForm, RegisterForm, LoginForm, SignUpForm
@@ -74,6 +75,13 @@ def organize(request):
       event = form.save(commit=False)
       event.start_time = datetime.time(form.cleaned_data['start_hours'], form.cleaned_data['start_minutes'])
       event.end_time = datetime.time(form.cleaned_data['end_hours'], form.cleaned_data['end_minutes'])
+      
+      if form.cleaned_data['signup_open_date']:
+        time_string = "%s %s:%s" % (form.cleaned_data['signup_open_date'],
+                                    form.cleaned_data['signup_open_hours'],
+                                    form.cleaned_data['signup_open_minutes'])
+        event.signup_open = datetime.datetime.strptime(time_string, '%Y-%m-%d %H:%M')
+
       event.organizer = request.user
       event.save()
 
@@ -86,8 +94,8 @@ def organize(request):
           print(exc)
 
       return redirect(reverse('index'))
-    for error in form.errors:
-      print(error)
+    else:
+      return HttpResponseServerError
 
   else:
     form = EventForm()
@@ -97,6 +105,7 @@ def organize(request):
     'login_form': LoginForm(),
   })
 
+@csrf_protect
 def handle_signup(request, pk):
   if not request.method == 'POST':
     response = HttpResponse('Method not allowed')
@@ -109,6 +118,11 @@ def handle_signup(request, pk):
 
   if event.booked:
     response = HttpResponse('Tapahtuma on täynnä.')
+    response.status_code = 400
+    return response
+
+  if event.signup_open and event.signup_open > timezone.now():
+    response = HttpResponse('Ilmoittautuminen suljettu.')
     response.status_code = 400
     return response
 

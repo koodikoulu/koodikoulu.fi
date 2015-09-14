@@ -40,6 +40,12 @@
         <div class="form-group">{% show_form_field form.organization %}</div>
         <div class="form-group">{% show_form_field form.amount %}</div>
         <div class="form-group">{% show_form_field form.signup_link %}</div>
+        <div class="form-group">{% show_form_field form.signup_open_date %}</div>
+        <div class="form-group">
+          <label for="id_id_signup_open_hours">Kello</label><br>
+          <label for="id_id_signup_open_minutes" style="display:none"></label>
+          {{ form.signup_open_hours }}:{{ form.signup_open_minutes }}
+        </div>
 
         <div class="form-group">
           <input disabled class="btn" type="submit" value="Luo tapahtuma">

@@ -1,6 +1,10 @@
 from django import forms, template
 from web.models import Event, SignUp, User
 from django.contrib.auth import authenticate
+from django.utils.dateparse import parse_date
+
+import datetime
+import sys
 
 class KoodikouluForm(forms.ModelForm):
   required_css_class = 'required'
@@ -21,6 +25,7 @@ class EventForm(KoodikouluForm):
     self.fields['organization'].label = 'Järjestäjä'
     self.fields['amount'].label = 'Osallistujien maksimimäärä'
     self.fields['signup_link'].label = 'Linkki omaan ilmoittautumiseen'
+    self.fields['signup_open_date'].label = 'Ilmoittautumisen avautuminen'
 
   start_date = forms.DateField(input_formats=['%d.%m.%Y'], widget=forms.DateInput(attrs={'class': 'startdate'}, format=('%d.%m.%Y')))
   end_date = forms.DateField(input_formats=['%d.%m.%Y'], required=False, widget=forms.DateInput(attrs={'class': 'enddate'}, format=('%d.%m.%Y')))
@@ -30,14 +35,41 @@ class EventForm(KoodikouluForm):
   end_hours = forms.IntegerField(required=True, max_value=23, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2', 'value': '00'}))
   end_minutes = forms.IntegerField(required=True, max_value=59, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2', 'value': '00'}))
 
+  signup_open_date = forms.DateField(input_formats=['%d.%m.%Y'], required=False, widget=forms.DateInput(attrs={'class': 'startdate'}, format=('%d.%m.%Y')))
+  signup_open_hours = forms.IntegerField(required=False, max_value=23, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2'}))
+  signup_open_minutes = forms.IntegerField(required=False, max_value=59, min_value=0, widget=forms.NumberInput(attrs={'class': 'time', 'type': 'tel', 'maxlength': '2'}))
+
   class Meta:
     model = Event
-    exclude = ['organizer', 'booked', 'start_time', 'end_time', 'decoded_location']
+    exclude = ['organizer', 'booked', 'start_time', 'end_time', 'signup_open', 'decoded_location']
     widgets = {
       'start_date': forms.DateInput(format=('%d.%m.%Y')),
       'end_date': forms.DateInput(format=('%d.%m.%Y')),
+      'signup_open_date': forms.DateInput(format=('%d.%m.%Y')),
       'bring_along': forms.TextInput(attrs={'placeholder': 'esim. kannettava tietokone, vanhempi'})
     }
+
+  def is_valid(self):
+    valid = super(EventForm, self).is_valid()
+
+    if not valid:
+      return valid
+
+    if self.cleaned_data['signup_open_date']:
+      if self.cleaned_data['signup_open_date'] >= self.cleaned_data['start_date']:
+        self._errors['signup_open_date'] = 'Ilmoittautuminen ei voi avautua tapahtuman jälkeen'
+        return False
+
+      if self.cleaned_data['signup_open_hours'] is None or self.cleaned_data['signup_open_minutes'] is None:
+        self._errors['signup_open_hours'] = 'Sinun täytyy ilmoittaa kellonaika'
+        return False
+
+    else:
+      if self.cleaned_data['signup_open_minutes'] or self.cleaned_data['signup_open_minutes']:
+        self._errors['signup_open_date'] = 'Sinun täytyy ilmoittaa päivämäärä'
+        return False
+
+    return True
 
 class SignUpForm(KoodikouluForm):
 
