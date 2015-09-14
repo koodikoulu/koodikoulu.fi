@@ -21,7 +21,8 @@ import csv
 def index(request):
   events = Event.objects.filter(approved=True)
   form = SignUpForm()
-  return render(request, 'index.html', {'events': events, 'form': form, 'key': settings.GOOGLE_KEY})
+  return render(request, 'index.html', {'events': events, 'form': form, 'key': settings.GOOGLE_KEY,
+                                        'time_now': timezone.now()})
 
 def register(request):
   if request.method == 'POST':

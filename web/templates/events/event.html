@@ -80,18 +80,26 @@
       <div class="signup signup-section">Kurssi on täynnä</div>
     {% endif %}
     {% if not event.booked %}
-      {% if event.signup_link %}
-        <a class="link-external" href="{{ event.signup_link }}">
-          <div class="btn btn-submit signup-section">Ilmoittaudu tästä</div>
-        </a>
+      {% load tz %}
+      {% if event.signup_open and event.signup_open > time_now %}
+        {% localtime on %}
+          <div class="signup signup-section">Ilmoittautuminen aukeaa {{ event.signup_open }}
+          </div>
+        {% endlocaltime %}
       {% else %}
-        <div class="panel-body">
-          <div class="text-content">
-            <div class="info col-xs-12 mol-md-8">
-              {% include "events/signup.html" %}
+        {% if event.signup_link %}
+          <a class="link-external" href="{{ event.signup_link }}">
+            <div class="btn btn-submit signup-section">Ilmoittaudu tästä</div>
+          </a>
+        {% else %}
+          <div class="panel-body">
+            <div class="text-content">
+              <div class="info col-xs-12 mol-md-8">
+                {% include "events/signup.html" %}
+              </div>
             </div>
           </div>
-        </div>
+        {% endif %}
       {% endif %}
     {% endif %}
   </div>
