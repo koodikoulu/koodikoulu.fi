@@ -11,81 +11,79 @@
 
 {% block content %}
   <!-- Title -->
-  <div class="jumbotron start">
+  <section class="jumbotron secondary start">
     <div class="container text-center">
-      <h1 class="start-title white">Koodikoulu</h1>
-      <p class="white">Halusimme koota yhteen paikkaan koodiopetuksen ja -oppaat Suomessa.</p>
-      <p class="white">Koodikoulu on sivusto, josta löydät kaiken, mitä aloittamiseen tarvitset.</p>
+      <h1>Koodikoulu</h1>
+      <p>Halusimme koota yhteen paikkaan koodiopetuksen ja -oppaat Suomessa.</p>
+      <p>Koodikoulu on sivusto, josta löydät kaiken, mitä aloittamiseen tarvitset.</p>
     </div>
-  </div>
+  </section>
 
-    <!-- Events -->
-    <div id="events" class="section events yellow">
-        <div class="container">
-            <h2 class="sub-title">Ilmoittaudu koodikouluun</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="panel panel-default panel-1">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Koodikoulun ensiaskeleet</h3>
-                        </div>
-                        <div class="panel-body">
-                            Koodikoulun ensiaskeleet on 4–9-vuotiaille lapsille suunnattu parin tunnin mittainen johdatus ohjelmoinnin maailmaan hauskalla ja helpolla tavalla. Ensiaskelten ohjaajina toimivat ammattikoodaajat. Osallistujalla ei tarvitse olla aikaisempaa kokemusta koodaamisesta.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="panel panel-default panel-2">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Koodikoulun iltis</h3>
-                        </div>
-                        <div class="panel-body">
-                            Koodikoulun iltis on kerran viikossa järjestettävä iltapäiväkerho, jossa opitaan ohjelmoinnin perusteet. Iltis järjestetään koulun tiloissa ja on tarkoitettu yli kolmasluokkalaisille, yli 9-vuotiaille lapsille. Iltistä vetää ohjelmoinnista kiinnostunut opettaja tai esimerkiksi IT-alalla työskentelevä vanhempi.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% if events %}
-                <div class="panel-group event-list" id="accordion" role="tablist" aria-multiselectable="true">
-                    <div class="panel panel-head">
-                        <div class="panel-heading" role="tab" id="heading">
-                            <div class="panel-title row-container heading-row">
-                                <div class="row col-xs-12 col-md-12">
-                                    <div class="col-xs-4 col-md-4 row-elem">
-                                        <img class="icon hidden-xs" src="/static/media/icon/koodikoulu_calendar.svg" alt="Aika">
-                                        Aika
-                                    </div>
-                                    <div class="col-xs-4 col-md-4 row-elem text-center">
-                                        <img class="icon hidden-xs" src="/static/media/icon/koodikoulu_event.svg" alt="Tapahtuma">
-                                        Tapahtuma
-                                    </div>
-                                    <div class="col-xs-4 col-md-4 row-elem text-right">
-                                        <img class="icon hidden-xs" src="/static/media/icon/koodikoulu_location.svg" alt="Paikka">
-                                        Paikka
-                                    </div>
-                                    <div class="col-md-1 hidden-sm hidden-xs row-elem"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% for event in events %}
-                        {% include 'events/event.html' %}
-                    {% endfor %}
-                </div>
-            {% else %}
-                <p>Ei tapahtumia.</p>
-            {% endif %}
-            <p class="text-center">Psst... Tarvitsemme lisää ohjaajia – <a href="/organize">järjestä oma Koodikoulun ensiaskeleet tai iltis</a></p>
-        </div>
-    </div>
+  <!-- Events -->
+  <section id="events" class="primary">
+      <div class="container">
+          <h2>Ilmoittaudu koodikouluun</h2>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="panel panel-default panel-1">
+                      <div class="panel-heading">
+                          <h3 class="panel-title">Koodikoulun ensiaskeleet</h3>
+                      </div>
+                      <div class="panel-body">
+                          Koodikoulun ensiaskeleet on 4–9-vuotiaille lapsille suunnattu parin tunnin mittainen johdatus ohjelmoinnin maailmaan hauskalla ja helpolla tavalla. Ensiaskelten ohjaajina toimivat ammattikoodaajat. Osallistujalla ei tarvitse olla aikaisempaa kokemusta koodaamisesta.
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="panel panel-default panel-2">
+                      <div class="panel-heading">
+                          <h3 class="panel-title">Koodikoulun iltis</h3>
+                      </div>
+                      <div class="panel-body">
+                          Koodikoulun iltis on kerran viikossa järjestettävä iltapäiväkerho, jossa opitaan ohjelmoinnin perusteet. Iltis järjestetään koulun tiloissa ja on tarkoitettu yli kolmasluokkalaisille, yli 9-vuotiaille lapsille. Iltistä vetää ohjelmoinnista kiinnostunut opettaja tai esimerkiksi IT-alalla työskentelevä vanhempi.
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% if events %}
+              <div class="panel-group event-list" id="accordion" role="tablist" aria-multiselectable="true">
+                  <div class="panel panel-head">
+                      <div class="panel-heading" role="tab" id="heading">
+                          <div class="panel-title row-container heading-row">
+                              <div class="row col-xs-12 col-md-12">
+                                  <div class="col-xs-4 col-md-4 row-elem">
+                                      <img class="icon hidden-xs" src="/static/media/icon/koodikoulu_calendar.svg" alt="Aika">
+                                      Aika
+                                  </div>
+                                  <div class="col-xs-4 col-md-4 row-elem text-center">
+                                      <img class="icon hidden-xs" src="/static/media/icon/koodikoulu_event.svg" alt="Tapahtuma">
+                                      Tapahtuma
+                                  </div>
+                                  <div class="col-xs-4 col-md-4 row-elem text-right">
+                                      <img class="icon hidden-xs" src="/static/media/icon/koodikoulu_location.svg" alt="Paikka">
+                                      Paikka
+                                  </div>
+                                  <div class="col-md-1 hidden-sm hidden-xs row-elem"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  {% for event in events %}
+                      {% include 'events/event.html' %}
+                  {% endfor %}
+              </div>
+          {% else %}
+              <p>Ei tapahtumia.</p>
+          {% endif %}
+          <p class="text-center">Psst... Tarvitsemme lisää ohjaajia – <a href="/organize">järjestä oma Koodikoulun ensiaskeleet tai iltis</a></p>
+      </div>
+  </section>
 
   <!-- Material links -->
-  <div id="learn" class="section material gfx-3">
+  <section id="learn" class="muted gfx-3">
     <div class="container page">
-      <h2 class="sub-title">Opi itse</h2>
-
-
-
+      <h2>Opi itse</h2>
+      
       <section class="text-center">
         <p>Katso lyhyt johdatusvideo koodauksen saloihin ja aloita ohjelmoinnin opettelu alla olevien sivustojen kautta.</p>
         <iframe class="first-lesson" src="https://www.youtube.com/embed/a6hf5cTOyhI" frameborder="0" allowfullscreen></iframe>
@@ -346,5 +344,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 {% endblock %}

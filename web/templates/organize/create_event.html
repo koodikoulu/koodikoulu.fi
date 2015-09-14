@@ -3,23 +3,23 @@
 {% endblock %}
 {% load form_extras %}
 
-<div class="section create-event-container" id="create-event">
-  <div class="container page">
-    <div class="row">
-        <section class="col-md-12">
-            <h2 class="sub-title">Ilmoita omasta tapahtumastasi</h2>
-            <p>Ilmoita oma koodiaiheinen tapahtuma sivuston tapahtumakalenteriin.</p>
-        </section>
+<div id="create-event" class="container">
+  <h2>Ilmoita omasta tapahtumastasi</h2>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Ilmoita oma koodiaiheinen tapahtuma sivuston tapahtumakalenteriin.</p>
     </div>
-    <form class="organize-form" method="post" action="{% url 'web.views.organize' %}">
-    {% csrf_token %}
-    <div class="row">
-      <div class="col-md-12">
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form class="organize-form" method="post" action="{% url 'web.views.organize' %}">
+        {% csrf_token %}
+        <div class="form-group">{% show_form_field form.title %}</div>
 
         <div class="form-group">
-          {% show_form_field form.title %}
+          <div class="styled-select">{% show_form_field form.category %}</div>
         </div>
-      <div class="form-group"><div class="styled-select">{% show_form_field form.category %}</div></div>
+
         <div class="form-group">{% show_form_field form.start_date %}</div>
         <div class="form-group">{% show_form_field form.end_date %}</div>
 
@@ -28,7 +28,7 @@
           <label class="required" for="id_id_start_minutes" style="display:none"></label>
           <label class="required" for="id_id_end_hours" style="display:none"></label>
           <label class="required" for="id_id_end_minutes" style="display:none"></label>
-          {{ form.start_hours }}:{{ form.start_minutes }} &ndash; {{ form.end_hours }}:{{ form.end_minutes }}
+          {{ form.start_hours }}:{{ form.start_minutes }} &ndash; {{ form.end_hours }}:{{ form.end_minutes }}
         </div>
 
         <div class="form-group">{% show_form_field form.price %}</div>
@@ -54,8 +54,7 @@
             <p class="submit-message error">Palvelinvirhe. Yritä hetken kuluttua uudelleen.</p>
           </div>
         </div>
-      </div>
+      </form>
     </div>
-    </form>
   </div>
 </div>
