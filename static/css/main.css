@@ -88,16 +88,13 @@ section {
     font-weight: 300;
 }
 
-.material a:link {
+.material .box a:link,
+.material .box a:visited {
     color: #333 !important;
 }
 
-.material a:hover {
+.material .box a:hover {
     text-decoration: none;
-}
-
-.material a:visited {
-    color: #333 !important;
 }
 
 .white {
