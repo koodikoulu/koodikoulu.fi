@@ -264,11 +264,17 @@ section {
 
 .panel-event:hover .panel-heading,
 .panel-event.active .panel-heading {
+    background: #eee;
+    transition: .5s;
+}
+
+.panel-event-own:hover .panel-heading,
+.panel-event-own.active .panel-heading {
     background: #d6d6d6;
     transition: .5s;
 }
 
-.panel-event:nth-child(odd) {
+.panel-event-own:nth-child(odd) {
     background: #eee;
 }
 

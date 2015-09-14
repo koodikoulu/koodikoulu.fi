@@ -68,7 +68,7 @@
                     {% if event.lat and event.lng %}
                         <img src="https://maps.googleapis.com/maps/api/staticmap?center={{event.lat}},{{event.lng}}&zoom=16&size=300x300&markers={{event.lat}},{{event.lng}}&output=embed" width="300" height="300" frameborder="0" style="border:0" allowfullscreen />
                     {% endif %}
-                    <p class="small">{{ event.street_address }}</p>
+                    <p class="small"><b>Tapahtumapaikka:</b> {{ event.street_address }}, {{ event.city }}</p>
                 </div>
             </div>
         </div>

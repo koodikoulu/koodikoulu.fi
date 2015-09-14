@@ -22,7 +22,7 @@
             </div>
         </div>
       {% for p in event.participants.all %}
-        <div class="panel panel-event" id="participant-{{ p.pk }}">
+        <div class="panel panel-event panel-event-own" id="participant-{{ p.pk }}">
           <div class="panel-heading" role="tab" id="headingOne">
             <div class="panel-title row-container">
                 <div class="row">
@@ -76,7 +76,7 @@
                 </div>
             </div>
         </div>
-      <div class="panel panel-event" id="emails-id-{{ event.pk }}">
+      <div class="panel panel-event panel-event-own" id="emails-id-{{ event.pk }}">
         <div id="emails-id-{{ event.pk }}">
           <div class="panel-body">
             <div class="text-content">
