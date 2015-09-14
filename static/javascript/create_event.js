@@ -56,7 +56,7 @@ $(function() {
           $spinner.hide()
           $form.trigger('reset')
           $submits.prop('disabled', false)
-          $form.find('.submit-message.success').fadeIn().delay(6000).fadeOut()
+          $form.find('.submit-message.success').fadeIn().delay(8000).fadeOut()
         },
 
         error: function(res) {
