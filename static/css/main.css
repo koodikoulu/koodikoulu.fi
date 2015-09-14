@@ -247,7 +247,7 @@ section {
 }
 
 .panel-group.event-list {
-    margin-top: 40px;
+    margin-top: 25px;
     margin-bottom: 35px;
 }
 
@@ -609,6 +609,15 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .status {
+    float: right;
+    line-height: 30px;
+    margin-left: 30px;
+}
+
+.download {
+    color: white;
+    background: #4C3750;
+    padding: 6px;
     float: right;
     line-height: 30px;
     margin-left: 30px;
