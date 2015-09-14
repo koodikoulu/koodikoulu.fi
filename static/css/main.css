@@ -630,6 +630,7 @@ input.custom-trash-button {
     border: none;
     background: #4C3750 url('/static/media/icon/koodikoulu_trash.svg') no-repeat center;
     margin-left: -1px;
+    max-width: 40px;
 }
 
 .footer .img-reaktor {
