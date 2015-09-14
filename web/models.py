@@ -112,8 +112,6 @@ class Event(models.Model):
         self.lat = location[0]
         self.lng = location[1]
         address = ','.join([self.street_address, self.city])
-        print("address" + address)
-        print("decoded" + urllib.parse.quote(address))
         self.decoded_location = urllib.parse.quote(address)
       except:
         pass
@@ -164,5 +162,4 @@ def getLocation(address, city):
   geocode_result = gmaps.geocode("%s, %s" % (address, city))
   lat = geocode_result[0]["geometry"]["location"]["lat"]
   lng = geocode_result[0]["geometry"]["location"]["lng"]
-  print("lat: %s lng: %s" % (lat, lng))
   return [lat, lng]
