@@ -752,6 +752,10 @@ form .submit-message.error {
     }
 }
 
+.story {
+    padding-bottom: 30px;
+}
+
 /* Disable lg grid */
 
 @media (min-width:970px) {

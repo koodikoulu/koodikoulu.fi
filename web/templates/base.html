@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="/static/css/main.css">
     <!--[if lt IE 9]>
-    <link rel="stylesheet" type="text/css" media="all" href="/static/css/ie.css" />
+      <link rel="stylesheet" type="text/css" media="all" href="/static/css/ie.css" />
     <![endif]-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -29,9 +29,9 @@
   </head>
 
   <body class="{% if user.is_authenticated %}organizer{% endif %}">
-    <!-- [if lt IE 9]>
+    <!--[if lt IE 9]>
       <p class="browserupgrade">Huomasimme, että käytät <strong>vanhentunutta</strong> selainta. Selataksesi sivua <a href="http://browsehappy.com/">päivitä selaimesi</a>, jotta selailukokemuksesi olisi parempi.</p>
-    <![endif] -->
+    <![endif]-->
     <div class="navbar navbar-default navbar-fixed-top text-center">
       {% if user.is_authenticated %}
         <nav class="navbar navbar-default organizer-nav">
