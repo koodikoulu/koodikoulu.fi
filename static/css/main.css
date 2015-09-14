@@ -112,6 +112,10 @@ section {
     border: none;
 }
 
+.navbar .container {
+    overflow: hidden;
+}
+
 .navbar a {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
