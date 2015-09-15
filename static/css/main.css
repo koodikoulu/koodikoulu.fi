@@ -352,6 +352,18 @@ h3 {
     border-right: 10px solid #DE5462;
 }
 
+.panel-group .panel-event.booked .panel-heading {
+    border-color: #f1f1f1;
+    color: #bfb9b9;
+}
+
+span.booked-indication {
+    color: #e45360;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
 img.icon {
     height: 20px;
     width: 20px;

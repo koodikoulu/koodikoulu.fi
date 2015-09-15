@@ -1,4 +1,4 @@
-<div class="panel panel-event {{ event.category }}">
+<div class="panel panel-event {{ event.category }} {% if event.booked %}booked{% endif %}">
   <div class="panel-heading" role="tab" id="headingOne">
     <div class="panel-title row-container">
       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#id-{{ event.pk }}" aria-expanded="true"
@@ -10,6 +10,9 @@
           </div>
           <div class="col-xs-4 col-md-4 row-elem text-center">
             {{ event.title }}
+            {% if event.booked %}
+              <span class="booked-indication">Täynnä!</span>
+            {% endif %}
           </div>
           <div class="col-xs-4 col-md-4 row-elem text-right">
             {{ event.city }}
