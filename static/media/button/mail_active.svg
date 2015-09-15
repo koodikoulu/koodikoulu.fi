@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="51px" height="50px" viewBox="0 0 51 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>mail button active</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="KOODIKOULU-JÄRJESTÄ,-kiitos-palautteestasi" sketch:type="MSArtboardGroup" transform="translate(-615.000000, -2073.000000)">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(615.000000, 2073.000000)">
+                <g id="mail-button-active" sketch:type="MSShapeGroup">
+                    <circle id="Oval-86-Copy-5" fill="#FFFFFF" cx="25.3846154" cy="25" r="25"></circle>
+                    <path d="M37.5695043,17 L13.1253561,17 C12.7161709,17 12.3846154,17.3315556 12.3846154,17.7407407 L12.3846154,31.733037 C12.3846154,32.1422222 12.7161709,32.4737778 13.1253561,32.4737778 L37.5695043,32.4737778 C37.9786895,32.4737778 38.310245,32.1422222 38.310245,31.733037 L38.310245,17.7407407 C38.310245,17.3315556 37.9786895,17 37.5695043,17 L37.5695043,17 Z M25.3620969,25.6631111 L15.4163191,18.4814815 L35.3300969,18.4814815 L25.3620969,25.6631111 L25.3620969,25.6631111 Z M21.4735043,24.6826667 L13.8660969,30.173037 L13.8660969,19.1893333 L21.4735043,24.6826667 L21.4735043,24.6826667 Z M22.7389858,25.5964444 L24.9277265,27.1768889 C25.057208,27.2705185 25.209208,27.317037 25.361208,27.317037 C25.513208,27.317037 25.665208,27.2705185 25.7943932,27.1774815 L28.0133561,25.5786667 L35.4927635,30.9922963 L15.2625413,30.9922963 L22.7389858,25.5964444 L22.7389858,25.5964444 Z M29.2797265,24.6663704 L36.8287635,19.2275556 L36.8287635,30.1303704 L29.2797265,24.6663704 L29.2797265,24.6663704 Z" id="Imported-Layers-Copy-8" fill="#FFB440"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

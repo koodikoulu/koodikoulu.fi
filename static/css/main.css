@@ -114,8 +114,16 @@ section#feedback {
     padding: 2em;
 }
 
-section#feedback p {
-    margin: 0;
+section#feedback a {
+    margin: 0 10px;
+}
+
+section#feedback a:focus {
+    outline: none;
+}
+
+section#feedback a:hover img {
+    fill: #000;
 }
 
 .browserupgrade {
