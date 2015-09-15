@@ -29,9 +29,6 @@ h3.panel-title {
 }
 
 h3.box-title {
-    font-size: 24px;
-    font-weight: 300;
-    text-transform: none;
     margin-top: 50px;
     margin-bottom: 40px;
 }
@@ -287,6 +284,11 @@ h2 {
 }
 
 h3 {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: none;
+
     margin-top: 31px;
     margin-bottom: 30px;
 }
@@ -612,10 +614,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .picture {
-    background: #6bbea9;;
-    border-radius: 1000px;
     width: 200px;
-    height: 200px;
     margin: 2em auto;
 }
 
@@ -769,8 +768,7 @@ ul.errorlist {
         height: 40px;
     }
 
-    h2,
-    h3 {
+    h2 {
         font-size: 18px;
     }
 
