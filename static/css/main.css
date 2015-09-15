@@ -118,12 +118,19 @@ section#feedback a {
     margin: 0 10px;
 }
 
-section#feedback a:focus {
-    outline: none;
+section#feedback a:focus,
+section#feedback a:hover {
+    text-decoration: none;
 }
 
-section#feedback a:hover img {
-    fill: #000;
+section#feedback a:hover svg circle,
+section#feedback a:focus svg circle {
+    fill: #fff;
+}
+
+section#feedback a:hover svg path,
+section#feedback a:focus svg path {
+    fill: #ffb440;
 }
 
 .browserupgrade {
