@@ -35,7 +35,7 @@ In order for the site to function fully, you must set a few environment variable
 * `GOOGLE_KEY`
   * The API key for Google maps.
 * `SLACK_CHANNEL`
-  * The email addresss where notifications about new events will be sent. It doesn't have to be a Slack channel, but we think that it's a good idea.
+  * The email address where notifications about new events will be sent. It doesn't have to be a Slack channel, but we think that it's a good idea.
 
 Contributing
 ------------
