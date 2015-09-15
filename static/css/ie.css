@@ -1,16 +1,28 @@
+body {
+    background: #4C3750;
+}
+
+section {
+    display: none;
+}
+
 .navbar {
     display: none;
 }
 
-.start {
-    background-image: none;
-    background-color: #4C3750;
+.browserupgrade {
+    margin: 4em;
+    color: #ffffff;
+    padding: 0.2em;
+    text-align: center;
 }
 
-#events {
-    background-image: none;
+.browserupgrade a {
+    color: #ffffff;
 }
 
-section.gfx-3 {
-    background-image: none;
+.ie-image {
+    margin: 0 auto;
+    height: 240px;
+    display: block;
 }

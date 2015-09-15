@@ -143,13 +143,6 @@ section#feedback a:focus svg path {
     transition: fill .4s ease;
 }
 
-.browserupgrade {
-    margin: 0.2em 0 0 0;
-    background: #fec772;
-    color: #000;
-    padding: 0.2em 0 0 0;
-}
-
 .ubuntu {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
