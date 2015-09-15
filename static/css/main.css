@@ -707,6 +707,12 @@ form .submit-message.error {
     color: red;
 }
 
+ul.errorlist {
+    list-style-type: none;
+    padding: 0;
+    color: red;
+}
+
 @media (max-width: 992px) {
     body {
         font-size: 14px;
