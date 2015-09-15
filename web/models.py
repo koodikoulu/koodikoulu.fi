@@ -92,6 +92,7 @@ class Event(models.Model):
   organization = models.CharField(max_length=100, blank=True, null=True)
   amount = models.PositiveIntegerField(blank=True, null=True)
   signup_link = models.CharField(max_length=255, blank=True, null=True)
+  signup_open = models.DateTimeField(blank=True, null=True)
   created = models.DateTimeField(auto_now_add=True)
   booked = models.BooleanField(default=False)
 

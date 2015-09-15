@@ -695,6 +695,7 @@ form .submit-message.error {
     }
 
     section.jumbotron,
+    section.gfx-3,
     #events,
     .material {
         background-image: none;

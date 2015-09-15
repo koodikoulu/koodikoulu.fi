@@ -94,7 +94,7 @@ GOOGLE_KEY = os.getenv('GOOGLE_KEY', '')
 
 LANGUAGE_CODE = 'fi'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Helsinki'
 
 USE_I18N = True
 

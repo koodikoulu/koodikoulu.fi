@@ -52,36 +52,36 @@
         </div>
       </div>
     </div>
-    {% if events %}
-      <div class="panel-group event-list" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-head">
-          <div class="panel-heading" role="tab" id="heading">
-            <div class="panel-title row-container heading-row">
-              <div class="row col-xs-12 col-md-12">
-                <div class="col-xs-4 col-md-4 row-elem">
-                  <img class="icon hidden-xs" src="/static/media/icon/koodikoulu_calendar.svg" alt="Aika">
-                  Aika
+    <div class="panel-group event-list" id="accordion" role="tablist" aria-multiselectable="true">
+      {% if events %}
+          <div class="panel panel-head">
+            <div class="panel-heading" role="tab" id="heading">
+              <div class="panel-title row-container heading-row">
+                <div class="row col-xs-12 col-md-12">
+                  <div class="col-xs-4 col-md-4 row-elem">
+                    <img class="icon hidden-xs" src="/static/media/icon/koodikoulu_calendar.svg" alt="Aika">
+                    Aika
+                  </div>
+                  <div class="col-xs-4 col-md-4 row-elem text-center">
+                    <img class="icon hidden-xs" src="/static/media/icon/koodikoulu_event.svg" alt="Tapahtuma">
+                    Tapahtuma
+                  </div>
+                  <div class="col-xs-4 col-md-4 row-elem text-right">
+                    <img class="icon hidden-xs" src="/static/media/icon/koodikoulu_location.svg" alt="Paikka">
+                    Paikka
+                  </div>
+                  <div class="col-md-1 hidden-sm hidden-xs row-elem"></div>
                 </div>
-                <div class="col-xs-4 col-md-4 row-elem text-center">
-                  <img class="icon hidden-xs" src="/static/media/icon/koodikoulu_event.svg" alt="Tapahtuma">
-                  Tapahtuma
-                </div>
-                <div class="col-xs-4 col-md-4 row-elem text-right">
-                  <img class="icon hidden-xs" src="/static/media/icon/koodikoulu_location.svg" alt="Paikka">
-                  Paikka
-                </div>
-                <div class="col-md-1 hidden-sm hidden-xs row-elem"></div>
               </div>
             </div>
           </div>
-        </div>
-        {% for event in events %}
-          {% include 'events/event.html' %}
-        {% endfor %}
-      </div>
-    {% else %}
-      <p>Ei tapahtumia.</p>
-    {% endif %}
+          {% for event in events %}
+            {% include 'events/event.html' %}
+          {% endfor %}
+      {% else %}
+        <p class="muted text-center">Ei tulevia tapahtumia juuri nyt.</p>
+      {% endif %}
+    </div>
     <p class="text-center">Psst... Tarvitsemme lisää ohjaajia – <a href="/organize">järjestä oma Koodikoulun ensiaskeleet tai iltis</a></p>
   </div>
 </section>
