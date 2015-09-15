@@ -102,13 +102,9 @@
       <h3 class="text-center box-title">{{ category.title }}</h3>
       <div class="box-container">
         <div class="row">
-          <div class="box-container">
-            <div class="row">
-              {% for resource in category.resources %}
-                {% show_resource resource %}
-              {% endfor %}
-            </div>
-          </div>
+          {% for resource in category.resources %}
+            {% show_resource resource %}
+          {% endfor %}
         </div>
       </div>
     {% endfor %}
