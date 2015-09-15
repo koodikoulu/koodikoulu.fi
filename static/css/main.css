@@ -29,9 +29,6 @@ h3.panel-title {
 }
 
 h3.box-title {
-    font-size: 24px;
-    font-weight: 300;
-    text-transform: none;
     margin-top: 50px;
     margin-bottom: 40px;
 }
@@ -287,6 +284,11 @@ h2 {
 }
 
 h3 {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: none;
+
     margin-top: 31px;
     margin-bottom: 30px;
 }
@@ -766,8 +768,7 @@ ul.errorlist {
         height: 40px;
     }
 
-    h2,
-    h3 {
+    h2 {
         font-size: 18px;
     }
 
