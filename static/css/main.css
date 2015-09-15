@@ -127,11 +127,13 @@ section#feedback a:hover {
 section#feedback a:hover svg circle,
 section#feedback a:focus svg circle {
     fill: #fff;
+    transition: fill .4s ease;
 }
 
 section#feedback a:hover svg path,
 section#feedback a:focus svg path {
     fill: #ffb440;
+    transition: fill .4s ease;
 }
 
 .browserupgrade {
