@@ -36,3 +36,13 @@ In order for the site to function fully, you must set a few environment variable
   * The API key for Google maps.
 * `SLACK_CHANNEL`
   * The email addresss where notifications about new events will be sent. It doesn't have to be a Slack channel, but we think that it's a good idea.
+
+Contributing
+------------
+
+[Browse issues in GitHub](https://github.com/koodikoulu/koodikoulu.fi/issues) and [make a pull request](https://github.com/koodikoulu/koodikoulu.fi/pulls).
+
+License
+-------
+
+See [LICENSE.md](https://github.com/koodikoulu/koodikoulu.fi/blob/master/LICENSE.md).
