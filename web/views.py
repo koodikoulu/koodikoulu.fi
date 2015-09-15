@@ -10,7 +10,7 @@ from django.utils.encoding import smart_str
 from django.conf import settings
 from django.utils import timezone
 
-from web.models import Event, User, SignUp
+from web.models import Event, User, SignUp, LearningResource, ResourceCategory
 from web.forms import EventForm, RegisterForm, LoginForm, SignUpForm
 from web.extra import send_signup_confirmation, send_new_event
 
@@ -21,8 +21,123 @@ import csv
 def index(request):
   events = Event.objects.filter(approved=True)
   form = SignUpForm()
-  return render(request, 'index.html', {'events': events, 'form': form, 'key': settings.GOOGLE_KEY,
-                                        'time_now': timezone.now()})
+
+  resources = [
+    ResourceCategory('Pelien avulla', [
+      LearningResource(
+        url = 'http://koodaustunti.fi',
+        age = '4 +',
+        ageClass = 4,
+        languages = 'FI',
+        header = 'Tunnin johdatus koodaukseen',
+        description = 'Kuka tahansa voi oppia koodauksen perusasiat. Koodaustunti antaa tunnin mittaisen johdatuksen koodaamiseen.',
+        free = True),
+      LearningResource(
+        url = 'http://lightbot.com',
+        age = '9 +',
+        ageClass = 8,
+        languages = 'EN',
+        header = 'Ratkaise pelissä arvoituksia käyttämällä ohjelmointilogiikkaa',
+        description = 'Lightbot-pelissä oppii ohjelmoinnin perusperiaatteita ja ajattelukykyä ohjaamalla robottia.',
+        free = True
+      ),
+      LearningResource(
+        url = 'https://codecombat.com',
+        age = '8–16',
+        ageClass = 8,
+        languages = 'FI/EN',
+        header = 'Opi koodaamista seikkailupelissä',
+        description = 'Codecombat-pelissä koululainen pääsee opettelemaan koodin kirjoittamista laajasti ja syvällisesti.',
+        free = True
+      ),
+      LearningResource(
+        url = 'http://thefoos.com',
+        age = '6 +',
+        ageClass = 6,
+        languages = 'EN',
+        header = 'Opi koodaamista tasohyppelypelissä',
+        description = 'The Foos on hauska lapsille suunnattu tasohyppelypeli koodauksen oppimiseen. Pelin saa ladattua mobiililaitteeseen.',
+        free = False
+      )
+    ]),
+    ResourceCategory('Palikoiden avulla', [
+      LearningResource(
+        url = 'https://scratch.mit.edu',
+        age = '8–16',
+        ageClass = 8,
+        languages = 'FI/EN',
+        header = 'Luo interaktiivisia pelejä, tarinoita ja animaatioita',
+        description = 'Scratch auttaa ajattelemaan luovasti, järkeilemään symmetrisesti ja työskentelemään yhteistyössä.',
+        free = True
+      ),
+      LearningResource(
+        url = 'https://www.tynker.com',
+        age = '7 +',
+        ageClass = 6,
+        languages = 'EN',
+        header = 'Tee pelejä ja ohjelmia visuaalisesti',
+        description = 'Tynker-sivustolla on nettikursseja, joissa on interaktiivisia tehtäviä, ohjattua opetusohjelmaa sekä luovia työkaluja koodaamisen opetteluun.',
+        free = True
+      )
+    ]),
+    ResourceCategory('Lautapelejä pelaamalla', [
+      LearningResource(
+        url = 'http://robogem.fi',
+        age = '6 +',
+        ageClass = 6,
+        languages = 'FI',
+        header = 'Ohjelmoi oma robottisi liikkumaan',
+        description = 'Robogem-lautapelissä oppii loogista päättelyä sekä hahmottaamaan yksityiskohtaiset ohjelmointikäskyt.',
+        free = False
+      ),
+      LearningResource(
+        url = 'http://www.robotturtles.com',
+        age = '4 +',
+        ageClass = 4,
+        languages = 'EN',
+        header = 'Anna robottikilpikonnalle ohjelmointikäskyjä',
+        description = 'Robo turtles -lautapelissä lapsi oppii ohjelmoinnin perusasiat.',
+        free = False
+      ),
+      LearningResource(
+        url = 'http://codemonkeyplanet.com',
+        age = '5 +',
+        ageClass = 4,
+        languages = 'EN',
+        header = 'Hauska ja mysteerinen ohjelmointia opettava lautapeli',
+        description = 'Code Monkey Island -lautapeli opettaa miten käyttää ja hallita ohjelmoinnin perusteita.',
+        free = False
+      ),
+    ]),
+    ResourceCategory('Kirjoja lukemalla', [
+      LearningResource(
+        url = 'http://www.helloruby.com',
+        age = '5–8',
+        ageClass = 4,
+        languages = 'FI',
+        header = 'Tarinamuotoinen lastenkirja ohjelmoinnista',
+        description = 'Hello Ruby on Linda Liukkaan kirjoittama koodisatukirja.',
+        free = False
+      ),
+      LearningResource(
+        url = 'http://koodi2016.fi',
+        age = '18 +',
+        ageClass = 18,
+        languages = 'FI',
+        header = 'Ensiapua ohjelmoinnin opettamiseen peruskouluissa',
+        description = 'Koodi2016-opas kertoo, miksi ohjelmointi on tärkeää ja miten sitä voi opettaa.',
+        free = True
+      )
+    ])
+  ]
+
+  return render(request, 'index.html', {
+    'events': events,
+    'resources': resources,
+    'form': form,
+    'key': settings.GOOGLE_KEY,
+    'time_now': timezone.now()
+  })
 
 def register(request):
   if request.method == 'POST':

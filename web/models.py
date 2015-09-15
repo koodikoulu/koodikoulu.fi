@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.conf import settings
 from web.extra import send_event_approved
+from collections import namedtuple
 
 import googlemaps
 import urllib
@@ -164,3 +165,7 @@ def getLocation(address, city):
   lat = geocode_result[0]["geometry"]["location"]["lat"]
   lng = geocode_result[0]["geometry"]["location"]["lng"]
   return [lat, lng]
+
+
+LearningResource = namedtuple('LearningResource', 'url age ageClass languages header description free')
+ResourceCategory = namedtuple('ResourceCategory', 'title resources')

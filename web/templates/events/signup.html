@@ -1,4 +1,4 @@
-{% load form_extras %}
+{% load tags %}
 
 <form method="post" class="signup-form" action="{% url 'web.views.handle_signup' pk=event.pk %}">
   {% csrf_token %}

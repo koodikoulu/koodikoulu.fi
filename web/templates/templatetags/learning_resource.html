@@ -1,0 +1,15 @@
+<div class="col-xs-12 col-sm-6 col-md-4">
+  <div class="panel box-default">
+    <a href="{{ resource.url }}" target="_blank">
+      <div class="box box-age-{{ resource.ageClass }} box-border">
+        <div class="box-info">
+          <div class="box-age age-{{ resource.ageClass }}">{{ resource.age }}</div>
+          <div class="box-language">{{ resource.languages }}</div>
+        </div>
+        <div class="box-header">{{ resource.header }}</div>
+        <div class="box-text">{{ resource.description }}</div>
+        <div class="box-price">{% if not resource.free %}€{% endif %}</div>
+      </div>
+    </a>
+  </div>
+</div>
