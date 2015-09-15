@@ -110,9 +110,18 @@ section.gfx-3 {
     background-position: 98% 43px;
 }
 
+section.flash {
+    padding: 1em;
+}
+
+section.flash.error {
+    background: #DC643E;
+    color: #fff;
+}
+
 section#feedback {
     line-height: 0;
-    padding: 2em;
+    padding: 2em 0;
 }
 
 section#feedback a {

@@ -167,6 +167,7 @@ def login_view(request):
 
   if request.method == 'POST':
     form = LoginForm(data=request.POST)
+
     if form.is_valid():
       user = form.login(request)
       if user:

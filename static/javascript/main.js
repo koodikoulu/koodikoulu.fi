@@ -19,4 +19,6 @@ $(function() {
     }, 100)
   })
 
+  $('.flash .close').click(function() { $('.flash').slideUp() })
+
 })
