@@ -111,6 +111,7 @@ section.gfx-3 {
 }
 
 section#feedback {
+    line-height: 0;
     padding: 2em;
 }
 
