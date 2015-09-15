@@ -612,10 +612,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .picture {
-    background: #6bbea9;;
-    border-radius: 1000px;
     width: 200px;
-    height: 200px;
     margin: 2em auto;
 }
 
