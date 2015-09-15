@@ -4,10 +4,12 @@ body {
 
 section {
     display: none;
+    visibility:hidden;
 }
 
 .navbar {
     display: none;
+    visibility:hidden;
 }
 
 .browserupgrade {
