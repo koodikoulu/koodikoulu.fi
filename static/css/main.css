@@ -256,13 +256,10 @@ section#feedback a:focus svg path {
     line-height: 20px;
 }
 
-.jumbotron h1 {
-    font-family: Ubuntu, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    font-weight: 700;
+.jumbotron #logo {
+    width: 490px;
+    margin-top: 50px;
     margin-bottom: 30px;
-    font-size: 63px;
 }
 
 h2 {
@@ -740,8 +737,8 @@ ul.errorlist {
         background-image: none;
     }
 
-    .jumbotron h1 {
-        font-size: 32px;
+    .jumbotron #logo {
+        width: 290px;
     }
 
     p {
