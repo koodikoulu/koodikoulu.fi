@@ -4,11 +4,12 @@
         <h3>{{ event.title }} ({{ event.start_date | date:"SHORT_DATE_FORMAT" }})</h3>
       </div>
       <div class="col col-md-4 text-right">
-        Tapahtuman tila: {% if event.approved %}Julkinen{% else %}Odottaa hyväksyntää{% endif %}
+        <strong>Tila</strong>:
+        {% if event.approved %}Julkinen{% else %}Odottaa hyväksyntää{% endif %}
       </div>
     </div>
 
-  <table class="participants table table-hover">
+  <table class="participants table table-striped">
     <thead>
       <tr>
         <th>Sija</th>
@@ -33,11 +34,15 @@
               <dt>Ikä:</dt>
               <dd>{{ p.age }}</dd>
 
-              <dt>Puhelinnumero:</dt>
-              <dd>{{ p.phone }}</dd>
+              {% if p.phone %}
+                <dt>Puhelinnumero:</dt>
+                <dd>{{ p.phone }}</dd>
+              {% endif %}
 
-              <dt>Muuta:</dt>
-              <dd>{{ p.other }}</dd>
+              {% if p.other %}
+                <dt>Muuta:</dt>
+                <dd>{{ p.other }}</dd>
+              {% endif %}
             </dl>
           </td>
         </tr>

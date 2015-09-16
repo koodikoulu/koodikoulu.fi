@@ -772,6 +772,10 @@ ul.errorlist {
     margin-top: 0;
 }
 
+.organizer-event h4 {
+    margin-top: 2em;
+}
+
 table.participants {
     width: 100%;
 }
@@ -793,9 +797,10 @@ table.participants .participant:hover {
 }
 
 .email-list {
+    font-family: monospace;
     display: block;
     padding: 10px;
-    margin: 0 0 30px;
+    margin: 0 0 2em;
     font-size: 13px;
     line-height: 1.5;
     color: #333;
@@ -808,6 +813,9 @@ table.participants .participant:hover {
 
 
 .download {
+    display: block;
+    max-width: 250px;
+    text-align: center;
     color: white;
     background: #4C3750;
     padding: 15px;
