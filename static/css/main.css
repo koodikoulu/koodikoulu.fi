@@ -830,7 +830,7 @@ table.participants .participant:hover {
 input.custom-trash-button {
     border: none;
     background: #4C3750 url('/static/media/icon/koodikoulu_trash.svg') no-repeat center;
-    width: 40px;
+    width: 50px;
 }
 
 /* Disable lg grid */
