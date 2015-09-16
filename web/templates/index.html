@@ -96,9 +96,9 @@
 
     {% for category in resources %}
       <div class="row cat-header">
-        <img id="{{ category.id }}-l" class="cat-icon" src="/static/media/learning_category/{{ category.id }}_l.png" alt="{{ category.title }}">
+        <img id="{{ category.id }}-l" class="cat-icon hidden-xs" src="/static/media/learning_category/{{ category.id }}_l.png" alt="{{ category.title }}">
         <h3 class="cat-title" class="text-center box-title">{{ category.title }}</h3>
-        <img id="{{ category.id }}-r" class="cat-icon" src="/static/media/learning_category/{{ category.id }}_r.png" alt="{{ category.title }}">
+        <img id="{{ category.id }}-r" class="cat-icon hidden-xs" src="/static/media/learning_category/{{ category.id }}_r.png" alt="{{ category.title }}">
       </div>
 
       <div class="box-container">
