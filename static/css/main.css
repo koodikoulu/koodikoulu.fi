@@ -571,6 +571,7 @@ label.required:after {
     min-height: 30vh;
     background-color: #4C3750;
     color: #FFFFFF;
+    padding-bottom: 0px;
 }
 
 #footer .img-reaktor {
