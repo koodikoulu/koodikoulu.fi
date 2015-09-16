@@ -188,11 +188,11 @@ section#feedback a:focus svg path {
     box-shadow: none;
 }
 
-.navbar.organizer-nav a {
+.navbar-default.organizer-nav .navbar-nav>li>a {
     color: #a38da8;
     font-size: 12px;
     text-transform: none;
-    padding: 12.5px 10px !important;
+    padding: 13px 10px !important;
 }
 
 .navbar.organizer-nav a:hover,
@@ -205,7 +205,7 @@ section#feedback a:focus svg path {
     border-bottom: 5px solid #6bbea9;
 }
 
-.navbar.organizer-nav a.active {
+.navbar-default.navbar.organizer-nav a.active {
     border: none;
     color: #fff;
 }
@@ -256,13 +256,10 @@ section#feedback a:focus svg path {
     line-height: 20px;
 }
 
-.jumbotron h1 {
-    font-family: Ubuntu, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    font-weight: 700;
+.jumbotron #logo {
+    width: 490px;
+    margin-top: 50px;
     margin-bottom: 30px;
-    font-size: 63px;
 }
 
 h2 {
@@ -740,8 +737,8 @@ ul.errorlist {
         background-image: none;
     }
 
-    .jumbotron h1 {
-        font-size: 32px;
+    .jumbotron #logo {
+        width: 290px;
     }
 
     p {
