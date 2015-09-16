@@ -21,14 +21,14 @@
     </thead>
     <tbody>
       {% for p in event.participants.all %}
-        <tr class="participant" data-toggle="collapse" data-target="#details-{{ p.pk }}">
+        <tr class="participant participant-{{ p.pk }}" data-toggle="collapse" data-target="#details-{{ p.pk }}">
           <td><strong>{{ forloop.counter }}.</strong></td>
           <td>{{ p.child }}</td>
           <td>{{ p.guardian }}</td>
           <td><a href="mailto:{{ p.email }}">{{ p.email }}</a></td>
           <td><input class="custom-trash-button" type="submit" value="" name="{{ p.pk }}"></td>
         </tr>
-        <tr class="collapse details" id="details-{{ p.pk }}">
+        <tr class="collapse details participant-{{ p.pk }}" id="details-{{ p.pk }}">
           <td colspan="5">
             <dl>
               <dt>Ikä:</dt>
