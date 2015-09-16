@@ -80,6 +80,44 @@ def index(request):
         free = True
       )
     ]),
+    ResourceCategory('Koodia kirjoittamalla', [
+      LearningResource(
+        url = 'http://www.koodikirja.fi',
+        age = '4 +',
+        ageClass = 6,
+        languages = 'FI/EN',
+        header = 'Ohjaa kilpikonnaa antamalla käskyjä',
+        description = 'Koodikirja on lyhyt web-kirja, jossa opit koodaamaan vekkulin kilpikonnan ja avuliaan robotin kanssa.',
+        free = True
+      ),
+      LearningResource(
+        url = 'https://www.codeacademy.com',
+        age = '12 +',
+        ageClass = 12,
+        languages = 'EN',
+        header = 'Koodauksen nettiopetus alkeista eteenpäin',
+        description = 'CodeAcademy-sivustolta löytyy eri ohjelmointikielten kursseja alkeista lähtien.',
+        free = True
+      ),
+      LearningResource(
+        url = 'https://www.khanacademy.org',
+        age = '12 +',
+        ageClass = 12,
+        languages = 'EN',
+        header = 'Nettikursseja koodauksen opetteluun',
+        description = 'Khan Academy on netissä oleva harjoitteluympäristö, jossa voi opetella koodausta eri ohjelmointikielillä.',
+        free = True
+      ),
+      LearningResource(
+        url = 'http://mooc.fi',
+        age = '12 +',
+        ageClass = 12,
+        languages = 'FI/EN',
+        header = 'Yliopistotasoisia ohjelmointikursseja',
+        description = 'MOOC.FI tarjoaa yliopistotasoisia ohjelmointikursseja kenelle tahansa. Niiden kautta voi jopa hakea opiskelupaikkaa.',
+        free = True
+      )
+    ]),
     ResourceCategory('Lautapelejä pelaamalla', [
       LearningResource(
         url = 'http://robogem.fi',
