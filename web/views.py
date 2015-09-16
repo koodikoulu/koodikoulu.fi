@@ -125,7 +125,7 @@ def index(request):
         ageClass = 6,
         languages = 'FI',
         header = 'Ohjelmoi oma robottisi liikkumaan',
-        description = 'Robogem-lautapelissä oppii loogista päättelyä sekä hahmottaamaan yksityiskohtaiset ohjelmointikäskyt.',
+        description = 'Robogem-lautapelissä oppii loogista päättelyä sekä hahmottamaan yksityiskohtaiset ohjelmointikäskyt.',
         free = False
       ),
       LearningResource(
@@ -143,7 +143,7 @@ def index(request):
         ageClass = 4,
         languages = 'EN',
         header = 'Hauska ja mysteerinen ohjelmointia opettava lautapeli',
-        description = 'Code Monkey Island -lautapeli opettaa miten käyttää ja hallita ohjelmoinnin perusteita.',
+        description = 'Code monkey island -lautapeli opettaa miten käyttää ja hallita ohjelmoinnin perusteita.',
         free = False
       ),
     ]),
