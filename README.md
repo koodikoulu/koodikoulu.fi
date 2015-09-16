@@ -1,4 +1,5 @@
-# koodikoulu.fi
+<img src="http://www.koodikoulu.fi/static/media/logo-opengraph.png" width="200px" height="200px" />
+# Koodikoulu.fi
 
 Source code for [koodikoulu.fi](http://koodikoulu.fi/). Python 3 + Django.
 
