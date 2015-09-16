@@ -188,11 +188,11 @@ section#feedback a:focus svg path {
     box-shadow: none;
 }
 
-.navbar.organizer-nav a {
+.navbar-default.organizer-nav .navbar-nav>li>a {
     color: #a38da8;
     font-size: 12px;
     text-transform: none;
-    padding: 12.5px 10px !important;
+    padding: 13px 10px !important;
 }
 
 .navbar.organizer-nav a:hover,
