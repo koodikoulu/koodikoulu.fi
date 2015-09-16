@@ -23,7 +23,7 @@ def index(request):
   form = SignUpForm()
 
   resources = [
-    ResourceCategory('Pelien avulla', [
+    ResourceCategory('Pelien avulla', 'game', [
       LearningResource(
         url = 'http://koodaustunti.fi',
         age = '4 +',
@@ -60,7 +60,7 @@ def index(request):
         free = False
       )
     ]),
-    ResourceCategory('Palikoiden avulla', [
+    ResourceCategory('Palikoiden avulla', 'block', [
       LearningResource(
         url = 'https://scratch.mit.edu',
         age = '8–16',
@@ -80,7 +80,7 @@ def index(request):
         free = True
       )
     ]),
-    ResourceCategory('Koodia kirjoittamalla', [
+    ResourceCategory('Koodia kirjoittamalla', 'code', [
       LearningResource(
         url = 'http://www.koodikirja.fi',
         age = '4 +',
@@ -118,7 +118,7 @@ def index(request):
         free = True
       )
     ]),
-    ResourceCategory('Lautapelejä pelaamalla', [
+    ResourceCategory('Lautapelejä pelaamalla', 'boardgame', [
       LearningResource(
         url = 'http://robogem.fi',
         age = '6 +',
@@ -147,7 +147,7 @@ def index(request):
         free = False
       ),
     ]),
-    ResourceCategory('Kirjoja lukemalla', [
+    ResourceCategory('Kirjoja lukemalla', 'book', [
       LearningResource(
         url = 'http://www.helloruby.com',
         age = '5–8',

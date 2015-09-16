@@ -833,6 +833,43 @@ input.custom-trash-button {
     width: 50px;
 }
 
+/* Learning category icons */
+
+
+img.cat-icon {
+    display: inline;
+    max-width: 40px;
+    margin: 0 2em;
+    vertical-align: baseline;
+}
+
+.cat-header {
+    margin: 3em 0;
+    text-align: center;
+}
+
+.cat-title {
+    display: inline;
+}
+
+img#book-l,
+img#book-r {
+    position: relative;
+    top: 4px;
+}
+
+img#code-l,
+img#code-r,
+img#game-l,
+img#game-r {
+    position: relative;
+    top: 2px;
+}
+
+img#block-r {
+    width: 28px;
+}
+
 /* Disable lg grid */
 
 @media (min-width:970px) {

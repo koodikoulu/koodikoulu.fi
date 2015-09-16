@@ -89,13 +89,18 @@
   <div class="container">
     <h2>Opi itse</h2>
 
-    <section class="text-center">
+    <div class="text-center">
       <p>Katso lyhyt johdatusvideo koodauksen saloihin ja aloita ohjelmoinnin opettelu alla olevien sivustojen kautta.</p>
       <iframe class="first-lesson" src="https://www.youtube.com/embed/a6hf5cTOyhI" frameborder="0" allowfullscreen></iframe>
-    </section>
+    </div>
 
     {% for category in resources %}
-      <h3 class="text-center box-title">{{ category.title }}</h3>
+      <div class="row cat-header">
+        <img id="{{ category.id }}-l" class="cat-icon" src="/static/media/learning_category/{{ category.id }}_l.png" alt="{{ category.title }}">
+        <h3 class="cat-title" class="text-center box-title">{{ category.title }}</h3>
+        <img id="{{ category.id }}-r" class="cat-icon" src="/static/media/learning_category/{{ category.id }}_r.png" alt="{{ category.title }}">
+      </div>
+
       <div class="box-container">
         <div class="row">
           {% for resource in category.resources %}

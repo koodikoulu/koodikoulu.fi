@@ -168,4 +168,4 @@ def getLocation(address, city):
 
 
 LearningResource = namedtuple('LearningResource', 'url age ageClass languages header description free')
-ResourceCategory = namedtuple('ResourceCategory', 'title resources')
+ResourceCategory = namedtuple('ResourceCategory', 'title id resources')
