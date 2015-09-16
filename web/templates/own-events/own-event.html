@@ -3,7 +3,7 @@
     <div class="panel-title row-container">
       <div class="row">
         <div class="row-elem">
-          <h3 class="title col-xs-12 col-md-6">{{ event.title }}</h3>
+          <h3 class="title col-xs-12 col-md-6">{{ event.title }} ({{ event.start_date | date:"SHORT_DATE_FORMAT" }})</h3>
           <div class="col-xs-12 col-md-6 text-right">Tapahtuman tila: {% if event.approved %}Julkinen{% else %}Odottaa hyväksyntää{% endif %}</div>
         </div>
       </div>
