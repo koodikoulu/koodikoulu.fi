@@ -1,103 +1,67 @@
-<div class="panel">
-  <div class="panel-heading">
-    <div class="panel-title row-container">
-      <div class="row">
-        <div class="row-elem">
-          <h3 class="title col-xs-12 col-md-6">{{ event.title }} ({{ event.start_date | date:"SHORT_DATE_FORMAT" }})</h3>
-          <div class="col-xs-12 col-md-6 text-right">Tapahtuman tila: {% if event.approved %}Julkinen{% else %}Odottaa hyväksyntää{% endif %}</div>
-        </div>
+<div class="panel organizer-event">
+    <div class="row">
+      <div class="col col-md-8">
+        <h3>{{ event.title }} ({{ event.start_date | date:"SHORT_DATE_FORMAT" }})</h3>
       </div>
-
-      <div class="panel-group event-list" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-head">
-            <div class="panel-heading" role="tab" id="heading">
-                <div class="panel-title row-container heading-row">
-                    <div class="row">
-                        <div class="col-xs-4 col-md-4 row-elem">Nimi</div>
-                        <div class="col-xs-4 col-md-3 row-elem text-center">Huoltajan nimi</div>
-                        <div class="col-sm-3 col-md-3 hidden-xs row-elem text-center">Sähköposti</div>
-                        <div class="col-xs-4 col-sm-1 col-md-2 row-elem text-right">Poista</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      {% for p in event.participants.all %}
-        <div class="panel panel-event panel-event-own" id="participant-{{ p.pk }}">
-          <div class="panel-heading" role="tab" id="headingOne">
-            <div class="panel-title row-container">
-                <div class="row">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#id-{{ p.pk }}" aria-expanded="true" aria-controls="collapseOne">
-                  <div class="col-xs-4 col-md-4 row-elem">
-                    <span class="title">{{ forloop.counter }}. {{ p.child }}</span>
-                  </div>
-                  <div class="col-xs-4 col-md-3 row-elem text-center">{{ p.guardian }}</div>
-                  <div class="col-sm-3 col-md-3 hidden-xs row-elem text-center">{{ p.email }}</div>
-                  </a>
-                  <div class="col-xs-4 col-sm-1 col-md-2 row-elem text-right">
-                    <input class="custom-trash-button" type="submit" value="" name="{{ p.pk }}"></input>
-                  </div>
-                </div>
-            </div>
-          </div>
-
-          <div id="id-{{ p.pk }}" class="panel-collapse collapse icon" role="tabpanel" aria-labelledby="headingOne">
-            <div class="panel-body">
-              <div class="text-content">
-                  <div class="info col-xs-6 col-md-6">
-                    <p class="hidden-sm">Sähköposti: {{p.email}} </p>
-                    <p>Ikä: {{ p.age }}</p>
-                    <p>Puhelinnumero: {{ p.phone }}</p>
-                    <p>Muuta: {{ p.other }}</p>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
+      <div class="col col-md-4 text-right">
+        Tapahtuman tila: {% if event.approved %}Julkinen{% else %}Odottaa hyväksyntää{% endif %}
       </div>
-
-      {% if not event.participants.all %}
-      <div class="row col-xs-12 col-md-12">
-        <div class="col-xs-4 col-md-4 row-elem">
-          <p>Ei osallistujia</p>
-        </div>
-      </div>
-
-      {% else %}
-      <div class="panel-group event-list" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-head">
-            <div class="panel-heading" role="tab" id="heading">
-                <div class="panel-title row-container heading-row">
-                    <div class="row col-xs-12 col-md-12">
-                        <div class="col-xs-12 col-md-12 row-elem">
-                            Kaikki sähköpostiosoitteet
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      <div class="panel panel-event panel-event-own" id="emails-id-{{ event.pk }}">
-        <div id="emails-id-{{ event.pk }}">
-          <div class="panel-body">
-            <div class="text-content">
-              <div class="info col-xs-12 col-md-12">
-                <p>
-                {% for p in event.participants.all %}
-                  {% if forloop.last %}
-                    {{ p.email }}
-                  {% else %}
-                    {{ p.email }},
-                  {% endif %}
-                {% endfor %}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-      <a href="/export-signup/{{ event.pk }}" class="export-link"><div class="download">Lataa kaikki tiedot (CSV)</div></a>
-      {% endif %}
     </div>
-  </div>
+
+  <table class="participants table table-hover">
+    <thead>
+      <tr>
+        <th>Sija</th>
+        <th>Nimi</th>
+        <th>Huoltajan nimi</th>
+        <th>Sähköposti</th>
+        <th>Poista</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in event.participants.all %}
+        <tr class="participant" data-toggle="collapse" data-target="#details-{{ p.pk }}">
+          <td><strong>{{ forloop.counter }}.</strong></td>
+          <td>{{ p.child }}</td>
+          <td>{{ p.guardian }}</td>
+          <td>{{ p.email }}</td>
+          <td><input class="custom-trash-button" type="submit" value="" name="{{ p.pk }}"></td>
+        </tr>
+        <tr class="collapse details" id="details-{{ p.pk }}">
+          <td colspan="5">
+            <dl>
+              <dt>Ikä:</dt>
+              <dd>{{ p.age }}</dd>
+
+              <dt>Puhelinnumero:</dt>
+              <dd>{{ p.phone }}</dd>
+
+              <dt>Muuta:</dt>
+              <dd>{{ p.other }}</dd>
+            </dl>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="5">Ei ilmoittautuneita.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% if event.participants.all %}
+    <h4>Kaikki sähköpostiosoitteet</h4>
+    <p class="email-list">
+      {% for p in event.participants.all %}
+        {% if forloop.last %}
+          {{ p.email }}
+        {% else %}
+          {{ p.email }},
+        {% endif %}
+      {% endfor %}
+    </p>
+    <p>
+      <a href="/export-signup/{{ event.pk }}" class="download">Lataa kaikki tiedot (CSV)</a>
+    </p>
+  {% endif %}
 </div>

@@ -670,33 +670,6 @@ input[type=number]::-webkit-inner-spin-button {
   height: 40px;
 }
 
-.export-link {
-    margin-left: 10px;
-    height: 100%;
-    vertical-align: middle;
-}
-
-.download {
-    color: white;
-    background: #4C3750;
-    padding: 6px;
-    float: right;
-    line-height: 30px;
-    margin-left: 30px;
-}
-
-.custom-trash {
-    color: white;
-    padding: 5px;
-}
-
-input.custom-trash-button {
-    border: none;
-    background: #4C3750 url('/static/media/icon/koodikoulu_trash.svg') no-repeat center;
-    margin-left: -1px;
-    max-width: 40px;
-}
-
 iframe.first-lesson {
     height: 400px;
     width: 90%;
@@ -790,6 +763,66 @@ ul.errorlist {
 }
 
 
+
+.organizer-event {
+    padding: 30px 20px;
+}
+
+.organizer-event h3 {
+    margin-top: 0;
+}
+
+table.participants {
+    width: 100%;
+}
+
+table.participants .details dl {
+    font-size: 16px;
+    text-align: left;
+}
+
+table.participants td,
+table.participants th {
+    text-align: center;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+table.participants .participant:hover {
+    cursor: pointer;
+}
+
+.email-list {
+    display: block;
+    padding: 10px;
+    margin: 0 0 30px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+
+.download {
+    color: white;
+    background: #4C3750;
+    padding: 15px;
+}
+
+.custom-trash {
+    color: white;
+    padding: 5px;
+}
+
+input.custom-trash-button {
+    border: none;
+    background: #4C3750 url('/static/media/icon/koodikoulu_trash.svg') no-repeat center;
+    width: 40px;
+}
 
 /* Disable lg grid */
 
