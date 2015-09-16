@@ -205,7 +205,7 @@ section#feedback a:focus svg path {
     border-bottom: 5px solid #6bbea9;
 }
 
-.navbar.organizer-nav a.active {
+.navbar-default.navbar.organizer-nav a.active {
     border: none;
     color: #fff;
 }
