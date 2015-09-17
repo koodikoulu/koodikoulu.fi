@@ -33,13 +33,13 @@ def index(request):
         description = 'Kuka tahansa voi oppia koodauksen perusasiat. Koodaustunti antaa tunnin mittaisen johdatuksen koodaamiseen.',
         free = True),
       LearningResource(
-        url = 'http://lightbot.com',
-        age = '9 +',
-        ageClass = 8,
+        url = 'http://thefoos.com',
+        age = '6 +',
+        ageClass = 6,
         languages = 'EN',
-        header = 'Ratkaise pelissä arvoituksia käyttämällä ohjelmointilogiikkaa',
-        description = 'Lightbot-pelissä oppii ohjelmoinnin perusperiaatteita ja ajattelukykyä ohjaamalla robottia.',
-        free = True
+        header = 'Opi koodaamista tasohyppelypelissä',
+        description = 'The Foos on hauska lapsille suunnattu tasohyppelypeli koodauksen oppimiseen. Pelin saa ladattua mobiililaitteeseen.',
+        free = False
       ),
       LearningResource(
         url = 'https://codecombat.com',
@@ -51,25 +51,16 @@ def index(request):
         free = True
       ),
       LearningResource(
-        url = 'http://thefoos.com',
-        age = '6 +',
-        ageClass = 6,
+        url = 'http://lightbot.com',
+        age = '9 +',
+        ageClass = 8,
         languages = 'EN',
-        header = 'Opi koodaamista tasohyppelypelissä',
-        description = 'The Foos on hauska lapsille suunnattu tasohyppelypeli koodauksen oppimiseen. Pelin saa ladattua mobiililaitteeseen.',
-        free = False
+        header = 'Ratkaise pelissä arvoituksia käyttämällä ohjelmointilogiikkaa',
+        description = 'Lightbot-pelissä oppii ohjelmoinnin perusperiaatteita ja ajattelukykyä ohjaamalla robottia.',
+        free = True
       )
     ]),
     ResourceCategory('Palikoiden avulla', 'block', [
-      LearningResource(
-        url = 'https://scratch.mit.edu',
-        age = '8–16',
-        ageClass = 8,
-        languages = 'FI/EN',
-        header = 'Luo interaktiivisia pelejä, tarinoita ja animaatioita',
-        description = 'Scratch auttaa ajattelemaan luovasti, järkeilemään symmetrisesti ja työskentelemään yhteistyössä.',
-        free = True
-      ),
       LearningResource(
         url = 'https://www.tynker.com',
         age = '7 +',
@@ -77,6 +68,15 @@ def index(request):
         languages = 'EN',
         header = 'Tee pelejä ja ohjelmia visuaalisesti',
         description = 'Tynker-sivustolla on nettikursseja, joissa on interaktiivisia tehtäviä, ohjattua opetusohjelmaa sekä luovia työkaluja koodaamisen opetteluun.',
+        free = True
+      ),
+      LearningResource(
+        url = 'https://scratch.mit.edu',
+        age = '8–16',
+        ageClass = 8,
+        languages = 'FI/EN',
+        header = 'Luo interaktiivisia pelejä, tarinoita ja animaatioita',
+        description = 'Scratch auttaa ajattelemaan luovasti, järkeilemään symmetrisesti ja työskentelemään yhteistyössä.',
         free = True
       )
     ]),
@@ -120,15 +120,6 @@ def index(request):
     ]),
     ResourceCategory('Lautapelejä pelaamalla', 'boardgame', [
       LearningResource(
-        url = 'http://robogem.fi',
-        age = '6 +',
-        ageClass = 6,
-        languages = 'FI',
-        header = 'Ohjelmoi oma robottisi liikkumaan',
-        description = 'Robogem-lautapelissä oppii loogista päättelyä sekä hahmottamaan yksityiskohtaiset ohjelmointikäskyt.',
-        free = False
-      ),
-      LearningResource(
         url = 'http://www.robotturtles.com',
         age = '4 +',
         ageClass = 4,
@@ -146,6 +137,15 @@ def index(request):
         description = 'Code monkey island -lautapeli opettaa miten käyttää ja hallita ohjelmoinnin perusteita.',
         free = False
       ),
+      LearningResource(
+        url = 'http://robogem.fi',
+        age = '6 +',
+        ageClass = 6,
+        languages = 'FI',
+        header = 'Ohjelmoi oma robottisi liikkumaan',
+        description = 'Robogem-lautapelissä oppii loogista päättelyä sekä hahmottaamaan yksityiskohtaiset ohjelmointikäskyt.',
+        free = False
+      )
     ]),
     ResourceCategory('Kirjoja lukemalla', 'book', [
       LearningResource(
@@ -230,7 +230,7 @@ def organize(request):
       event = form.save(commit=False)
       event.start_time = datetime.time(form.cleaned_data['start_hours'], form.cleaned_data['start_minutes'])
       event.end_time = datetime.time(form.cleaned_data['end_hours'], form.cleaned_data['end_minutes'])
-      
+
       if form.cleaned_data['signup_open_date']:
         time_string = "%s %s:%s" % (form.cleaned_data['signup_open_date'],
                                     form.cleaned_data['signup_open_hours'],
