@@ -330,6 +330,16 @@ h3 {
     padding: 13px 15px;
 }
 
+.panel-event [class*="col-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.panel-event .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .panel-group .panel-event.ENSIASKELEET .panel-heading {
     border-left: 10px solid #6bbea9;
     border-right: 10px solid #6bbea9;
