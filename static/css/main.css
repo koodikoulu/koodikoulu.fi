@@ -330,7 +330,7 @@ h3 {
     padding: 13px 15px;
 }
 
-.panel-event [class*="col-"] {
+.panel-event [class*="header-col"] {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
