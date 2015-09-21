@@ -88,7 +88,7 @@
       {% load tz %}
       {% if event.signup_open and event.signup_open > time_now %}
         {% localtime on %}
-          <div class="signup signup-section">Ilmoittautuminen aukeaa {{ event.signup_open }}
+          <div class="signup signup-section">Ilmoittautuminen aukeaa {{ event.signup_open }}.
           </div>
         {% endlocaltime %}
       {% else %}
