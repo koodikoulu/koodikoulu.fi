@@ -30,6 +30,8 @@
             <p><a href="http://koodikerho.fi/">http://koodikerho.fi/</a></p>
           {% endif %}
           <dl class="dl-horizontal event-description-list">
+            <dt>Ilmoittautuminen aukeaa:</dt>
+            <dd>{% load tz %}{% localtime on %}{{ event.signup_open }}{% endlocaltime %}</dd>
             <dt class="visible-xs-block">Aika: </dt>
             <dd class="visible-xs-block">{{ event.start_date | date:"SHORT_DATE_FORMAT" }} klo&nbsp;{{ event.start_time }}–{{ event.end_time }}</dd>
             <dt>Ota mukaan:</dt>

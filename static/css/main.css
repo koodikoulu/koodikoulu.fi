@@ -541,6 +541,7 @@ img.icon {
 .event-description-list dt {
     text-align: left;
     font-weight: 600;
+    width: 170px;
 }
 
 .text-content {
