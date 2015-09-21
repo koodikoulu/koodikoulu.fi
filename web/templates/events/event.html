@@ -30,10 +30,17 @@
             <p><a href="http://koodikerho.fi/">http://koodikerho.fi/</a></p>
           {% endif %}
           <dl class="dl-horizontal event-description-list">
+            {% if event.signup_open %}
+            <dt>Ilmoittautuminen aukeaa:</dt>
+            <dd>{% load tz %}{% localtime on %}{{ event.signup_open }}{% endlocaltime %}
+            </dd>
+            {% endif %}
             <dt class="visible-xs-block">Aika: </dt>
             <dd class="visible-xs-block">{{ event.start_date | date:"SHORT_DATE_FORMAT" }} klo&nbsp;{{ event.start_time }}–{{ event.end_time }}</dd>
+            {% if event.bring_along %}
             <dt>Ota mukaan:</dt>
             <dd>{{ event.bring_along }}</dd>
+            {% endif %}
             <dt>Hinta:</dt>
             <dd>
               {% if event.price > 0 %}
@@ -50,8 +57,7 @@
                 {{ event.organization }},
               {% endif %}
               {% if event.organizer %}
-                {{ event.organizer.get_full_name }},
-                <a href="mailto:{{ event.organizer.email }}">{{ event.organizer.email }}</a>
+                {{ event.organizer.get_full_name }}</a>
               {% endif %}
             </dd>
             <dt>
@@ -82,13 +88,12 @@
       </div>
     </div>
     {% if event.booked %}
-      <div class="signup signup-section">Kurssi on täynnä</div>
-    {% endif %}
-    {% if not event.booked %}
+      <div class="signup signup-section">Tapahtuma on täynnä.</div>
+    {% else %}
       {% load tz %}
       {% if event.signup_open and event.signup_open > time_now %}
         {% localtime on %}
-          <div class="signup signup-section">Ilmoittautuminen aukeaa {{ event.signup_open }}
+          <div class="signup signup-section">Ilmoittautuminen aukeaa {{ event.signup_open }}.
           </div>
         {% endlocaltime %}
       {% else %}
