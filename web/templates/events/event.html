@@ -50,8 +50,7 @@
                 {{ event.organization }},
               {% endif %}
               {% if event.organizer %}
-                {{ event.organizer.get_full_name }},
-                <a href="mailto:{{ event.organizer.email }}">{{ event.organizer.email }}</a>
+                {{ event.organizer.get_full_name }}</a>
               {% endif %}
             </dd>
             <dt>
