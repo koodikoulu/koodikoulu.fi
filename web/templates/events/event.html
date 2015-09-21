@@ -83,9 +83,8 @@
       </div>
     </div>
     {% if event.booked %}
-      <div class="signup signup-section">Kurssi on täynnä</div>
-    {% endif %}
-    {% if not event.booked %}
+      <div class="signup signup-section">Tapahtuma on täynnä.</div>
+    {% else %}
       {% load tz %}
       {% if event.signup_open and event.signup_open > time_now %}
         {% localtime on %}
