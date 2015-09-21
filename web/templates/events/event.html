@@ -34,8 +34,10 @@
             <dd>{% load tz %}{% localtime on %}{{ event.signup_open }}{% endlocaltime %}</dd>
             <dt class="visible-xs-block">Aika: </dt>
             <dd class="visible-xs-block">{{ event.start_date | date:"SHORT_DATE_FORMAT" }} klo&nbsp;{{ event.start_time }}–{{ event.end_time }}</dd>
+            {% if event.bring_along %}
             <dt>Ota mukaan:</dt>
             <dd>{{ event.bring_along }}</dd>
+            {% endif %}
             <dt>Hinta:</dt>
             <dd>
               {% if event.price > 0 %}
