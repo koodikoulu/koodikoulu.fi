@@ -17,6 +17,7 @@ from web.extra import send_signup_confirmation, send_new_event
 import sys
 import datetime
 import csv
+import urllib
 
 def index(request):
   events = Event.objects.filter(approved=True)
@@ -334,7 +335,15 @@ def export_signup_list(request, event_id):
     return response
 
   response = HttpResponse(content_type='text/csv')
-  response['Content-Disposition'] = 'attachment; filename=%s.csv' % event.title
+
+  if u'WebKit' in request.META['HTTP_USER_AGENT']:
+    filename_header = 'filename=%s.csv' % event.title.encode('utf-8')
+  elif u'MSIE' in request.META['HTTP_USER_AGENT']:
+    filename_header = ''
+  else:
+    filename_header = 'filename*=UTF-8\'\'%s' % urllib.quote(event.title.encode('utf-8'))
+
+  response['Content-Disposition'] = 'attachment; ' + filename_header
   writer = csv.writer(response, csv.excel)
   response.write(u'\ufeff'.encode('utf8'))
 
