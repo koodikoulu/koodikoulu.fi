@@ -335,13 +335,17 @@ def export_signup_list(request, event_id):
     return response
 
   response = HttpResponse(content_type='text/csv')
+  if is_ascii(event.title):
+    title = event.title
+  else:
+    title = event.title.encode('utf-8')
 
   if u'WebKit' in request.META['HTTP_USER_AGENT']:
-    filename_header = 'filename=%s.csv' % event.title.encode('utf-8')
+    filename_header = 'filename=%s.csv' % title
   elif u'MSIE' in request.META['HTTP_USER_AGENT']:
     filename_header = ''
   else:
-    filename_header = 'filename*=UTF-8\'\'%s' % urllib.quote(event.title.encode('utf-8'))
+    filename_header = 'filename*=UTF-8\'\'%s.csv' % urllib.quote(title)
 
   response['Content-Disposition'] = 'attachment; ' + filename_header
   writer = csv.writer(response, csv.excel)
@@ -370,3 +374,7 @@ def export_signup_list(request, event_id):
 
 def koodikoulu_404(request):
   return render(request, '404.html')
+
+# Helper function for filenames to check if a string contains only ascii chars
+def is_ascii(s):
+  return all(ord(c) < 128 for c in s)
