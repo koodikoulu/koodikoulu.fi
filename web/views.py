@@ -345,7 +345,7 @@ def export_signup_list(request, event_id):
   elif u'MSIE' in request.META['HTTP_USER_AGENT']:
     filename_header = ''
   else:
-    filename_header = 'filename*=UTF-8\'\'%s.csv' % urllib.quote(title)
+    filename_header = 'filename*=UTF-8\'\'%s' % urllib.quote(title)
 
   response['Content-Disposition'] = 'attachment; ' + filename_header
   writer = csv.writer(response, csv.excel)
