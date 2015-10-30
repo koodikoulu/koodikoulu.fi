@@ -1,1 +1,1 @@
-web: newrelic-admin run-program gunicorn koodikoulu.wsgi --log-file -
+web: bin/start-pgbouncer-stunnel gunicorn koodikoulu.wsgi --log-file -

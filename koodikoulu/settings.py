@@ -133,6 +133,7 @@ if 'DYNO' in os.environ:
     import dj_database_url
     DATABASES = {}
     DATABASES['default'] = dj_database_url.config()
+    DATABASES['default']['CONN_MAX_AGE'] = 500
 
     DEBUG = False
 
