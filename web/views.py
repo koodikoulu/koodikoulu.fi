@@ -13,15 +13,16 @@ from django.utils import timezone
 from web.models import Event, User, SignUp, LearningResource, ResourceCategory
 from web.forms import EventForm, RegisterForm, LoginForm, SignUpForm
 from web.extra import send_signup_confirmation, send_new_event
+from datetime import timedelta
 
 import sys
-from datetime import datetime, timedelta
+import datetime
 import csv
 import urllib
 
 def index(request):
-  events = Event.objects.filter(approved=True, end_date__gt=datetime.now() + timedelta(days=-1))
-  old_events = Event.objects.filter(approved=True, end_date__lt=datetime.now() + timedelta(days=-1))
+  events = Event.objects.filter(approved=True, end_date__gt=datetime.datetime.now() + timedelta(days=-1))
+  old_events = Event.objects.filter(approved=True, end_date__lt=datetime.datetime.now() + timedelta(days=-1))
   form = SignUpForm()
 
   resources = [
