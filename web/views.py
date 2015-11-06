@@ -15,12 +15,13 @@ from web.forms import EventForm, RegisterForm, LoginForm, SignUpForm
 from web.extra import send_signup_confirmation, send_new_event
 
 import sys
-import datetime
+from datetime import datetime, timedelta
 import csv
 import urllib
 
 def index(request):
-  events = Event.objects.filter(approved=True)
+  events = Event.objects.filter(approved=True, end_date__gt=datetime.now() + timedelta(days=-1))
+  old_events = Event.objects.filter(approved=True, end_date__lt=datetime.now() + timedelta(days=-1))
   form = SignUpForm()
 
   resources = [
@@ -172,6 +173,7 @@ def index(request):
 
   return render(request, 'index.html', {
     'events': events,
+    'old_events': old_events,
     'resources': resources,
     'form': form,
     'key': settings.GOOGLE_KEY,

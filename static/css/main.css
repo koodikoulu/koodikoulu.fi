@@ -530,9 +530,9 @@ img.icon {
     clear: both;
 }
 
-/*.row-elem {
-    float: left;
-}*/
+.more-container {
+    display: none;
+}
 
 .row-container {
     overflow: auto;
