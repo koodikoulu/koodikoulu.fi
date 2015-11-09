@@ -13,13 +13,11 @@ $(function() {
   })
 
   $('.more').click(function() {
-    console.log('click');
     $('.more-container').show();
     $('.more').hide();
   })
 
   $('.less').click(function() {
-    console.log('click');
     $('.more-container').hide();
     $('.more').show();
   })
