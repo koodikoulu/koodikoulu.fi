@@ -22,7 +22,7 @@ import urllib
 
 def index(request):
   events = Event.objects.filter(approved=True, end_date__gt=datetime.datetime.now() + timedelta(days=-1))
-  old_events = Event.objects.filter(approved=True, end_date__lt=datetime.datetime.now() + timedelta(days=-1))
+  old_events = Event.objects.filter(approved=True, end_date__lte=datetime.datetime.now() + timedelta(days=-1))
   form = SignUpForm()
 
   resources = [
