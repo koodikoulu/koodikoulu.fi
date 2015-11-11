@@ -108,9 +108,6 @@ class Event(models.Model):
     ordering = ('start_date',)
 
   def save(self, *args, **kwargs):
-    if not self.end_date:
-      self.end_date = self.start_date
-
     if not self.lat or not self.lng or not self.decoded_location:
       try:
         location = getLocation(self.street_address, self.city)
