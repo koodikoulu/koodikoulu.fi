@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseServerError
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.sites.models import Site
+from django.db.models import Q
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import get_object_or_404
 from django.utils.encoding import smart_str
@@ -13,6 +14,7 @@ from django.utils import timezone
 from web.models import Event, User, SignUp, LearningResource, ResourceCategory
 from web.forms import EventForm, RegisterForm, LoginForm, SignUpForm
 from web.extra import send_signup_confirmation, send_new_event
+from datetime import timedelta
 
 import sys
 import datetime
@@ -20,7 +22,11 @@ import csv
 import urllib
 
 def index(request):
-  events = Event.objects.filter(approved=True)
+  approved = Q(approved=True)
+  endDateInFuture = Q(end_date__isnull=False) & Q(end_date__gt=datetime.datetime.now() + timedelta(days=-1))
+  noEndDateStartDateInFuture = Q(end_date__isnull=True) & Q(start_date__gt=datetime.datetime.now() + timedelta(days=-1))
+  events = Event.objects.filter(approved & (endDateInFuture | noEndDateStartDateInFuture))
+  old_events = Event.objects.filter(~Q(approved & (endDateInFuture | noEndDateStartDateInFuture)))
   form = SignUpForm()
 
   resources = [
@@ -172,6 +178,7 @@ def index(request):
 
   return render(request, 'index.html', {
     'events': events,
+    'old_events': old_events,
     'resources': resources,
     'form': form,
     'key': settings.GOOGLE_KEY,

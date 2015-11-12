@@ -1,6 +1,7 @@
 $(function() {
   var $panels = $('.panel')
   var activeClass = 'active'
+  var display = false;
 
   // Active class for togglable panels.
 
@@ -9,6 +10,16 @@ $(function() {
   })
   $panels.on('hide.bs.collapse', function() {
     $(this).removeClass(activeClass)
+  })
+
+  $('.more').click(function() {
+    $('.more-container').show();
+    $('.more').hide();
+  })
+
+  $('.less').click(function() {
+    $('.more-container').hide();
+    $('.more').show();
   })
 
   // Scroll window to content when toggling accordion panels.

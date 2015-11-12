@@ -5,7 +5,7 @@
          aria-controls="collapseOne">
         <div class="row">
           <div class="col-xs-4 col-md-3 header-col">
-            <span class="title">{{ event.start_date | date:"SHORT_DATE_FORMAT" }}</span>
+            <span class="title">{{ event.start_date | date:"SHORT_DATE_FORMAT" }}{% if event.end_date%}-{{ event.end_date | date:"SHORT_DATE_FORMAT" }}{% endif %}</span>
             <span class="kkdetail hidden-xs">klo&nbsp;{{ event.start_time }}–{{ event.end_time }}</span>
           </div>
           <div class="col-xs-4 col-md-6 text-center header-col">
@@ -36,7 +36,7 @@
             </dd>
             {% endif %}
             <dt class="visible-xs-block">Aika: </dt>
-            <dd class="visible-xs-block">{{ event.start_date | date:"SHORT_DATE_FORMAT" }} klo&nbsp;{{ event.start_time }}–{{ event.end_time }}</dd>
+            <dd class="visible-xs-block">{{ event.start_date | date:"SHORT_DATE_FORMAT" }}{% if event.end_date%}-{{ event.end_date | date:"SHORT_DATE_FORMAT" }}{% endif %} klo&nbsp;{{ event.start_time }}–{{ event.end_time }}</dd>
             {% if event.bring_along %}
             <dt>Ota mukaan:</dt>
             <dd>{{ event.bring_along }}</dd>
