@@ -26,7 +26,7 @@ def index(request):
   endDateInFuture = Q(end_date__isnull=False) & Q(end_date__gt=datetime.datetime.now() + timedelta(days=-1))
   noEndDateStartDateInFuture = Q(end_date__isnull=True) & Q(start_date__gt=datetime.datetime.now() + timedelta(days=-1))
   events = Event.objects.filter(approved & (endDateInFuture | noEndDateStartDateInFuture))
-  old_events = Event.objects.filter(~Q(approved & (endDateInFuture | noEndDateStartDateInFuture)))
+  old_events = Event.objects.filter(approved & ~Q(endDateInFuture | noEndDateStartDateInFuture))
   form = SignUpForm()
 
   resources = [
