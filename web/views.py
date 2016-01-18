@@ -329,6 +329,11 @@ def remove_participant(request, pk):
     response.status_code = 403
     return response
 
+  event = participant.event
+  if event.booked:
+    event.booked = False
+    event.save()
+
   participant.delete()
   return HttpResponse('Osallistuja poistettu')
 
