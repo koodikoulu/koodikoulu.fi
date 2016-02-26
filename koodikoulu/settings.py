@@ -137,9 +137,11 @@ if 'DYNO' in os.environ:
 
     DEBUG = False
 
-    # Mandrill settings for production.
-    MANDRILL_API_KEY = os.getenv('MANDRILL_API_KEY', '')
-    EMAIL_BACKEND = 'djrill.mail.backends.djrill.DjrillBackend'
+    # Sendgrid settings.
+    EMAIL_BACKEND = 'sgbackend.SendGridBackend'
+    SENDGRID_USER = os.getenv('SENDGRID_USERNAME', '')
+    SENDGRID_PASSWORD = os.getenv('SENDGRID_PASSWORD', '')
+
     DEFAULT_FROM_EMAIL = 'noreply@koodikoulu.fi'
 
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

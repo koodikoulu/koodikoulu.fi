@@ -1,13 +1,85 @@
+# dj-database-url
+# License: BSD
+# Homepage: https://github.com/kennethreitz/dj-database-url
+# Author: Kenneth Reitz
 dj-database-url==0.3.0
+
+# dj-static
+# License: BSD
+# Homepage: https://github.com/kennethreitz/dj-static
+# Author: Kenneth Reitz
 dj-static==0.0.6
+
+# Django
+# License: BSD
+# Homepage: http://www.djangoproject.com/
+# Author: Django Software Foundation
 Django==1.8.3
+
+# django-toolbelt
+# Homepage: https://devcenter.heroku.com/articles/django
+# Author: Kenneth Reitz
 django-toolbelt==0.0.1
+
+# djrill
 djrill==1.4.0
+
+# googlemaps
 googlemaps==2.2
+
+# gunicorn
+# License: MIT
+# Homepage: http://gunicorn.org
+# Author: Benoit Chesneau
 gunicorn==19.3.0
+
+# newrelic
+newrelic==2.56.0.42
+
+# psycopg2
+# License: LGPL with exceptions or ZPL
+# Homepage: http://initd.org/psycopg/
+# Author: Federico Di Gregorio
 psycopg2==2.6.1
+
+# pytz
+# License: MIT
+# Homepage: http://pythonhosted.org/pytz
+# Author: Stuart Bishop
 pytz==2015.4
+
+# requests
+# License: Apache 2.0
+# Homepage: http://python-requests.org
+# Author: Kenneth Reitz
 requests==2.7.0
+
+# sendgrid
+# License: MIT
+# Homepage: https://github.com/sendgrid/sendgrid-python/
+# Author: Yamil Asusta
+sendgrid==1.4.0
+
+# sendgrid-django
+# License: MIT
+# Homepage: https://github.com/elbuo8/sendgrid-django
+# Author: Yamil Asusta
+sendgrid-django==1.4.0
+
+# smtpapi
+# License: MIT License
+# Author: Yamil Asusta, Kane Kim
+smtpapi==0.2.0
+
+# static3
+# License: LGPL
+# Homepage: https://github.com/rmohr/static3
+# Author: Roman Mohr
 static3==0.6.1
+
+# wheel
+# License: MIT
+# Homepage: http://bitbucket.org/pypa/wheel/
+# Author: Daniel Holth
 wheel==0.24.0
-newrelic
+
