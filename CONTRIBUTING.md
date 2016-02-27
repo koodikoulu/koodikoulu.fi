@@ -56,8 +56,10 @@ Running the application on [Heroku](https://heroku.com) requires setting a few e
 
 * `SECRET_KEY`
   * There is a default value for this but in order to be safe, change it.
-* `MANDRILL_API_KEY`
-  * The API key for your [Mandrill](https://www.mandrill.com/) account.
+* `SENDGRID_USERNAME`
+    * Username for your [Sendgrid](https://sendgrid.com/) account.
+* `SENDGRID_PASSWORD`
+    * Password for your [Sendgrid](https://sendgrid.com/) account.
 * `GOOGLE_KEY`
   * The API key for Google maps.
 * `SLACK_CHANNEL`
