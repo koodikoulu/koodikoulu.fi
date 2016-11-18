@@ -21,6 +21,13 @@ If you want to participate to the development of koodikoulu.fi, please follow th
 
 Using [virtualenv](https://virtualenv.pypa.io/en/latest/) is the preferred way to manage dependencies while developing Python applications and we suggest using it.
 
+To setup your virtualenv:
+
+1. Install `python3` if you don't have it. OSX users will `brew install python3`.
+2. Install virtualenv executable: `pip install virtualenv`. Sudo if you have to.
+3. Create your virtual environment: `virtualenv -p python3 venv`.
+4. Activate it: `source venv/bin/activate`
+
 ##### Installing requirements
 Requirements for the applications are located in the `requirements.txt`file. You can install the requirements easily with the command:  
 `pip install -r requirements.txt`
