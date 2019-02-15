@@ -146,3 +146,27 @@ if 'DYNO' in os.environ:
 
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     ALLOWED_HOSTS = ['*']
+
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'formatters': {
+            'verbose': {
+                'format': '[%(asctime)s] [%(process)d] [%(levelname)s] %(message)s'
+            },
+        },
+        'handlers': {
+            'stderr': {
+                'level': 'INFO',
+                'class': 'logging.StreamHandler',
+                'formatter': 'verbose',
+            },
+        },
+        'loggers': {
+            'django': {
+                'handlers': ['stderr'],
+                'level': 'DEBUG',
+                'propagate': True,
+            },
+        },
+    }
