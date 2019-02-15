@@ -6,7 +6,7 @@ Source code for [koodikoulu.fi](http://koodikoulu.fi/). Python 3 + Django.
 Contributing
 ------------
 
-See the instructions in [CONTRIBUTING.md](https://github.com/koodikoulu/koodikoulu.fi/blob/develop/CONTRIBUTING.md).
+See the instructions in [CONTRIBUTING.md](https://github.com/koodikoulu/koodikoulu.fi/blob/master/CONTRIBUTING.md).
 
 License
 -------
